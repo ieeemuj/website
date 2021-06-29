@@ -1,0 +1,11 @@
+{
+  "extends": ["next", "airbnb", "airbnb/hooks"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/prop-types": "warn"
+  },
+  "env": {
+    "browser": true
+  }
+}
