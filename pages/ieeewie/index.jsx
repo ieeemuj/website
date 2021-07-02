@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const IeeeWie = () => {
-  return <div>wie</div>;
-};
+const IeeeWie = () => <div>wie</div>;
 
 export default IeeeWie;

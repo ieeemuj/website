@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react';
 
-const Events = () => {
-  return (
-    <div>
-      <p>event</p>
-    </div>
-  );
-};
+const Events = () => (
+  <div>
+    <p>event</p>
+  </div>
+);
 
 export default Events;

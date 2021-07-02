@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const JoinUs = () => {
-  return <div>join us</div>;
-};
+const JoinUs = () => <div>join us</div>;
 
 export default JoinUs;

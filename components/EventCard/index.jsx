@@ -1,8 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
 
-const EventCard = () => {
-  return <div>card</div>;
-};
+const EventCard = () => <div>card</div>;
 
 export default EventCard;

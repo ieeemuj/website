@@ -1,19 +1,19 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 import {
   Link as NavLink,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 const NavMenuItem = ({ navMenu }) => {
   const { title, links } = navMenu;
   return (
     <>
       <Menu>
-        <MenuButton as={NavLink} variant={"link"} cursor={"pointer"}>
+        <MenuButton as={NavLink} variant="link" cursor="pointer">
           {title}
         </MenuButton>
         <MenuList>

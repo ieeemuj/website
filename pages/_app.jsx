@@ -1,9 +1,9 @@
-import "../styles/globals.css";
-import { ChakraProvider, ThemeProvider, CSSReset } from "@chakra-ui/react";
-import Layout from "../components/Layout";
+import '../styles/globals.css';
+import { ChakraProvider, ThemeProvider, CSSReset } from '@chakra-ui/react';
+import Layout from '../components/Layout';
 
 // theme
-import theme from "../theme/theme";
+import theme from '../theme/theme';
 
 function MyApp({ Component, pageProps }) {
   return (

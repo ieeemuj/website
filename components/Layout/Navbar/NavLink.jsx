@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "@chakra-ui/react";
+import React from 'react';
+import { Link } from '@chakra-ui/react';
 
 const NavLink = ({ to, children }) => (
   <Link
     px={2}
     py={1}
     _hover={{
-      textDecoration: "none",
+      textDecoration: 'none',
     }}
     href={to}
   >
