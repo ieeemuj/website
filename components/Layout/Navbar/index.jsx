@@ -35,8 +35,8 @@ const Links = [
 const NavLinks = () => (
   <>
     <NavLink to="/">Home</NavLink>
-    {NAV_LINKS.map((navMenuLink, index) => (
-      <NavMenuItem navMenu={navMenuLink} key={index} />
+    {NAV_LINKS.map((navMenuLink) => (
+      <NavMenuItem navMenu={navMenuLink} key={navMenuLink.title} />
     ))}
     <NavLink to="/events">Event</NavLink>
     <NavLink to="/projects">Projects</NavLink>

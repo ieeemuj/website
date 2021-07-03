@@ -18,7 +18,7 @@ const NavMenuItem = ({ navMenu }) => {
         </MenuButton>
         <MenuList>
           {links.map((link, id) => (
-            <MenuItem key={id}>
+            <MenuItem key={link.gref}>
               <Link href={link.href}>
                 <NavLink>{link.name}</NavLink>
               </Link>

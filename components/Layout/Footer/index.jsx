@@ -99,8 +99,8 @@ const Footer = () => {
             </Stack>
           </Stack>
           <Stack align="flex-start">
-            {Links.map((link, id) => (
-              <Link key={id} href={link.toLowerCase()}>
+            {Links.map((link) => (
+              <Link key={link} href={link.toLowerCase()}>
                 {link}
               </Link>
             ))}

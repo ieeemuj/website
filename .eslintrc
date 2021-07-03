@@ -3,7 +3,8 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "warn",
-    "react/prop-types": "warn"
+    "react/prop-types": "warn",
+    "no-unused-vars": "warn"
   },
   "env": {
     "browser": true
