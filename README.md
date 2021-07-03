@@ -9,7 +9,7 @@ Rules:
 - No password or secrets in code. Use environment variables.
 - While working on your task, don't worry about new changes in master branch. Keep working on your fork.
 
-Step 1: Fork the repository to your own account. (Keep it private).
+Step 1: Create a branch in the repository with the task name you're doing.
 
 Step 2: Open a PR immediately with your TASK topic to master branch.
 
