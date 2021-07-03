@@ -11,7 +11,7 @@ Rules:
 
 Step 1: Create a branch in the repository with the task name you're doing.
 
-Step 2: Open a PR immediately with your TASK topic to master branch.
+Step 2: Open a PR immediately with your TASK topic to dev branch.
 
 Step 3: Do changes related to your task in your own fork.
 
