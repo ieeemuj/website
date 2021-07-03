@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IEEE SB MUJ Website
+## Workflow
+### Contributing
 
-## Getting Started
+Rules:
+- Never push directly to master branch.
+- If possible fix the eslint errors.
+- Don't work on multiple tasks at a time.
+- No password or secrets in code. Use environment variables.
+- While working on your task, don't worry about new changes in master branch. Keep working on your fork.
 
-First, run the development server:
+Step 1: Fork the repository to your own account. (Keep it private).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Step 2: Open a PR immediately with your TASK topic to master branch.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Step 3: Do changes related to your task in your own fork.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Step 4: When task is done, ping someone on whatsapp to review and merge.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Step 5: After merge, open PR for next task and repeat.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### ESLint
+This project uses ESLint to enforce code consistency and detect potential bugs. The rules are heavily opinionated and sometimes can be frustrating. But it results in cleaner and bug free code, especially since we might open source this website later.
 
-## Learn More
+You do NOT need to setup eslint. But you need to disable "Format on Save" and prettier plugins in vscode/IDE if you use them. The default prettier format rules are against eslint config. 
 
-To learn more about Next.js, take a look at the following resources:
+If you want to highlight ESLint errors in your editor, use VSCode ESLint plugin or equivalent in your editor. The plugin also fixes minor errors if you set it as default formatter. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can also fix minors errors using `npm run lint:fix`. Major errors will be printed and need manual intervention.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Also, you can run this project in development without worrying about ESLint errors using `npm run dev`.
 
-## Deploy on Vercel
+You can see warnings and errors in ESLint with `npm run lint`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
+## Build
+### Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ESLint rules DO NOT NEED to pass for project to run in debug build.
+
+```npm run dev```
+### Production
+
+ESLint rules DO NEED to pass for project to build.
+
+To see eslint errors:
+
+```npm run lint```
+
+After fixing the errors, build using:
+
+```npm run build```
+
+and then run using:
+
+```npm start```
+
+Production builds are for deployment only so I don't think anyone will need to do this.

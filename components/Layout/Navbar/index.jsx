@@ -2,16 +2,8 @@ import {
   Box,
   Flex,
   HStack,
-  Link,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
-  useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
@@ -21,16 +13,6 @@ import NavMenuItem from './NavMenuItem';
 
 // CONSTANTS
 import NAV_LINKS from '../../../constants/NavLinks';
-
-const Links = [
-  // "Home",
-  'Events',
-  'Projects',
-  'Team',
-  'IEEE WIE',
-  'IEEE CS',
-  'JOIN US',
-];
 
 const NavLinks = () => (
   <>
