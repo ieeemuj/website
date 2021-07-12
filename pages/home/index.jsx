@@ -6,6 +6,8 @@ import { Button } from '@chakra-ui/react';
 // styles
 import styles from '../../styles/Home.module.css';
 
+import TGroup from '../../components/Testimonials/testimonials';
+
 const Home = () => (
   <div className={styles.container}>
     <Head>
@@ -21,6 +23,7 @@ const Home = () => (
       <h1 className={styles.title}>Welcome to IEEE SB MUJ Website!</h1>
       <Button colorScheme="blue">Join</Button>
     </main>
+      <TGroup />
   </div>
 );
 
