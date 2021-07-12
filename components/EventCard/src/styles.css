@@ -1,0 +1,17 @@
+.App {
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	padding: 0
+}
+
+* {
+	background-color: grey
+}
+
+.lhFzqP {
+	font-size: 13.020833333333334vw
+}
