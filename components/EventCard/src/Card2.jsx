@@ -7,7 +7,7 @@ function Card2(props)
     //var img_loc = props.img;
     var img_loc = img1;
     console.log(props.img);
-    console.log("Logged");
+    console.log("Logged2");
     var style1 = {
         //height: "200px",
         height: "10.4166666vw",

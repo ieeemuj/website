@@ -31,7 +31,7 @@ function event_card(val)
 function App() {
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Upcoming Events</h1>
+      <h1 style={{ textAlign: "center" }}>Upcoming Event</h1>
       <div className="App">
         <Carousel breakPoints={breakPoints}>
           {Sdata.map(event_card)}

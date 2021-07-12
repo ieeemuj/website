@@ -12,7 +12,7 @@ const Sdata = [
         img: "./imgs/2.jpg",
         category: "IEEE CS MUJ",
         title: "Competetive Progamming",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        desc: "Lorem isum dolor sit amet, consectetur adipiscing elit.",
         more: "",
     },
     {

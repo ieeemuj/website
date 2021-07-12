@@ -10,4 +10,4 @@ Steps to install :
 
 4.npm start
 
-Access localhost:3000 on your browser
+Access localhost:3000 on your browser.
