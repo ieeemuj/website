@@ -1,11 +1,10 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .main {
@@ -33,4 +32,461 @@
   line-height: 1.15;
   font-size: 4rem;
   text-align: center;
+}
+
+
+/***TESTIMONIALS***/
+
+
+.TestimonialBackground{
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.TestimonialPlaceholder{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.TestimonialTitle{
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+
+.TestimonialHeading{
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.TestimonialSubHeading{
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.TestimonialCardGroup{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 4rem;
+}
+
+.TestimonialCard{
+  background-color:rgba(255, 255, 255, 1);
+	background-image:linear-gradient(0deg, rgba(0, 63.39851886034012, 136.00000709295273, 1) 0%,rgba(20.028132498264313, 96.8740613758564, 184.87500607967377, 1) 100%) ;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  border-radius: 1rem;
+  transition: all 0.5s ease;
+}
+
+.TestimonialCard:hover{
+  transform: scale(1.02);
+}
+
+.TestimonialCard img{
+  border: solid 1px #ffffff;
+  width: 100px;
+  border-radius: 0.5rem;
+}
+
+.TestimonialCardContent{
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding-left: 1rem;
+}
+
+.TestimonialCardAuthor{
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .TestimonialTitle{
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .TestimonialHeading{
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .TestimonialSubHeading{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  .TestimonialCardGroup{
+    display: grid;
+    grid-template-columns: auto;
+    padding: 0 2rem;
+  }
+
+  .TestimonialCard img{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .TestimonialCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .TestimonialCardContent{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 768px){
+  .TestimonialTitle{
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .TestimonialHeading{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .TestimonialSubHeading{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  .TestimonialCardGroup{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0 2rem;
+  }
+
+  .TestimonialCard img{
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+/***FOOTER***/
+
+
+.footer a:hover, .footer a:active, .footer a:visited, .footer a:focus{
+  text-decoration: none;
+}
+
+.footer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00132b;
+}
+
+.footerRule{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.level1{
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.level1 .location, .level1 .email, .level1 .subscribe{
+  padding: 1rem 4rem;
+  font-size: 55px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.5s ease;
+}
+
+.level1 .location span:nth-of-type(1), .level1 .email span:nth-of-type(1), .level1 .subscribe span:nth-of-type(1){
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 0.75rem;
+  margin-bottom: -0.75rem;
+}
+
+.level1 .location span:nth-of-type(2), .level1 .email span:nth-of-type(2), .level1 .subscribe span:nth-of-type(2){
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.locationText, .emailText, .subscribeText{
+  display: flex;
+  flex-direction: column;
+  margin: 0 0rem;
+}
+
+
+.location:hover, .subscribe:hover, .email:hover{
+  color: rgb(36, 36, 252);
+}
+
+.level2{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.link{
+  padding: 0.5rem 0;
+  color: rgb(136, 134, 134);
+  width: max-content;
+  transition: all 0.5s ease;
+}
+
+.link:hover{
+  transform: scale(1.25);
+  color: white;
+  font-weight: bold;
+}
+
+.linksContainer{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 1rem 0rem 1rem 12rem;
+  width: 65%;
+}
+
+.logoContainer{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer img{
+  width: 250px;
+}
+
+.level3{
+  background-color: #1b242b;
+  width: 100%;
+  color: rgb(122, 122, 122);
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 9rem;
+}
+
+.level3 .copyrightInfo{
+  font-size: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.level3 .socialMedia{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.footerLevel3Icon{
+  font-size: 25px;
+  margin: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.footerLevel3Icon:hover{
+  background-color: white;
+  color: #00132b;
+}
+
+@media (max-width: 767px) {
+  .level1{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .level1 .location, .level1 .email, .level1 .subscribe{
+    padding: 0.5rem 0rem;
+    font-size: 30px;
+  }
+
+  .level1 .location span:nth-of-type(1), .level1 .email span:nth-of-type(1), .level1 .subscribe span:nth-of-type(1){
+    font-size: 18px;
+    font-weight: bolder;
+    margin-top: 0rem;
+    margin-bottom: -0.5rem;
+  }
+  
+  .level1 .location span:nth-of-type(2), .level1 .email span:nth-of-type(2), .level1 .subscribe span:nth-of-type(2){
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .level2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .linksContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1rem 0rem 1rem 5rem;
+    width: 100%;
+  }
+  
+  .logoContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoContainer img{
+    margin-top: 2rem;
+    width: 250px;
+  }
+
+  .level3{
+    background-color: #1b242b;
+    width: 100%;
+    color: rgb(122, 122, 122);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 0 1.5rem;
+  }
+  
+  .level3 .copyrightInfo{
+    font-size: 8px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .level3 .socialMedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .footerLevel3Icon{
+    font-size: 15px;
+    margin: 1rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 768px){
+  .footerRule{
+    width: 95%;
+  }
+
+  .level1{
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .level1 .location, .level1 .email, .level1 .subscribe{
+    padding: 0.5rem 1rem;
+    font-size: 30px;
+  }
+
+  .level1 .location span:nth-of-type(1), .level1 .email span:nth-of-type(1), .level1 .subscribe span:nth-of-type(1){
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 0rem;
+    margin-bottom: -0.5rem;
+  }
+  
+  .level1 .location span:nth-of-type(2), .level1 .email span:nth-of-type(2), .level1 .subscribe span:nth-of-type(2){
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .linksContainer{
+    display: grid;
+    grid-template-columns: auto 60;
+    padding: 1rem 0rem 1rem 6rem;
+    width: 65%;
+  }
+
+  .logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+  }
+  
+  .logoContainer img{
+    width: 225px;
+  }
+
+  .level3{
+    background-color: #1b242b;
+    width: 100%;
+    color: rgb(122, 122, 122);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 0 1.5rem;
+  }
+  
+  .level3 .copyrightInfo{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .level3 .socialMedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .footerLevel3Icon{
+    font-size: 25px;
+    margin: 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
 }
