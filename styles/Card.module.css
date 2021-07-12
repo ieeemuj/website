@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.card {
+	box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .2);
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+	border-radius: 12.5px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.cards {
+	margin: 15%;
+    width: 320px;
+	transition: all .4s cubic-bezier(.175, .885, 0, 1);
+	background-color: #fff;
+	border-radius: 12.5px;
+	box-shadow: 0 16.25px 22.5px -10px rgba(0, 0, 0, .1);
+	transition: scale(1.05, 1.05)
+}
+
+.card__info {
+	background-color: #fff;
+	border-bottom-left-radius: 12.5px;
+	border-bottom-right-radius: 12.5px;
+}
+.card__title_div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.card__title {
+	text-align: left;
+	padding: 0 0 0 18.75px;
+	background-color: #fff;
+    font-size: 25px;    
+}
+.card__desc_div {
+	padding: 0 10px 0 22px;
+}
+.card__desc {
+	text-align: left;
+	font-weight: 500;
+	background-color: #fff;
+	color: #888888;
+    overflow: hidden;
+}
+
+.card_more {
+	padding-bottom: 12.5px;
+	background-color: transparent;
+	height: 40px;
+    text-align: left;
+    padding-left: 25px;
+    padding-top: 10px;
+    font-weight: 500;
+    color: #4900cf;
+}
+
+.know_more
+{
+    text-decoration: none;
+    float: left;
+    background-color: #fff;
+    padding: 10px;
+    padding-left: 20px;
+}
+ 
+.bg_img
+{
+    /*175px*/
+	height: 10.94rem;
+    background-repeat: no-repeat;
+    /* width: 20.625rem; */
+    background-size: 100% auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
