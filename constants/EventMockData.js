@@ -1,0 +1,68 @@
+const EventMockData = [
+  {
+    key: 1,
+    img: '/imgs/1.jpg',
+    category: 'WIE',
+    title: 'Introduction to Blockchain',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 2,
+    img: '/imgs/2.jpg',
+    category: 'CS',
+    title: 'Competetive Progamming',
+    desc: 'Lorem isum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 3,
+    img: '/imgs/3.jpg',
+    category: 'SB',
+    title: 'ML AI Random Title',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 4,
+    img: '/imgs/4.jpg',
+    category: 'SB',
+    title: 'Web Scrapping',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 5,
+    img: '/imgs/3.jpg',
+    category: 'WIE',
+    title: 'Cybersecurity',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 6,
+    img: '/imgs/2.jpg',
+    category: 'SB',
+    title: 'Unity Development',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 7,
+    img: '/imgs/1.jpg',
+
+    category: 'WIE',
+    title: 'MERN vs MEAN vs MEVN',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+  {
+    key: 8,
+    img: '/imgs/2.jpg',
+    category: 'CS',
+    title: 'Random Topics',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    more: '',
+  },
+];
+export default EventMockData;
