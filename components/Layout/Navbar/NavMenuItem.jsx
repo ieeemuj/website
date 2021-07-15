@@ -13,7 +13,17 @@ const NavMenuItem = ({ navMenu }) => {
   return (
     <>
       <Menu>
-        <MenuButton as={NavLink} variant="link" cursor="pointer">
+        <MenuButton as={NavLink} variant="link" cursor="pointer"
+        px={2}
+    py={1}
+    _hover={{
+      textDecoration: 'none',
+      backgroundColor:'#3182CE',
+      borderRadius:'6px',
+    }}
+    style={{borderRadius:'6px'}}
+    
+    >
           {title}
         </MenuButton>
         <MenuList>
