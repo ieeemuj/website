@@ -1,7 +1,7 @@
 import React from 'react';
-import CardCarousel from '../../components/CardCarousel';
+import CardCarousel from '../../components/Events/CardCarousel';
 import EventMockData from '../../constants/EventMockData';
-import EventCard from '../../components/EventCard';
+import EventCard from '../../components/Events/EventCard';
 
 const Events = () => (
   <div>

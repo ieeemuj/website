@@ -1,16 +1,16 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
-// import styles from "../../styles/Carousel.module.css";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 1 },
-  { width: 768, itemsToShow: 2 },
-  { width: 1200, itemsToShow: 3 },
+  { width: 720, itemsToShow: 2 },
+  { width: 1080, itemsToShow: 3 },
+  { width: 1440, itemsToShow: 4 },
+  { width: 1640, itemsToShow: 5 },
 ];
 
 const CardCarousel = ({ children }) => (
-  <Carousel breakPoints={breakPoints}>
+  <Carousel pagination={false} itemPadding={[0, 15]} breakPoints={breakPoints} showEmptySlots>
     {children}
   </Carousel>
 );
