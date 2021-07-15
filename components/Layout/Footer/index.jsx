@@ -1,20 +1,16 @@
 import {
-  Box,
   chakra,
-  Container,
   Link,
-  SimpleGrid,
-  Stack,
-  Text,
   VisuallyHidden,
-  useColorModeValue,
 } from '@chakra-ui/react';
 
-import { FaInstagram, FaTwitter, FaYoutube, FaTelegramPlane } from 'react-icons/fa';
+import {
+  FaInstagram, FaTwitter, FaYoutube, FaTelegramPlane,
+} from 'react-icons/fa';
 
-import { HiLocationMarker, HiMailOpen } from "react-icons/hi";
+import { HiLocationMarker, HiMailOpen } from 'react-icons/hi';
 
-import styles from '../../../styles/Home.module.css';
+import styles from '../../../styles/Footer.module.css';
 
 const SocialButton = ({ children, label, href }) => (
   <chakra.button
@@ -30,7 +26,7 @@ const SocialButton = ({ children, label, href }) => (
   </chakra.button>
 );
 
-const Level1Buttons = ({ children, label, href }) => (
+const Level1Buttons = ({ children, label }) => (
   <chakra.button
     rounded="full"
     display="inline-flex"
@@ -56,7 +52,7 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.level1}>
-        <a href="#" className={styles.location}>
+        <a href="/" className={styles.location}>
           <Level1Buttons label="Location" href="#">
             <div className={styles.footerLevel1Icon}>
               <HiLocationMarker />
@@ -67,7 +63,7 @@ const Footer = () => {
             <span>Lorem ipsum, dolor sit amet</span>
           </div>
         </a>
-        <a href="#" className={styles.subscribe}>
+        <a href="/" className={styles.subscribe}>
           <Level1Buttons label="Subscribe" href="#">
             <div className={styles.footerLevel1Icon}>
               <FaTelegramPlane />
@@ -78,7 +74,7 @@ const Footer = () => {
             <span>Lorem ipsum, dolor sit amet</span>
           </div>
         </a>
-        <a href="#" className={styles.email}>
+        <a href="mailto:example@gmail.com" className={styles.email}>
           <Level1Buttons label="Email" href="#">
             <div className={styles.footerLevel1Icon}>
               <HiMailOpen />
@@ -90,10 +86,10 @@ const Footer = () => {
           </div>
         </a>
       </div>
-      <hr className={styles.footerRule}></hr>
+      <hr className={styles.footerRule} />
       <div className={styles.level2}>
         <div className={styles.logoContainer}>
-          <a href="#"><img src="https://www.dawex.com/hubfs/migration-assets/img/events/ieee-logo.svg" alt="logo" /></a>
+          <a href="www.ieee.org"><img src="https://www.dawex.com/hubfs/migration-assets/img/events/ieee-logo.svg" alt="logo" /></a>
         </div>
         <div className={styles.linksContainer}>
           {Links.map((link) => (
@@ -128,7 +124,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    
+
   );
 };
 

@@ -1,15 +1,12 @@
 import Head from 'next/head';
 
 // components
-import { Button } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 
-// styles
-import styles from '../../styles/Home.module.css';
-
-import TGroup from '../../components/Testimonials/testimonials';
+import TestimonialGroup from '../../components/Testimonial/TestimonialGroup';
 
 const Home = () => (
-  <div className={styles.container}>
+  <Container maxW="container.xl">
     <Head>
       <title>IEEE SB MUJ</title>
       <meta
@@ -18,13 +15,8 @@ const Home = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
-    <main className={styles.main}>
-      <h1 className={styles.title}>Welcome to IEEE SB MUJ Website!</h1>
-      <Button colorScheme="blue">Join</Button>
-    </main>
-      <TGroup />
-  </div>
+    <TestimonialGroup />
+  </Container>
 );
 
 export default Home;
