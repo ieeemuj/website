@@ -7,7 +7,6 @@ const AboutUsContent = () => (
     alignItems={['center', 'center', 'center', 'center', 'flex-start']}
     justify={['space-around', 'space-around', 'space-around', 'space-around', 'space-between']}
     wrap="wrap"
-    height="100%"
     flexGrow="1"
   >
     <VStack

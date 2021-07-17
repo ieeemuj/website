@@ -1,81 +1,83 @@
-import {
-  chakra,
-  Link,
-  VisuallyHidden,
-} from '@chakra-ui/react';
+import { Box, SimpleGrid, VStack } from '@chakra-ui/react';
+import Image from 'next/image';
+import ResponsiveContainer from '../ResponsiveContainer';
+import FooterSection from './FooterSection';
+import FooterSectionContact from './FooterSectionContact';
+import FooterSectionHeading from './FooterSectionHeading';
+import FooterSectionLink from './FooterSectionLink';
 
-import {
-  FaInstagram, FaTwitter, FaYoutube,
-} from 'react-icons/fa';
-
-import styles from '../../../styles/Footer.module.css';
-
-const SocialButton = ({ children, label, href }) => (
-  <chakra.button
-    cursor="pointer"
-    as="a"
-    href={href}
-    display="inline-flex"
-    alignItems="center"
-    justifyContent="center"
+const Footer = () => (
+  <Box
+    bgColor="brand.700"
+    width="100%"
+    backgroundImage="url(/footer.svg)"
+    backgroundAttachment="fixed"
+    backgroundPosition="center"
+    backgroundSize="cover"
+    backgroundRepeat="no-repeat"
+    paddingTop="96px"
+    paddingBottom="96px"
   >
-    <VisuallyHidden>{label}</VisuallyHidden>
-    {children}
-  </chakra.button>
+    <ResponsiveContainer>
+      <SimpleGrid
+        columns={[1, 1, 1, 1, 4]}
+        alignItems="flex-start"
+        justifyItems="center"
+        spacing="48px"
+      >
+        <Image
+          width="256"
+          height="75"
+          src="https://www.dawex.com/hubfs/migration-assets/img/events/ieee-logo.svg"
+        />
+        <FooterSection>
+          <FooterSectionHeading>Social Media</FooterSectionHeading>
+        </FooterSection>
+        <VStack
+          width="100%"
+          spacing={10}
+        >
+          <FooterSection>
+            <FooterSectionHeading>Contact Us</FooterSectionHeading>
+            <FooterSectionContact number="+91123456789" name="Shaleen Poddar" />
+            <FooterSectionContact number="+91123456789" name="Vaibhav Khandelwal" />
+            <FooterSectionLink href="mailto:acmmuj@gmail.com">acmmuj@gmail.com</FooterSectionLink>
+          </FooterSection>
+          <FooterSection>
+            <FooterSectionHeading>Address</FooterSectionHeading>
+            <FooterSectionLink>
+              Manipal University Jaipur,
+              Dehmi Kalan, Near GVK Toll Plaza,
+              Jaipur-Ajmer Expressway, Jaipur,
+              Rajasthan 303007
+            </FooterSectionLink>
+          </FooterSection>
+        </VStack>
+        <VStack
+          width="100%"
+          spacing={10}
+        >
+          <FooterSection>
+            <FooterSectionHeading>Links</FooterSectionHeading>
+            <FooterSectionLink href="http://jaipur.manipal.edu/">MUJ Official Website</FooterSectionLink>
+            <FooterSectionLink href="http://www.ieee.org/about/index.html">IEEE Official Website</FooterSectionLink>
+            <FooterSectionLink href="http://www.ieee.org/membership_services/membership/students/awards/index.html">IEEE Scholarships</FooterSectionLink>
+            <FooterSectionLink href="http://www.ieee.org/membership_services/membership/benefits/benefits.html">IEEE Benefits</FooterSectionLink>
+            <FooterSectionLink href="http://www.ieee.org/membership_services/membership/join/index.html">IEEE Global Membership</FooterSectionLink>
+          </FooterSection>
+          <FooterSection>
+            <FooterSectionHeading>Faculty Messages</FooterSectionHeading>
+            <FooterSectionLink href="www.ieee.org">Ex-President&apos;s Message</FooterSectionLink>
+            <FooterSectionLink href="www.ieee.org">Ex-Pro-President&apos;s Message</FooterSectionLink>
+            <FooterSectionLink href="www.ieee.org">Advisor&apos;s Message</FooterSectionLink>
+            <FooterSectionLink href="www.ieee.org">Faculty Coordinator&apos;s Message</FooterSectionLink>
+          </FooterSection>
+        </VStack>
+
+      </SimpleGrid>
+    </ResponsiveContainer>
+
+  </Box>
 );
-
-const Footer = () => {
-  const Links = [
-    'Home',
-    'Events',
-    'Projects',
-    'Team',
-    'IEEE-WIE',
-    'IEEE-CS',
-    'Join Us',
-  ];
-
-  return (
-    <div className={styles.footer}>
-      <div className={styles.level2}>
-        <div className={styles.logoContainer}>
-          <a href="www.ieee.org"><img src="https://www.dawex.com/hubfs/migration-assets/img/events/ieee-logo.svg" alt="logo" /></a>
-        </div>
-        <div className={styles.linksContainer}>
-          {Links.map((link) => (
-            <div className={styles.link}>
-              <Link key={link} href={link.toLowerCase()}>
-                {link}
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className={styles.level3}>
-        <div className={styles.copyrightInfo}>
-          © 2021 IEEE SB MUJ. All rights reserved
-        </div>
-        <div className={styles.socialMedia}>
-          <SocialButton label="Twitter" href="#">
-            <div className={styles.footerLevel3Icon}>
-              <FaTwitter />
-            </div>
-          </SocialButton>
-          <SocialButton label="YouTube" href="#">
-            <div className={styles.footerLevel3Icon}>
-              <FaYoutube />
-            </div>
-          </SocialButton>
-          <SocialButton label="Instagram" href="#">
-            <div className={styles.footerLevel3Icon}>
-              <FaInstagram />
-            </div>
-          </SocialButton>
-        </div>
-      </div>
-    </div>
-
-  );
-};
 
 export default Footer;
