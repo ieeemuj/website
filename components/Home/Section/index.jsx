@@ -1,7 +1,7 @@
 import { Flex, VStack } from '@chakra-ui/react';
 
 const Section = ({ children }) => (
-  <Flex minH="400px">
+  <Flex minH="400px" marginY="96px">
     <VStack
       spacing="10"
       alignItems="flex-start"
