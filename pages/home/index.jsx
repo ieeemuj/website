@@ -4,6 +4,11 @@ import Head from 'next/head';
 import { Container } from '@chakra-ui/react';
 
 import TestimonialGroup from '../../components/Testimonial/TestimonialGroup';
+import Section from '../../components/Home/Section';
+import SectionHeader from '../../components/Home/Section/SectionHeader';
+import AboutUsHeader from '../../components/Home/AboutUs/AboutUsHeader';
+import SectionContent from '../../components/Home/Section/SectionContent';
+import AboutUsContent from '../../components/Home/AboutUs/AboutUsContent';
 
 const Home = () => (
   <Container maxW="container.xl">
@@ -15,6 +20,14 @@ const Home = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
+    <Section>
+      <SectionHeader>
+        <AboutUsHeader />
+      </SectionHeader>
+      <SectionContent>
+        <AboutUsContent />
+      </SectionContent>
+    </Section>
     <TestimonialGroup />
   </Container>
 );
