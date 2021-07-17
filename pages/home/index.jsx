@@ -1,8 +1,6 @@
 import Head from 'next/head';
 
 // components
-import { Container } from '@chakra-ui/react';
-
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import AboutUsHeader from '../../components/Home/AboutUs/AboutUsHeader';
@@ -12,7 +10,7 @@ import TestimonialHeader from '../../components/Home/Testimonial/TestimonialHead
 import TestimonialContent from '../../components/Home/Testimonial/TestimonialContent';
 
 const Home = () => (
-  <Container maxW={['95%', '90%', '85%', '90%', '85%', '70%']}>
+  <main>
     <Head>
       <title>IEEE SB MUJ</title>
       <meta
@@ -37,7 +35,7 @@ const Home = () => (
         <TestimonialContent />
       </SectionContent>
     </Section>
-  </Container>
+  </main>
 );
 
 export default Home;
