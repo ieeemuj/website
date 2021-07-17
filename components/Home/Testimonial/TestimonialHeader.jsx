@@ -2,7 +2,7 @@ import { Heading } from '@chakra-ui/react';
 
 const TestimonialHeader = () => (
   <>
-    <Heading>
+    <Heading textAlign="center">
       What Students have to say
     </Heading>
     <Heading
