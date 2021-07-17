@@ -12,7 +12,7 @@ import TestimonialHeader from '../../components/Home/Testimonial/TestimonialHead
 import TestimonialContent from '../../components/Home/Testimonial/TestimonialContent';
 
 const Home = () => (
-  <Container maxW="container.xl">
+  <Container maxW={['95%', '90%', '85%', '90%', '85%', '70%']}>
     <Head>
       <title>IEEE SB MUJ</title>
       <meta

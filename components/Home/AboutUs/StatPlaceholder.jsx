@@ -3,8 +3,8 @@ import { Box, SimpleGrid } from '@chakra-ui/react';
 const StatPlaceholder = () => (
   <SimpleGrid
     columns="2"
-    height={['300px', '360px', '400px', '400px', '480px']}
-    width={['300px', '360px', '400px', '400px', '480px']}
+    height={['300px', '360px', '400px', '400px', '400px', '480px']}
+    width={['300px', '360px', '400px', '400px', '400px', '480px']}
     spacing="24px"
     paddingBottom="0%"
   >

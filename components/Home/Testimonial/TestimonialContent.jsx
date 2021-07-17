@@ -8,6 +8,7 @@ const TestimonialContent = () => (
       width="100%"
       spacing="48px"
       paddingBottom="0%"
+      justifyItems="center"
     >
       <TestimonialCard rounded="lg" bgColor="gray.100" />
       <TestimonialCard rounded="lg" bgColor="gray.100" />
