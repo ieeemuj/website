@@ -1,0 +1,59 @@
+.rec.rec-arrow {
+  height: 32px !important;
+  width: 32px !important;
+  min-width: 32px !important;
+  font-size: small !important;
+  line-height: 0px !important;
+  color: gray !important;
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.rec.rec-arrow:hover {
+  height: 32px !important;
+  width: 32px !important;
+  min-width: 32px !important;
+  font-size: small !important;
+  line-height: 0px !important;
+  color: gray !important;
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.rec.rec-arrow:disabled {
+  height: 32px !important;
+  width: 32px !important;
+  min-width: 32px !important;
+  font-size: small !important;
+  line-height: 0px !important;
+  color: lightgray !important;
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.rec.rec-dot {
+  height: 8px !important;
+  width: 8px !important;
+  background-color: lightgray !important;
+  box-shadow: none !important;
+}
+
+.rec.rec-dot.rec-dot_active {
+  height: 8px !important;
+  width: 8px !important;
+  background-color: gray !important;
+  box-shadow: none !important;
+}
+
+@media only screen and (max-width: 640px) {
+  .rec.rec-arrow {
+    display: none !important;
+  }
+}
+
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: inset 0 0 1px 1px lightgrey;
+}

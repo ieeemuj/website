@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 // components
+import { Flex } from '@chakra-ui/react';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import AboutUsHeader from '../../components/Home/AboutUs/AboutUsHeader';
@@ -9,7 +10,7 @@ import AboutUsContent from '../../components/Home/AboutUs/AboutUsContent';
 import TestimonialHeader from '../../components/Home/Testimonial/TestimonialHeader';
 import TestimonialContent from '../../components/Home/Testimonial/TestimonialContent';
 import JoinUsBanner from '../../components/Layout/JoinUsBanner';
-import ActiveEventsHeader from '../../components/Home/ActiveEvents/ActiveEventsHeader';
+import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEventsHeader';
 import CardCarousel from '../../components/Events/CardCarousel';
 import EventMockData from '../../constants/EventMockData';
 import EventCard from '../../components/Events/EventCard';
@@ -33,14 +34,14 @@ const Home = () => (
       </SectionContent>
     </Section>
     <Section
-      bgColor="gray.100"
+      bgColor="whitesmoke"
     >
       <SectionHeader>
         <ActiveEventsHeader />
       </SectionHeader>
       <SectionContent>
         <CardCarousel>
-          {EventMockData.map((val) => (
+          {EventMockData.length > 0 ? EventMockData.map((val) => (
             <EventCard
               key={val.key}
               img={val.img}
@@ -49,7 +50,17 @@ const Home = () => (
               status={val.status}
               more={val.more}
             />
-          ))}
+          ))
+            : (
+              <Flex
+                width="320px"
+                height="455px"
+                justify="center"
+                alignItems="center"
+              >
+                Come back later!
+              </Flex>
+            )}
         </CardCarousel>
       </SectionContent>
     </Section>
