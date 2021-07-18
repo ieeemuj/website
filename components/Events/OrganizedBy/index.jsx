@@ -4,7 +4,7 @@ const OrganizedBy = ({ by }) => {
   let colorScheme = 'cyan';
 
   if (by === 'CS') {
-    colorScheme = 'yellow';
+    colorScheme = 'orange';
   } else if (by === 'WIE') {
     colorScheme = 'pink';
   }
@@ -13,12 +13,12 @@ const OrganizedBy = ({ by }) => {
     <HStack>
       <Badge
         fontSize="0.8em"
-        padding="10px"
+        padding="4px 8px"
         variant="subtle"
         colorScheme={colorScheme}
-        rounded="lg"
+        rounded="md"
       >
-        &#9679; IEEE
+        IEEE
         {' '}
         {by}
         {' '}

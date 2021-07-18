@@ -11,8 +11,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: 'Inter',
-    body: 'Inter',
+    heading: 'Montserrat',
+    body: 'DM Sans',
   },
 });
 export default theme;
