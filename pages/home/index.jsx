@@ -8,6 +8,7 @@ import SectionContent from '../../components/Home/Section/SectionContent';
 import AboutUsContent from '../../components/Home/AboutUs/AboutUsContent';
 import TestimonialHeader from '../../components/Home/Testimonial/TestimonialHeader';
 import TestimonialContent from '../../components/Home/Testimonial/TestimonialContent';
+import JoinUsBanner from '../../components/Layout/JoinUsBanner';
 
 const Home = () => (
   <main>
@@ -35,6 +36,7 @@ const Home = () => (
         <TestimonialContent />
       </SectionContent>
     </Section>
+    <JoinUsBanner />
   </main>
 );
 
