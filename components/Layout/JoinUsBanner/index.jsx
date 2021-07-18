@@ -24,6 +24,7 @@ const JoinUsBanner = () => (
             width="100%"
             textAlign={['center', 'center', 'center', 'center', 'left', 'left']}
             color="brand.500"
+            size="lg"
           >
             What Are You Waiting For? Join Our Awesome Community
           </Heading>
