@@ -10,7 +10,12 @@ const breakPoints = [
 ];
 
 const CardCarousel = ({ children }) => (
-  <Carousel pagination={false} itemPadding={[0, 15]} breakPoints={breakPoints} showEmptySlots>
+  <Carousel
+    breakPoints={breakPoints}
+    itemsToScroll={1}
+    enableMouseSwipe={false}
+    pagination={false}
+  >
     {children}
   </Carousel>
 );

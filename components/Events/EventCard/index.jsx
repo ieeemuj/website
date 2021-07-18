@@ -9,29 +9,29 @@ import OrganizedBy from '../OrganizedBy';
 const EventCard = ({
   img, category, title, status,
 }) => (
-  <Link passHref href={`/events/${title}`}>
-    <Box boxShadow="lg" margin="10px" rounded="md" bg="white" width={290}>
-      <VStack align="flex-start">
-        <Image
-          src={img}
-          width="100%"
-          height={290}
-          objectFit="cover"
-          rounded="md"
-          roundedBottom="none"
-        />
-        <VStack spacing="5" align="flex-start" padding="24px" paddingTop="16px" width="100%">
-          <HStack justifyContent="space-between" width="100%">
-            <OrganizedBy by={category} />
-            <Badge>{status}</Badge>
-          </HStack>
-          <Divider />
-          <Heading size="md">{title}</Heading>
+  <Box boxShadow="lg" margin="10px" rounded="md" bg="white" width={290} minH={450}>
+    {/* <Link passHref href={`/events/${title}`}> */}
+    <VStack align="flex-start">
+      <Image
+        src={img}
+        width="100%"
+        height={290}
+        objectFit="cover"
+        rounded="md"
+        roundedBottom="none"
+      />
+      <VStack spacing="5" align="flex-start" padding="24px" paddingTop="16px" width="100%">
+        <HStack justifyContent="space-between" width="100%">
+          <OrganizedBy by={category} />
+          <Badge>{status}</Badge>
+        </HStack>
+        <Divider />
+        <Heading size="md">{title}</Heading>
 
-        </VStack>
       </VStack>
-    </Box>
-  </Link>
+    </VStack>
+    {/* </Link> */}
+  </Box>
 );
 
 export default EventCard;
