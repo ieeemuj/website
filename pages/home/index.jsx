@@ -9,6 +9,10 @@ import AboutUsContent from '../../components/Home/AboutUs/AboutUsContent';
 import TestimonialHeader from '../../components/Home/Testimonial/TestimonialHeader';
 import TestimonialContent from '../../components/Home/Testimonial/TestimonialContent';
 import JoinUsBanner from '../../components/Layout/JoinUsBanner';
+import ActiveEventsHeader from '../../components/Home/ActiveEvents/ActiveEventsHeader';
+import CardCarousel from '../../components/Events/CardCarousel';
+import EventMockData from '../../constants/EventMockData';
+import EventCard from '../../components/Events/EventCard';
 
 const Home = () => (
   <main>
@@ -34,6 +38,25 @@ const Home = () => (
       </SectionHeader>
       <SectionContent>
         <TestimonialContent />
+      </SectionContent>
+    </Section>
+    <Section>
+      <SectionHeader>
+        <ActiveEventsHeader />
+      </SectionHeader>
+      <SectionContent>
+        <CardCarousel>
+          {EventMockData.map((val) => (
+            <EventCard
+              key={val.key}
+              img={val.img}
+              category={val.category}
+              title={val.title}
+              status={val.status}
+              more={val.more}
+            />
+          ))}
+        </CardCarousel>
       </SectionContent>
     </Section>
     <JoinUsBanner />
