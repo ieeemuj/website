@@ -2,7 +2,7 @@
 .underLineAnimation {
   display: inline-block;
   position: relative;
-  color: #000000;
+  color: gray;
 }
 
 .underLineAnimation:after {
@@ -21,4 +21,9 @@
 .underLineAnimation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.active {
+  color: #000000;
+  font-weight: bold;
 }

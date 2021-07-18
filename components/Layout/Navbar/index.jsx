@@ -11,29 +11,27 @@ import {
 import { MdMenu, MdClose } from 'react-icons/md';
 
 import NavLink from './NavLink';
-// Styles
-import styles from '../../../styles/Navbar.module.css';
 import ResponsiveContainer from '../ResponsiveContainer';
 
 const NavLinks = () => (
   <>
     <NavLink to="/">
-      <span className={styles.underLineAnimation}>HOME</span>
+      <span>HOME</span>
     </NavLink>
     <NavLink to="/events">
-      <span className={styles.underLineAnimation}>EVENTS</span>
+      <span>EVENTS</span>
     </NavLink>
     <NavLink to="/projects">
-      <span className={styles.underLineAnimation}>PROJECTS</span>
+      <span>PROJECTS</span>
     </NavLink>
     <NavLink to="/ieeewie">
-      <span className={styles.underLineAnimation}>SOCIETIES</span>
+      <span>SOCIETIES</span>
     </NavLink>
     <NavLink to="/ieeecs">
-      <span className={styles.underLineAnimation}>TEAM</span>
+      <span>TEAM</span>
     </NavLink>
     <NavLink to="/ieeecs">
-      <span className={styles.underLineAnimation}>CONTACT US</span>
+      <span>CONTACT US</span>
     </NavLink>
     <NavLink to="/join-us">
       <Button
