@@ -9,27 +9,27 @@ import {
 import { MdMenu, MdClose } from 'react-icons/md';
 
 import NavLink from './NavLink';
-import NavMenuItem from './NavMenuItem';
+// Styles
+import styles from '../../../styles/Navbar.module.css';
 
-// CONSTANTS
-import NAV_LINKS from '../../../constants/NavLinks';
-
-const NavLinks = () => {
-  
-  return(<>
-    <NavLink to="/" >Home</NavLink>
-    {NAV_LINKS.map((navMenuLink) => (
-      <NavMenuItem navMenu={navMenuLink} key={navMenuLink.title} />
-    ))}
-    <NavLink to="/events" >Event</NavLink>
-    <NavLink to="/projects">Projects</NavLink>
-    <NavLink to="/ieeewie">IEEE WIE</NavLink>
-    <NavLink to="/ieeecs">IEEE CS</NavLink>
-    <NavLink to="/join-us">Join Us</NavLink>
-  </>)
-};
-
-
+const NavLinks = () => (
+  <>
+    <NavLink to="/"><span className={styles.underLineAnimation}>HOME</span></NavLink>
+    <NavLink to="/events"><span className={styles.underLineAnimation}>EVENTS</span></NavLink>
+    <NavLink to="/projects"><span className={styles.underLineAnimation}>PROJECTS</span></NavLink>
+    <NavLink to="/ieeewie"><span className={styles.underLineAnimation}>SOCIETIES</span></NavLink>
+    <NavLink to="/ieeecs"><span className={styles.underLineAnimation}>TEAM</span></NavLink>
+    <NavLink to="/ieeecs"><span className={styles.underLineAnimation}>CONTACT US</span></NavLink>
+    <NavLink to="/join-us">
+      <span style={{
+        backgroundColor: '#034188', padding: '0.4em 0.8em', borderRadius: '5px', color: 'white',
+      }}
+      >
+        JOIN NOW
+      </span>
+    </NavLink>
+  </>
+);
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -47,7 +47,7 @@ const Navbar = () => {
             colorScheme="blue.50"
             p={3}
             borderRadius="50"
-            size="md"
+            size="lg"
             icon={isOpen ? <MdClose /> : <MdMenu />}
             aria-label="Open Menu"
             display={{ xl: 'none' }}
