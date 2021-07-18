@@ -1,64 +1,37 @@
 import React from 'react';
 import {
-  Box, Heading, Image, VStack, Text,
+  Box, Heading, Image, VStack, Divider, HStack,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import Badge from '../Badge';
 import OrganizedBy from '../OrganizedBy';
 
 const EventCard = ({
-  img, category, title, desc,
+  img, category, title, status,
 }) => (
-  <Box
-    boxShadow="lg"
-    margin="10px"
-    rounded="lg"
-    bg="white"
-    width="320px"
-  >
-    <VStack align="flex-start">
-      <Badge>
-        Upcoming
-      </Badge>
-      <Image
-        src={img}
-        width="100%"
-        height="160px"
-        objectFit="cover"
-        rounded="lg"
-        roundedBottom="none"
-      />
-      <Box
-        padding="25px"
-      >
-        <VStack spacing="5" align="flex-start">
-          <OrganizedBy by={category} />
-          <Heading
-            height="72px"
-            size="lg"
-            noOfLines={2}
-          >
-            {title}
-          </Heading>
-          <Text
-            height="60px"
-            noOfLines={2}
-          >
-            {desc}
-          </Text>
-          <Link passHref href={`/events/${title}`}>
-            <Text
-              fontWeight="bold"
-              color="blue.600"
-            >
-              KNOW MORE
-            </Text>
-          </Link>
-        </VStack>
-      </Box>
-    </VStack>
+  <Link passHref href={`/events/${title}`}>
+    <Box boxShadow="lg" margin="10px" rounded="md" bg="white" width={290}>
+      <VStack align="flex-start">
+        <Image
+          src={img}
+          width="100%"
+          height={290}
+          objectFit="cover"
+          rounded="md"
+          roundedBottom="none"
+        />
+        <VStack spacing="5" align="flex-start" padding="24px" paddingTop="16px" width="100%">
+          <HStack justifyContent="space-between" width="100%">
+            <OrganizedBy by={category} />
+            <Badge>{status}</Badge>
+          </HStack>
+          <Divider />
+          <Heading size="md">{title}</Heading>
 
-  </Box>
+        </VStack>
+      </VStack>
+    </Box>
+  </Link>
 );
 
 export default EventCard;

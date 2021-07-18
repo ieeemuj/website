@@ -13,7 +13,7 @@ const Events = () => (
           img={val.img}
           category={val.category}
           title={val.title}
-          desc={val.desc}
+          status={val.status}
           more={val.more}
         />
       ))}
