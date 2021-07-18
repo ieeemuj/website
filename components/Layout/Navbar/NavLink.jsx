@@ -11,21 +11,20 @@ const NavLink = ({ to, children }) => {
   <>
    
   <Link
+  
     px={2}
     py={1}
-    
+    color="black"
     _hover={{
-      textDecoration: 'none',
-      backgroundColor:'#3182CE',
-      borderRadius:'6px',
-    
+    textDecoration:'none',
+    fontWeight:"bold"
       
     }}
-    style={{borderRadius:'6px'}}
+
     href={to}
-    bg={router.pathname===to?"#3182CE":""}
+    //bg={router.pathname===to?"#3182CE":""}
    
-    color={router.pathname===to?"white":""}
+    //color={router.pathname===to?"white":""}
   >
   
     {children}

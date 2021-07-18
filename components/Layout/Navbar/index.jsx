@@ -13,19 +13,20 @@ import NavMenuItem from './NavMenuItem';
 
 // CONSTANTS
 import NAV_LINKS from '../../../constants/NavLinks';
-
+//Styles
+import styles from "../../../styles/Navbar.module.css"
 const NavLinks = () => {
   
   return(<>
-    <NavLink to="/" >Home</NavLink>
+    <NavLink to="/"><span  className={styles.underLineAnimation} >Home</span></NavLink>
     {NAV_LINKS.map((navMenuLink) => (
       <NavMenuItem navMenu={navMenuLink} key={navMenuLink.title} />
     ))}
-    <NavLink to="/events" >Event</NavLink>
-    <NavLink to="/projects">Projects</NavLink>
-    <NavLink to="/ieeewie">IEEE WIE</NavLink>
-    <NavLink to="/ieeecs">IEEE CS</NavLink>
-    <NavLink to="/join-us">Join Us</NavLink>
+    <NavLink to="/events" ><span className={styles.underLineAnimation}>Event</span></NavLink>
+    <NavLink to="/projects"><span className={styles.underLineAnimation}>Projects</span></NavLink>
+    <NavLink to="/ieeewie"><span className={styles.underLineAnimation}>IEEE WIE</span></NavLink>
+    <NavLink to="/ieeecs"><span className={styles.underLineAnimation}>IEEE CS</span></NavLink>
+    <NavLink to="/join-us" ><span style={{backgroundColor:'#034188', padding:"0.5em",borderRadius:"5px",color:"white"}}>Join Now</span></NavLink>
   </>)
 };
 
