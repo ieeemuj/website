@@ -2,9 +2,16 @@ import { Heading } from '@chakra-ui/react';
 
 const AboutUsHeader = () => (
   <>
-    <Heading>What is IEEE</Heading>
     <Heading
-      textAlign={['center', 'center', 'center', 'center', 'left']}
+      width="100%"
+      size="lg"
+      textAlign="center"
+    >
+      What is IEEE
+    </Heading>
+    <Heading
+      width="100%"
+      textAlign="center"
       color="brand.500"
       size="sm"
     >

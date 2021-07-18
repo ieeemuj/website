@@ -9,16 +9,17 @@ const AboutUsContent = () => (
     wrap="wrap"
     flexGrow="1"
   >
+    <StatPlaceholder />
     <VStack
-      marginBottom={['32px', '32px', '32px', '32px', '0px']}
+      spacing="10"
+      marginTop={['48px', '48px', '48px', '48px', '0px']}
       justify="space-around"
-      width={['100%', '100%', '100%', '100%', '60%']}
+      width={['100%', '100%', '100%', '100%', '55%']}
       height={['50%', '50%', '50%', '50%', '400px', '480px']}
     >
       <AboutUsContentText />
       <AboutUsContentText />
     </VStack>
-    <StatPlaceholder />
   </HStack>
 );
 

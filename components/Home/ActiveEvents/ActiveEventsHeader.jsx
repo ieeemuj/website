@@ -5,7 +5,7 @@ const ActiveEventsHeader = () => (
     <Heading
       as="h6"
       width="100%"
-      size="md"
+      size="lg"
       padding={4}
       textAlign="center"
     >
