@@ -10,12 +10,12 @@
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 3px;
   bottom: 0;
   left: 0;
   background-color: #0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  transform-origin: bottom left;
+  transition: transform 0.4s ease-out;
 }
 
 .underLineAnimation:hover:after {
