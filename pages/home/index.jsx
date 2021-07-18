@@ -32,15 +32,9 @@ const Home = () => (
         <AboutUsContent />
       </SectionContent>
     </Section>
-    <Section>
-      <SectionHeader>
-        <TestimonialHeader />
-      </SectionHeader>
-      <SectionContent>
-        <TestimonialContent />
-      </SectionContent>
-    </Section>
-    <Section>
+    <Section
+      bgColor="gray.100"
+    >
       <SectionHeader>
         <ActiveEventsHeader />
       </SectionHeader>
@@ -57,6 +51,14 @@ const Home = () => (
             />
           ))}
         </CardCarousel>
+      </SectionContent>
+    </Section>
+    <Section>
+      <SectionHeader>
+        <TestimonialHeader />
+      </SectionHeader>
+      <SectionContent>
+        <TestimonialContent />
       </SectionContent>
     </Section>
     <JoinUsBanner />
