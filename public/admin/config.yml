@@ -2,66 +2,88 @@ backend:
   name: git-gateway
 local_backend: true
 media_folder: public/images
-public_folder: /images
-
+public_folder: "/images"
 collections:
-  - label: Projects
-    name: projects
-    label_singular: Project
-    description: Projects that will be shown on the project spotlight page.
-    folder: content/projects/
+  - label: Pages
+    name: pages
+    format: json
+    description: This collection allows editing website content
+    create: false
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: Home Page
+        name: home
+        file: "content/pages/home.json"
+        fields:
+          - label: Our Vision
+            name: vision
+            widget: text
+          - label: Our Mission
+            name: mission
+            widget: text
+          - label: Stats
+            name: stats
+            widget: list
+            max: 4
+            min: 4
+            fields:
+              - label: Number Text
+                name: numtext
+                widget: string
+              - label: Subject Text
+                name: subtext
+                widget: string
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            max: 4
+            min: 4
+            fields:
+              - label: Text
+                name: text
+                widget: text
+              - label: Author
+                name: author
+                widget: string
+              - label: Author Image
+                name: authorImg
+                widget: image
+  - label: Tags
+    name: tags
+    label_singular: Tag
+    format: json
+    description: Tags for events
+    folder: content/tags
     create: true
+    editor:
+      preview: false
     fields:
       - label: Title
         name: title
         widget: string
-      - label: Author
-        name: authors
-        widget: list
-        fields:
-          - label: Full Name
-            name: name
-            widget: string
-          - label: GitHub Link
-            name: github
-            widget: string
-          - label: LinkedIn Link
-            name: linkedin
-            widget: string
-            required: false
-          - label: Twitter Link
-            name: twitter
-            widget: string
-            required: false
-          - label: Instagram Link
-            name: instagram
-            widget: string
-            required: false
-          - label: Website
-            name: website
-            widget: string
-            required: false
-          - label: Other
-            name: other
-            widget: string
-            required: false
-      - label: Project GitHub Link
-        name: github
-        widget: string
-      - label: Summary
-        name: summary
-        widget: string
+      - label: Color
+        name: color
+        widget: color
   - label: Events
     name: events
     label_singular: Event
+    format: json
     description: Past, current and future Events that will be shown on the events page.
     folder: content/events
+    slug: "{{year}}-{{title}}"
     create: true
+    editor:
+      preview: false
     fields:
       - label: Club
         name: club
         widget: select
-        options: ["Student Branch", "WIE", "Computer Society"]
+        options:
+          - Student Branch
+          - WIE
+          - Computer Society
       - label: Title
         name: title
         widget: string
@@ -97,7 +119,12 @@ collections:
             widget: string
       - label: Tags
         name: tags
-        widget: 
+        widget: relation
+        multiple: true
+        collection: tags
+        search_fields:
+          - title
+        value_field: "title"
       - label: Team Size
         name: team_size
         widget: string

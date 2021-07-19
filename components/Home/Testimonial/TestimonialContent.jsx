@@ -1,7 +1,7 @@
 import { Box, SimpleGrid } from '@chakra-ui/react';
 import TestimonialCard from './TestimonialCard';
 
-const TestimonialContent = () => (
+const TestimonialContent = ({ testimonials }) => (
   <Box width="100%">
     <SimpleGrid
       columns={['1', '1', '1', '1', '2']}
@@ -10,10 +10,13 @@ const TestimonialContent = () => (
       paddingBottom="0%"
       justifyItems="center"
     >
-      <TestimonialCard rounded="lg" bgColor="gray.100" />
-      <TestimonialCard rounded="lg" bgColor="gray.100" />
-      <TestimonialCard rounded="lg" bgColor="gray.100" />
-      <TestimonialCard rounded="lg" bgColor="gray.100" />
+      {testimonials.map((testimonial) => (
+        <TestimonialCard
+          testimonial={testimonial}
+          rounded="lg"
+          bgColor="gray.100"
+        />
+      ))}
     </SimpleGrid>
   </Box>
 );

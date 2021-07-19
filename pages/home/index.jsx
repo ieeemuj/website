@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 // components
-import { Flex } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import AboutUsHeader from '../../components/Home/AboutUs/AboutUsHeader';
@@ -14,6 +14,8 @@ import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEvent
 import CardCarousel from '../../components/Events/CardCarousel';
 import EventMockData from '../../constants/EventMockData';
 import EventCard from '../../components/Events/EventCard';
+
+import homeContent from '../../content/pages/home.json';
 
 const Home = () => (
   <main>
@@ -30,7 +32,11 @@ const Home = () => (
         <AboutUsHeader />
       </SectionHeader>
       <SectionContent>
-        <AboutUsContent />
+        <AboutUsContent
+          visionText={homeContent.vision}
+          missionText={homeContent.mission}
+          stats={homeContent.stats}
+        />
       </SectionContent>
     </Section>
     <Section
@@ -58,7 +64,11 @@ const Home = () => (
                 justify="center"
                 alignItems="center"
               >
-                Come back later!
+                <Heading
+                  size="md"
+                >
+                  Come back later!
+                </Heading>
               </Flex>
             )}
         </CardCarousel>
@@ -69,7 +79,7 @@ const Home = () => (
         <TestimonialHeader />
       </SectionHeader>
       <SectionContent>
-        <TestimonialContent />
+        <TestimonialContent testimonials={homeContent.testimonials} />
       </SectionContent>
     </Section>
     <JoinUsBanner />
