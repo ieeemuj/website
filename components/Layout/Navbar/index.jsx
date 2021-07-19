@@ -5,63 +5,84 @@ import {
   IconButton,
   useDisclosure,
   Stack,
+  Heading,
+  Button,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
 
 import NavLink from './NavLink';
-import NavMenuItem from './NavMenuItem';
+import ResponsiveContainer from '../ResponsiveContainer';
 
-// CONSTANTS
-import NAV_LINKS from '../../../constants/NavLinks';
-
-const NavLinks = () => {
-  
-  return(<>
-    <NavLink to="/" >Home</NavLink>
-    {NAV_LINKS.map((navMenuLink) => (
-      <NavMenuItem navMenu={navMenuLink} key={navMenuLink.title} />
-    ))}
-    <NavLink to="/events" >Event</NavLink>
-    <NavLink to="/projects">Projects</NavLink>
-    <NavLink to="/ieeewie">IEEE WIE</NavLink>
-    <NavLink to="/ieeecs">IEEE CS</NavLink>
-    <NavLink to="/join-us">Join Us</NavLink>
-  </>)
-};
-
-
+const NavLinks = () => (
+  <>
+    <NavLink to="/">
+      <span>HOME</span>
+    </NavLink>
+    <NavLink to="/events">
+      <span>EVENTS</span>
+    </NavLink>
+    <NavLink to="/projects">
+      <span>PROJECTS</span>
+    </NavLink>
+    <NavLink to="/ieeewie">
+      <span>SOCIETIES</span>
+    </NavLink>
+    <NavLink to="/ieeecs">
+      <span>TEAM</span>
+    </NavLink>
+    <NavLink to="/ieeecs">
+      <span>CONTACT US</span>
+    </NavLink>
+    <NavLink to="/join-us">
+      <Button
+        colorScheme="brand"
+        padding="16px"
+        rounded="lg"
+      >
+        JOIN NOW
+      </Button>
+    </NavLink>
+  </>
+);
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Box px={[4, 4, 16, 32]}>
-        <Flex h={16} alignItems="center" justifyContent="space-between">
-          <Box>IEEE SB MUJ</Box>
-          <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
-            <NavLinks />
-          </HStack>
-          <IconButton
-            variant="ghost"
-            colorScheme="blue.50"
-            p={3}
-            borderRadius="50"
-            size="md"
-            icon={isOpen ? <MdClose /> : <MdMenu />}
-            aria-label="Open Menu"
-            display={{ xl: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-        </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ xl: 'none' }}>
-            <Stack as="nav" spacing={4}>
+      <Box py="16px">
+        <ResponsiveContainer>
+          <Flex h={16} alignItems="center" justifyContent="space-between">
+            <Heading
+              size="lg"
+            >
+              IEEE SB MUJ
+            </Heading>
+            <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
               <NavLinks />
-            </Stack>
-          </Box>
-        ) : null}
+            </HStack>
+            <IconButton
+              variant="ghost"
+              colorScheme="blue.50"
+              p={3}
+              borderRadius="50"
+              size="lg"
+              icon={isOpen ? <MdClose /> : <MdMenu />}
+              aria-label="Open Menu"
+              display={{ xl: 'none' }}
+              onClick={isOpen ? onClose : onOpen}
+            />
+          </Flex>
+
+          {isOpen ? (
+            <Box pb={4} display={{ xl: 'none' }}>
+              <Stack as="nav" spacing={4}>
+                <NavLinks />
+              </Stack>
+            </Box>
+          ) : null}
+        </ResponsiveContainer>
+
       </Box>
     </>
   );

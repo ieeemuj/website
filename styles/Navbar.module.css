@@ -1,0 +1,29 @@
+/***Navbar***/
+.underLineAnimation {
+  display: inline-block;
+  position: relative;
+  color: gray;
+}
+
+.underLineAnimation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom left;
+  transition: transform 0.4s ease-out;
+}
+
+.underLineAnimation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.active {
+  color: #000000;
+  font-weight: bold;
+}

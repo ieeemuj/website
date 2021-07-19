@@ -4,7 +4,7 @@ const AboutUsContentText = () => (
   <VStack
     alignItems={['center', 'center', 'center', 'center', 'flex-start']}
   >
-    <Heading size="lg">Our Vision</Heading>
+    <Heading size="md">Our Vision</Heading>
     <Text
       textAlign={['center', 'center', 'center', 'center', 'left']}
     >

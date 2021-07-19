@@ -14,7 +14,7 @@ const CardCarousel = ({ children }) => (
     breakPoints={breakPoints}
     itemsToScroll={1}
     enableMouseSwipe={false}
-    pagination={false}
+    pagination
   >
     {children}
   </Carousel>

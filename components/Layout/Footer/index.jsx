@@ -59,18 +59,63 @@ const Footer = () => (
         >
           <FooterSection>
             <FooterSectionHeading>Links</FooterSectionHeading>
-            <FooterSectionLink href="http://jaipur.manipal.edu/">MUJ Official Website</FooterSectionLink>
-            <FooterSectionLink href="http://www.ieee.org/about/index.html">IEEE Official Website</FooterSectionLink>
-            <FooterSectionLink href="http://www.ieee.org/membership_services/membership/students/awards/index.html">IEEE Scholarships</FooterSectionLink>
-            <FooterSectionLink href="http://www.ieee.org/membership_services/membership/benefits/benefits.html">IEEE Benefits</FooterSectionLink>
-            <FooterSectionLink href="http://www.ieee.org/membership_services/membership/join/index.html">IEEE Global Membership</FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="http://jaipur.manipal.edu/"
+            >
+              MUJ Official Website
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="http://www.ieee.org/about/index.html"
+            >
+              IEEE Official Website
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="http://www.ieee.org/membership_services/membership/students/awards/index.html"
+            >
+              IEEE Scholarships
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="http://www.ieee.org/membership_services/membership/benefits/benefits.html"
+            >
+              IEEE Benefits
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="http://www.ieee.org/membership_services/membership/join/index.html"
+            >
+              IEEE Global Membership
+            </FooterSectionLink>
           </FooterSection>
           <FooterSection>
             <FooterSectionHeading>Faculty Messages</FooterSectionHeading>
-            <FooterSectionLink href="www.ieee.org">Ex-President&apos;s Message</FooterSectionLink>
-            <FooterSectionLink href="www.ieee.org">Ex-Pro-President&apos;s Message</FooterSectionLink>
-            <FooterSectionLink href="www.ieee.org">Advisor&apos;s Message</FooterSectionLink>
-            <FooterSectionLink href="www.ieee.org">Faculty Coordinator&apos;s Message</FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="www.ieee.org"
+            >
+              Ex-President&apos;s Message
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="www.ieee.org"
+            >
+              Ex-Pro-President&apos;s Message
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="www.ieee.org"
+            >
+              Advisor&apos;s Message
+            </FooterSectionLink>
+            <FooterSectionLink
+              underline
+              href="www.ieee.org"
+            >
+              Faculty Coordinator&apos;s Message
+            </FooterSectionLink>
           </FooterSection>
         </VStack>
 

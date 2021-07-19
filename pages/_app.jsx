@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/carousel.css';
 import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 import Layout from '../components/Layout';
 

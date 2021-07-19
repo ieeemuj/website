@@ -2,11 +2,16 @@ import { Heading } from '@chakra-ui/react';
 
 const TestimonialHeader = () => (
   <>
-    <Heading textAlign="center">
+    <Heading
+      width="100%"
+      size="lg"
+      textAlign="center"
+    >
       What Students have to say
     </Heading>
     <Heading
-      textAlign={['center', 'center', 'center', 'center', 'left']}
+      width="100%"
+      textAlign="center"
       size="sm"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
