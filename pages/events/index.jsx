@@ -9,15 +9,17 @@ import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEvent
 import SectionContent from '../../components/Home/Section/SectionContent';
 import PastEventsHeader from '../../components/Events/PastEvents/PastEventsHeader';
 import PastEventsGrid from '../../components/Events/PastEvents/PastEventsGrid';
-
+import TagsFilter from "../../components/Events/TagsFilter/TagsFilter"
 const Events = () => (
   <main>
+
     <Section
       bgColor="whitesmoke"
-    >
+    >   
       <SectionHeader>
-        <ActiveEventsHeader />
+        <ActiveEventsHeader/>
       </SectionHeader>
+      <TagsFilter/>
       <SectionContent>
         <CardCarousel>
           {EventMockData.length > 0 ? EventMockData.map((val) => (
