@@ -15,7 +15,7 @@ const AboutUsContent = () => (
       marginTop={['48px', '48px', '48px', '48px', '0px']}
       justify="space-around"
       width={['100%', '100%', '100%', '100%', '55%']}
-      height={['50%', '50%', '50%', '50%', '400px', '480px']}
+      height={['50%', '50%', '50%', '50%', '400px', '440px']}
     >
       <AboutUsContentText />
       <AboutUsContentText />
