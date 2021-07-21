@@ -1,10 +1,13 @@
 import { Box, SimpleGrid, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import ResponsiveContainer from '../ResponsiveContainer';
 import FooterSection from './FooterSection';
 import FooterSectionContact from './FooterSectionContact';
 import FooterSectionHeading from './FooterSectionHeading';
 import FooterSectionLink from './FooterSectionLink';
+import FooterSectionSocialIcon from './FooterSectionSocialIcon';
+import FooterSectionSocialLink from './FooterSectionSocialLink';
 
 const Footer = () => (
   <Box
@@ -32,6 +35,57 @@ const Footer = () => (
         />
         <FooterSection>
           <FooterSectionHeading>Social Media</FooterSectionHeading>
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaInstagram} />}
+            href="https://www.instagram.com/ieeemuj"
+            underline
+          >
+            @ieeemuj
+          </FooterSectionSocialLink>
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaInstagram} />}
+            href="https://www.instagram.com/ieee_csmuj"
+            underline
+          >
+            @ieee_csmuj
+          </FooterSectionSocialLink>
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaInstagram} />}
+            href="https://www.instagram.com/ieee.wiemuj"
+            underline
+          >
+            @ieee.wiemuj
+          </FooterSectionSocialLink>
+          <Box width="100%" height="8px" />
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaLinkedin} />}
+            href="https://www.linkedin.com/company/ieeesbmuj/"
+            underline
+          >
+            IEEE SB MUJ
+          </FooterSectionSocialLink>
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaLinkedin} />}
+            href="https://www.linkedin.com/company/ieee-cs-muj/"
+            underline
+          >
+            IEEE CS MUJ
+          </FooterSectionSocialLink>
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaLinkedin} />}
+            href="https://www.linkedin.com/company/ieee-wie-muj/"
+            underline
+          >
+            IEEE WIE MUJ
+          </FooterSectionSocialLink>
+          <Box width="100%" height="8px" />
+          <FooterSectionSocialLink
+            icon={<FooterSectionSocialIcon icon={FaFacebook} />}
+            href="https://www.facebook.com/ieeemuj/"
+            underline
+          >
+            @ieeemuj
+          </FooterSectionSocialLink>
         </FooterSection>
         <VStack
           width="100%"
@@ -39,9 +93,15 @@ const Footer = () => (
         >
           <FooterSection>
             <FooterSectionHeading>Contact Us</FooterSectionHeading>
-            <FooterSectionContact number="+91123456789" name="Shaleen Poddar" />
-            <FooterSectionContact number="+91123456789" name="Vaibhav Khandelwal" />
-            <FooterSectionLink href="mailto:acmmuj@gmail.com">acmmuj@gmail.com</FooterSectionLink>
+            <FooterSectionContact number="+919825440501" name="Shaleen Poddar">
+              +91 98254 40501
+            </FooterSectionContact>
+            <FooterSectionContact number="+917503584851" name="Vaibhav Khandelwal">
+              +91 75035 84851
+            </FooterSectionContact>
+            <FooterSectionLink href="mailto:ieee@muj.manipal.edu">
+              ieee@muj.manipal.edu
+            </FooterSectionLink>
           </FooterSection>
           <FooterSection>
             <FooterSectionHeading>Address</FooterSectionHeading>

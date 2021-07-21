@@ -1,22 +1,20 @@
 import { SimpleGrid } from '@chakra-ui/react';
-import EventMockData from '../../../constants/EventMockData';
 import EventCard from '../EventCard';
 
-const PastEventsGrid = () => (
+const PastEventsGrid = ({ allEventsData }) => (
   <SimpleGrid
     width="100%"
-    columns={['3']}
+    columns={[1, 1, 2, 2, 3, 3]}
     spacing="16"
     justifyItems="center"
   >
-    {EventMockData.map((val) => (
+    {allEventsData.map((event) => (
       <EventCard
-        key={val.key}
-        img={val.img}
-        category={val.category}
-        title={val.title}
-        status={val.status}
-        more={val.more}
+        key={event.slug}
+        image={event.image}
+        club={event.club}
+        title={event.title}
+        status={event.status}
       />
     ))}
   </SimpleGrid>

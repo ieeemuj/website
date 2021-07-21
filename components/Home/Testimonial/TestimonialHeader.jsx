@@ -14,7 +14,7 @@ const TestimonialHeader = () => (
       textAlign="center"
       size="sm"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      IEEE members and students participating in our mentoring programmes share their perspectives.
     </Heading>
   </>
 );

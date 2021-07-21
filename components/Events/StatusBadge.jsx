@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from '@chakra-ui/react';
 
-const CardBadge = ({ children }) => {
+const StatusBadge = ({ children }) => {
   function getColor(status) {
     let color;
     switch (status.toUpperCase()) {
@@ -24,7 +24,7 @@ const CardBadge = ({ children }) => {
     <Text
       fontWeight="600"
       fontSize="0.8em"
-      color={getColor(children)}
+      color={children ? getColor(children) : ''}
       textTransform="uppercase"
     >
       {children}
@@ -32,4 +32,4 @@ const CardBadge = ({ children }) => {
   );
 };
 
-export default CardBadge;
+export default StatusBadge;

@@ -1,0 +1,19 @@
+{
+  "team_size": "2",
+  "fee": "Free",
+  "contacts": [
+    {
+      "name": "Ronak Modi",
+      "mobno": "2089873241"
+    }
+  ],
+  "club": "WIE",
+  "title": "Introduction to Blockchain",
+  "start_datetime": "2021-07-20T08:23:51.730Z",
+  "tags": [
+    "Technical"
+  ],
+  "image": "/imgs/1.jpg",
+  "description": "Block 'em all",
+  "end_datetime": "2021-07-29T18:30:00.000Z"
+}
