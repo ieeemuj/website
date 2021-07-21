@@ -3,10 +3,11 @@ import Carousel from 'react-elastic-carousel';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 720, itemsToShow: 2 },
-  { width: 1080, itemsToShow: 3 },
-  { width: 1440, itemsToShow: 4 },
-  { width: 1640, itemsToShow: 5 },
+  { width: 480, itemsToShow: 1 },
+  { width: 768, itemsToShow: 2 },
+  { width: 992, itemsToShow: 2 },
+  { width: 1280, itemsToShow: 3 },
+  { width: 1536, itemsToShow: 3 },
 ];
 
 const CardCarousel = ({ children }) => (

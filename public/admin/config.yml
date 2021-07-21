@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
 local_backend: true
-media_folder: public/images
-public_folder: "/images"
+media_folder: public/imgs
+public_folder: "/imgs"
 collections:
   - label: Pages
     name: pages
@@ -81,9 +81,9 @@ collections:
         name: club
         widget: select
         options:
-          - Student Branch
+          - SB
           - WIE
-          - Computer Society
+          - CS
       - label: Title
         name: title
         widget: string
@@ -98,14 +98,12 @@ collections:
         widget: datetime
         date_format: DD.MM.YYYY
         time_format: HH:mm
-        format: LLL
         picker_utc: false
       - label: End Date Time
         name: end_datetime
         widget: datetime
         date_format: DD.MM.YYYY
         time_format: HH:mm
-        format: LLL
         picker_utc: false
       - label: Contacts
         name: contacts

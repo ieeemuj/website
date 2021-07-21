@@ -1,11 +1,11 @@
 import { Badge, HStack } from '@chakra-ui/react';
 
-const OrganizedBy = ({ by }) => {
+const OrganizedByBadge = ({ club }) => {
   let colorScheme = 'cyan';
 
-  if (by === 'CS') {
+  if (club === 'CS') {
     colorScheme = 'orange';
-  } else if (by === 'WIE') {
+  } else if (club === 'WIE') {
     colorScheme = 'pink';
   }
 
@@ -20,7 +20,7 @@ const OrganizedBy = ({ by }) => {
       >
         IEEE
         {' '}
-        {by}
+        {club}
         {' '}
         MUJ
       </Badge>
@@ -28,4 +28,4 @@ const OrganizedBy = ({ by }) => {
   );
 };
 
-export default OrganizedBy;
+export default OrganizedByBadge;

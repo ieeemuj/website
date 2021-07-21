@@ -3,11 +3,11 @@ import {
   Box, Heading, Image, VStack, Divider, HStack,
 } from '@chakra-ui/react';
 // import Link from 'next/link';
-import Badge from '../Badge';
-import OrganizedBy from '../OrganizedBy';
+import StatusBadge from './StatusBadge';
+import OrganizedByBadge from './OrganizedByBadge';
 
 const EventCard = ({
-  img, category, title, status,
+  image, club, title, status,
 }) => (
   <Box
     boxShadow="md"
@@ -20,7 +20,7 @@ const EventCard = ({
     {/* <Link passHref href={`/events/${title}`}> */}
     <VStack align="flex-start">
       <Image
-        src={img}
+        src={image}
         width="100%"
         height={290}
         objectFit="cover"
@@ -38,8 +38,8 @@ const EventCard = ({
           justifyContent="space-between"
           width="100%"
         >
-          <OrganizedBy by={category} />
-          <Badge>{status}</Badge>
+          <OrganizedByBadge club={club} />
+          <StatusBadge>{status}</StatusBadge>
         </HStack>
         <Divider />
         <Heading size="md">{title}</Heading>
