@@ -10,7 +10,7 @@ import {
     Heading
   } from "@chakra-ui/react"
   import Styles from "../../../styles/TagsFilter.module.css"
-
+  import MockEvent from "../../../constants/TagFilterMockData"
   import { BiCaretDown, BiCaretUp } from 'react-icons/bi';
 const TagsFilter=()=>{
     const[tags,setTag]=useState([])
@@ -19,40 +19,23 @@ const TagsFilter=()=>{
     //add tags
 
     const addTag=(e)=>{
-        console.log(e.target)
+       // console.log(e.target)
         if(e.target.value!==""){
             setTag([...tags,e.target.value]);
-            e.target.style.display='none'
-           
-        }
+            e.target.style.display='none'            
     }
+}
 
     //remove tags
     const removeTag=index=>{
         let option=tags[index]
         setTag([...tags.filter((tag)=>tags.indexOf(tag)!==index)])
         if(option!==null)
-        document.getElementById(option).style.display="block"       
+        document.getElementById(option).style.display="block"              
     }
 
-    //Mock Events data
-    const MockEvent=[
-        {
-            title:"IEEE SB",
-            events:["opt1","opt2"]
-        },
-        {
-            title:"IEEE CS",
-            events:["opt3"]
-        },
-        {
-            title:"IEEE WIE",
-            events:["opt4","opt5","opt6"]
-        }
-    ]
 
-    
-    
+   
     return(
        <Box bg="white" p={2.5} borderRadius={10} minW="22vw" boxShadow="md" position="absolute" zIndex="dropdown">
         <Box className="tags-input" display="flex" bg="white" flexWrap="wrap"
@@ -78,9 +61,9 @@ const TagsFilter=()=>{
                     flag?<BiCaretUp style={{marginLeft:"auto" , color:"gray"}}/>:<BiCaretDown style={{marginLeft:"auto", color:"gray"}}/>
                 }
                 </Box>
-            {
-                flag?(
-                    <Box bg="white" cursor="pointer" id="BoxSelect">
+            
+                    <Box bg="white" cursor="pointer" id="BoxSelect" 
+                    display={flag?"block":"none"}>
 
                     {
                         MockEvent.map(Evt=>(
@@ -88,8 +71,9 @@ const TagsFilter=()=>{
                             <Heading as="h5" size="sm" textDecoration="underline" color="#1A202C" textDecorationColor="inherit">{Evt.title}</Heading>
                             {
                                 Evt.events.map(opt=>(
-                                    <option id={opt} className={Styles.Option} onClick={(event)=>addTag(event)} value={opt}>
-                                     {opt}
+                                    <option id={opt.name} className={Styles.Option} onClick={(event)=>addTag(event)} value={opt.name}
+                                    style={opt.dis?{display:"block"}:{display:"none"}}>
+                                     {opt.name}
                                      </option>
                                 ))
                             }
@@ -98,8 +82,9 @@ const TagsFilter=()=>{
                         ))
                     }
                     </Box>
-                ):""
-            }
+               
+
+            
             
             </Box>
         
