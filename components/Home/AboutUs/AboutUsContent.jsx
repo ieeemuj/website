@@ -14,7 +14,7 @@ const AboutUsContent = ({ visionText, missionText, stats }) => (
       spacing="10"
       justify="space-around"
       width={['100%', '100%', '100%', '100%', '55%']}
-      height={['50%', '50%', '50%', '50%', '400px', '480px']}
+      height={['50%', '50%', '50%', '50%', '400px', '440px']}
     >
       <AboutUsContentText heading="Our Vision" text={visionText} />
       <AboutUsContentText heading="Our Mission" text={missionText} />
