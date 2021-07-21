@@ -1,8 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 
-const FooterSectionContact = ({ number, name }) => (
+const FooterSectionContact = ({ number, name, children }) => (
   <Box
-    paddingTop="8px"
     paddingBottom="8px"
   >
     <a
@@ -13,7 +12,7 @@ const FooterSectionContact = ({ number, name }) => (
         color="white"
         size="sm"
       >
-        {number}
+        {children}
       </Text>
     </a>
     <Text

@@ -2,7 +2,7 @@ import {
   Avatar, Box, Heading, HStack, Text, VStack,
 } from '@chakra-ui/react';
 
-const TestimonialCard = () => (
+const TestimonialCard = ({ testimonial }) => (
   <Box
     maxW="600px"
     rounded="lg"
@@ -13,28 +13,27 @@ const TestimonialCard = () => (
   >
     <VStack
       spacing="10"
+      height="100%"
+      justify="space-between"
     >
       <Text
         textAlign="center"
         fontStyle="italic"
       >
         &ldquo;
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Pharetra purus sed viverra amet vulputate.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Pharetra purus sed viverra amet vulputate.
+        {testimonial.text}
         &rdquo;
       </Text>
       <HStack
         spacing="10"
       >
         <Avatar
-          src="https://i.pravatar.cc/300"
+          src={testimonial.authorImg}
         />
         <Heading
           size="sm"
         >
-          Manavendra Sen
+          {testimonial.author}
         </Heading>
       </HStack>
     </VStack>

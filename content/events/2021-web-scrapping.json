@@ -1,0 +1,19 @@
+{
+  "team_size": "1",
+  "fee": "Free",
+  "contacts": [
+    {
+      "name": "Ronak Modi",
+      "mobno": "2089873241"
+    }
+  ],
+  "club": "SB",
+  "title": "Web Scrapping",
+  "start_datetime": "2021-07-29T18:30:00.000Z",
+  "tags": [
+    "Technical"
+  ],
+  "image": "http://localhost:3000/imgs/4.jpg",
+  "description": "Scrap it all",
+  "end_datetime": "2021-08-11T18:30:00.000Z"
+}

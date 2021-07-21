@@ -1,0 +1,44 @@
+{
+  "vision": "IEEE SB MUJ envisions itself as the world's premier provider of\ntechnical knowledge, community services, educational seminars,\nand individualised services to the world's top professionals.",
+  "mission": "IEEE SB MUJ is the biggest technical professional organisation of\nManipal University, Jaipur. Our mission here is to work on projects\nand development into advancing technology in order to benefit the\nmankind and transform lives through the power of technology and\neducation.\nWe aim at fostering technological innovation and excellence\ncontributed by the members and society of our community.",
+  "stats": [
+    {
+      "numtext": "500+",
+      "subtext": "Members"
+    },
+    {
+      "numtext": "50+",
+      "subtext": "Events"
+    },
+    {
+      "numtext": "4",
+      "subtext": "Societies"
+    },
+    {
+      "numtext": "20+",
+      "subtext": "Mentors"
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "I believe professionals in technology fields should join IEEE to help themselves and the community. It is also important to understand how protocols and frameworks are utilised to develop, maintain, and test electronic/IT systems. IEEE members are uniquely positioned to provide the innovative solutions needed in technical industries going forward.",
+      "author": "Aarohi Manchanda",
+      "authorImg": "https://i.pravatar.cc/48"
+    },
+    {
+      "text": "IEEE’s mission 'to foster technological innovation and excellence for the benefit of humanity' challenges us to work towards a better future for the entire global community, and there’s never a better and more exciting time to be a member of IEEE to be part of this meaningful mission.",
+      "author": "Rhythm Bindal, Student",
+      "authorImg": "https://i.pravatar.cc/48"
+    },
+    {
+      "text": "To make lasting contributions to a discipline, you really need to have an organisation like IEEE behind you. I joined IEEE because of IEEE’s journals and the important opportunities that they have to offer.",
+      "author": "Yash Pachchigar",
+      "authorImg": "https://i.pravatar.cc/48"
+    },
+    {
+      "text": "As a member of IEEE, I find it is an invaluable source of information and conduit for discussion.IEEE encourages professional learning through its international conferences, workshops, short courses and publications.",
+      "author": "Ronak Modi",
+      "authorImg": "https://i.pravatar.cc/48"
+    }
+  ]
+}

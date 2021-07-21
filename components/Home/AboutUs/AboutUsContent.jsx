@@ -1,24 +1,23 @@
 import { HStack, VStack } from '@chakra-ui/react';
 import AboutUsContentText from './AboutUsContentText';
-import StatPlaceholder from './StatPlaceholder';
+import StatGroup from './StatGroup';
 
-const AboutUsContent = () => (
+const AboutUsContent = ({ visionText, missionText, stats }) => (
   <HStack
     alignItems={['center', 'center', 'center', 'center', 'flex-start']}
     justify={['space-around', 'space-around', 'space-around', 'space-around', 'space-between']}
     wrap="wrap"
     flexGrow="1"
   >
-    <StatPlaceholder />
+    <StatGroup stats={stats} />
     <VStack
       spacing="10"
-      marginTop={['48px', '48px', '48px', '48px', '0px']}
       justify="space-around"
       width={['100%', '100%', '100%', '100%', '55%']}
-      height={['50%', '50%', '50%', '50%', '400px', '480px']}
+      height={['50%', '50%', '50%', '50%', '400px', '440px']}
     >
-      <AboutUsContentText />
-      <AboutUsContentText />
+      <AboutUsContentText heading="Our Vision" text={visionText} />
+      <AboutUsContentText heading="Our Mission" text={missionText} />
     </VStack>
   </HStack>
 );
