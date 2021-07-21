@@ -1,13 +1,12 @@
-import { Box, Heading, Text, Image, Link, Button, Divider } from "@chakra-ui/react";
+import { Box, Heading, Text, Image, Link, Button} from "@chakra-ui/react";
 import {FaLinkedinIn, FaTwitter, FaInstagram} from 'react-icons/fa';
 
-const SocietiesContent = ({titleQues, alignImg, alignText, dividerBg, twitterUrl, instaUrl, linkedInUrl, imgSrc, altText, imgMarginTop, imgMarginRight}) => (
+const SocietiesContent = ({titleQues, alignImg, alignText, twitterUrl, instaUrl, linkedInUrl, imgSrc, altText, imgMarginTop, imgMarginRight}) => (
     <Box>
-        <Divider backgroundColor={dividerBg} height="0.8"/>
         <Box
             width= "md" 
             float = {alignText}
-            marginTop = "9"
+            // marginTop = "9"
             marginX="4"
         >
         <Heading

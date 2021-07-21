@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading,  Box, Text, Button} from "@chakra-ui/react";
+import { Heading,  Box, Text, Button, Divider} from "@chakra-ui/react";
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import SocietiesHeader from '../../components/Societies/SocietiesHeader';
@@ -36,72 +36,12 @@ const Societies = () =>{
             linkedInUrl: "#",
             twitterUrl: "#",
             imgSrc: "/svg/ieee_wie_logo.svg",
-            imgMarginTop: "2.5em",
+            imgMarginTop: "3em",
             imgMarginRight: "8em"
         },
     ]
     return (
         <main>
-            <Section>
-                <SectionHeader>
-                    <SocietiesHeader heading="Societies"/>
-                </SectionHeader>
-                <SectionContent>
-                    <Box 
-                        as = "a"
-                        href = "#cs"
-                        minWidth="md" 
-                        maxW="md"
-                        p="5" 
-                        borderWidth="1px" 
-                        rounded="md" 
-                        borderColor ="brand.500" 
-                        textAlign="center" 
-                        display="inline-block"
-                        minH={455}
-                        boxShadow ="md"
-                        position= "relative"
-                    >
-                        <Heading marginTop="3em" marginBottom="18" >
-                            IEEE CS Society
-                        </Heading>
-                        <Text fontSize="lg" >
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Quae blanditiis ipsum aut vero atque doloribus rem eum neque, 
-                            voluptates deleniti. Iusto laudantium dolorum consequuntur quae 
-                            nam magni, omnis obcaecati dolores?
-                        </Text>
-                        <Button marginTop= "12" color="brand.500" href="#cs_society">Read More</Button>
-                    </Box>
-                    <Box 
-                        as = "a"
-                        href = "#"
-                        cursor = "pointer"
-                        minWidth= "md"
-                        maxW="md"
-                        p="5"
-                        borderWidth="1px" 
-                        rounded="md" 
-                        borderColor ="brand.500" 
-                        textAlign="center"
-                        display="inline-block"
-                        float = "right"
-                        minH={455}
-                        boxShadow ="md"
-                        >
-                        <Heading  marginTop="3em" marginBottom="18">
-                            IEEE WIE
-                        </Heading>
-                        <Text fontSize="lg">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Quae blanditiis ipsum aut vero atque doloribus rem eum neque, 
-                            voluptates deleniti. Iusto laudantium dolorum consequuntur quae 
-                            nam magni, omnis obcaecati dolores?
-                        </Text>
-                            <Button marginTop= "12" color="brand.500">Read More</Button>
-                    </Box>
-                </SectionContent>
-            </Section>
             {sectionData.map((item, index) => (
                 <Section key={index}>
                     <SectionHeader>
@@ -111,13 +51,13 @@ const Societies = () =>{
                             subHeading = {item.subHeading}
                             subHeadingColor = {item.subHeadingColor}/>
                     </SectionHeader>
+                    <Divider backgroundColor={item.dividerBg} height="0.7"/>
                     <SectionContent>
                         <SocietiesContent
                             altText        = {item.heading}
                             titleQues      = {item.titleQues}
                             alignText      = {item.alignText}
                             alignImg       = {item.alignImg}
-                            dividerBg      = {item.dividerBg}  
                             instaUrl       = {item.instaUrl}
                             twitterUrl     = {item.twitterUrl}
                             linkedInUrl    = {item.linkedInUrl}
@@ -126,6 +66,7 @@ const Societies = () =>{
                             imgMarginRight = {item.imgMarginRight}
                         />
                     </SectionContent>
+                    <Divider backgroundColor={item.dividerBg} height="0.7"/>
                 </Section>
             ))}
         </main>
