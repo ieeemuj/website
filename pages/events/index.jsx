@@ -5,7 +5,6 @@ import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEvent
 import SectionContent from '../../components/Home/Section/SectionContent';
 import PastEventsHeader from '../../components/Events/PastEvents/PastEventsHeader';
 import PastEventsGrid from '../../components/Events/PastEvents/PastEventsGrid';
-import TagsFilter from "../../components/Events/TagsFilter/TagsFilter"
 
 import ActiveEventsCarousel from '../../components/Events/ActiveEvents/ActiveEventsCarousel';
 import { getAllActiveEvents, getAllInactiveEvents } from '../../lib/events';
@@ -24,7 +23,6 @@ const Events = () => {
 
   return (
     <main>
-      <TagsFilter />
       <Section
         bgColor="whitesmoke"
       >
