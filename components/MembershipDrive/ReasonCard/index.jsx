@@ -1,9 +1,12 @@
 import React from 'react';
-import { Image, Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-const testImg = "https://source.unsplash.com/100x100";
+import {
+  Image, Box, Heading, HStack, Text, VStack,
+} from '@chakra-ui/react';
+
+const testImg = 'https://source.unsplash.com/100x100';
 
 const ReasonCard = () => (
-    <Box maxW="600px" rounded="md">
+  <Box maxW="600px" rounded="md">
     <HStack spacing="2">
       <Box height="auto">
         <Image src={testImg} borderRadius="10px" width="100px" />

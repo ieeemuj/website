@@ -1,10 +1,13 @@
-import React from "react";
-import { SimpleGrid, Heading } from "@chakra-ui/layout";
-import { Button, Image, Box, Text, VStack } from "@chakra-ui/react";
-import ResponsiveContainer from "../../components/Layout/ResponsiveContainer";
-import TextSection from "../../components/MembershipDrive/TextSection";
-import SocietyCard from "../../components/MembershipDrive/SocietyCard";
-import Slideshow from "../../components/MembershipDrive/Slideshow";
+import React from 'react';
+import {
+  SimpleGrid, Heading,
+  Button, Box, Text, VStack,
+} from '@chakra-ui/react';
+
+import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
+import TextSection from '../../components/MembershipDrive/TextSection';
+import SocietyCard from '../../components/MembershipDrive/SocietyCard';
+import Slideshow from '../../components/MembershipDrive/Slideshow';
 
 const JoinUs = () => (
   <div>
@@ -31,7 +34,7 @@ const JoinUs = () => (
       <br />
       <br />
 
-      <SimpleGrid columns={["1", "1", "1", "2", "2"]} spacingX="90px">
+      <SimpleGrid columns={['1', '1', '1', '2', '2']} spacingX="90px">
         <VStack spacing={10}>
           <Heading as="h1" size="xl" p="2">
             Reason & Benefits of joining IEEE
@@ -59,7 +62,7 @@ const JoinUs = () => (
       <br />
       <br />
       <SimpleGrid
-        columns={["1", "1", "1", "2", "2"]}
+        columns={['1', '1', '1', '2', '2']}
         width="100%"
         justifyItems="center"
         spacingX="50px"

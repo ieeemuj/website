@@ -1,11 +1,13 @@
-import React from "react";
-import { Image, Box, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import React from 'react';
+import {
+  Image, Box, Heading, Stack, Text, VStack,
+} from '@chakra-ui/react';
 
-const testImg = "https://source.unsplash.com/150x150";
+const testImg = 'https://source.unsplash.com/150x150';
 
 const SocietyCard = () => (
   <Box maxW="600px" rounded="md">
-    <Stack direction={["column","row"]} spacing="2">
+    <Stack direction={['column', 'row']} spacing="2">
       <Box height="auto">
         <Image src={testImg} borderRadius="10px" width="500px" />
       </Box>

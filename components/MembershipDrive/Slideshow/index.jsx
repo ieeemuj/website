@@ -1,8 +1,8 @@
-import { Box, Image } from "@chakra-ui/react";
-import React from "react";
-import Carousel from "react-elastic-carousel";
+import { Box, Image } from '@chakra-ui/react';
+import React from 'react';
+import Carousel from 'react-elastic-carousel';
 
-const testImg = "https://source.unsplash.com/250x250";
+const testImg = 'https://source.unsplash.com/250x250';
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 720, itemsToShow: 2 },
