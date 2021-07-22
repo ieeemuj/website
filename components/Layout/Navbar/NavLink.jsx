@@ -20,9 +20,12 @@ const NavLink = ({ to, children, ...props }) => {
         <Link
           px={2}
           py={1}
-          color="black"
+          color="white"
           _hover={{
             textDecoration: 'none',
+          }}
+          _focus={{
+            border: 'none',
           }}
         >
           {React.cloneElement(child, {

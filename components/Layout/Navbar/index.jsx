@@ -33,15 +33,24 @@ const NavLinks = () => (
     <NavLink to="/ieeecs">
       <span>CONTACT US</span>
     </NavLink>
-    <NavLink to="/join-us">
-      <Button
-        colorScheme="brand"
-        padding="16px"
-        rounded="lg"
-      >
-        JOIN NOW
-      </Button>
-    </NavLink>
+    <Button
+      bg="white"
+      boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+      padding="16px"
+      rounded="lg"
+      color="brand"
+      _hover={{
+        bg: 'brand',
+        border: 'none',
+      }}
+      _active={{
+        bg: 'brand',
+        transform: 'scale(0.97)',
+      }}
+      _focus={{ bg: 'brand' }}
+    >
+      JOIN NOW
+    </Button>
   </>
 );
 
@@ -50,11 +59,15 @@ const Navbar = () => {
 
   return (
     <>
-      <Box py="16px">
+      <Box
+        py="16px"
+        bg="#00132B"
+      >
         <ResponsiveContainer>
           <Flex h={16} alignItems="center" justifyContent="space-between">
             <Heading
               size="lg"
+              color="white"
             >
               IEEE SB MUJ
             </Heading>
@@ -63,8 +76,7 @@ const Navbar = () => {
             </HStack>
             <IconButton
               variant="ghost"
-              colorScheme="blue.50"
-              p={3}
+              color="white"
               borderRadius="50"
               size="lg"
               icon={isOpen ? <MdClose /> : <MdMenu />}
