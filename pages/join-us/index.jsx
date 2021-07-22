@@ -1,13 +1,14 @@
 import React from 'react';
 import {
   SimpleGrid, Heading,
-  Button, Box, Text, VStack,
+  Button, Box,
 } from '@chakra-ui/react';
 
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
-import TextSection from '../../components/MembershipDrive/TextSection';
 import SocietyCard from '../../components/MembershipDrive/SocietyCard';
 import Slideshow from '../../components/MembershipDrive/Slideshow';
+import Benefits from '../../components/MembershipDrive/Benefits';
+import Plans from '../../components/MembershipDrive/plans';
 
 const JoinUs = () => (
   <div>
@@ -17,16 +18,16 @@ const JoinUs = () => (
       <br />
       <SimpleGrid columns={2} minChildWidth="180px">
         <Heading as="h3" size="md">
-          IEEE MUJ Membership
+          Registration is now Open!
         </Heading>
         <Box>
           <Button
             float="right"
-            colorScheme="blue"
-            variant="solid"
-            width="125px"
+            colorScheme="brand"
+            rounded="lg"
+            padding="16px"
           >
-            Join Now
+            REGISTER
           </Button>
         </Box>
       </SimpleGrid>
@@ -35,15 +36,8 @@ const JoinUs = () => (
       <br />
 
       <SimpleGrid columns={['1', '1', '1', '2', '2']} spacingX="90px">
-        <VStack spacing={10}>
-          <Heading as="h1" size="xl" p="2">
-            Reason & Benefits of joining IEEE
-          </Heading>
-          <Text fontSize="xl">Catchy Tagline goes here !</Text>
-        </VStack>
-        <Box justifyItems="center">
-          <TextSection />
-        </Box>
+        <Plans />
+        <Benefits />
       </SimpleGrid>
 
       <br />
@@ -55,8 +49,8 @@ const JoinUs = () => (
         minChildWidth="200px"
         marginTop="10"
       >
-        <Heading as="h7" size="xs">
-          IEEE Global Membership
+        <Heading as="h7" size="sm">
+          Each plan gets you membership for all Societies
         </Heading>
       </SimpleGrid>
       <br />
@@ -75,7 +69,7 @@ const JoinUs = () => (
       <br />
       <br />
       <SimpleGrid columns={2} spacingX="90px" minChildWidth="200px">
-        <Heading as="h7" size="xs">
+        <Heading as="h7" size="sm">
           Glimpse of what we do
         </Heading>
       </SimpleGrid>
