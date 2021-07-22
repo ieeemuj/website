@@ -1,12 +1,14 @@
 import { Heading } from '@chakra-ui/react';
 
-const SocietiesHeader = ({ heading, headingColor, subHeading, subHeadingColor}) => (
+const SocietiesHeader = ({
+  heading, headingColor, subHeading, subHeadingColor,
+}) => (
   <>
     <Heading
       width="100%"
       size="lg"
       textAlign="center"
-      color = {headingColor}
+      color={headingColor}
     >
       {heading}
     </Heading>
