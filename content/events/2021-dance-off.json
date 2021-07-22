@@ -7,13 +7,13 @@
       "mobno": "2089873241"
     }
   ],
-  "club": "SB",
-  "title": "Web Scrapping",
-  "start_datetime": "2021-07-29T18:30:00.000Z",
+  "club": "WIE",
+  "title": "Dance Off",
+  "start_datetime": "2021-07-07T16:01:52.571Z",
   "tags": [
-    "Technical"
+    "Non Technical"
   ],
   "image": "/imgs/4.jpg",
   "description": "Scrap it all",
-  "end_datetime": "2021-08-11T18:30:00.000Z"
+  "end_datetime": "2021-07-08T16:01:52.601Z"
 }
