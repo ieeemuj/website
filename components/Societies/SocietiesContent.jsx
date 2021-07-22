@@ -1,13 +1,13 @@
 import { Box, Heading, Text, Image, Link, Button} from "@chakra-ui/react";
 import {FaLinkedinIn, FaTwitter, FaInstagram} from 'react-icons/fa';
 
-const SocietiesContent = ({titleQues, alignImg, alignText, twitterUrl, instaUrl, linkedInUrl, imgSrc, altText, imgMarginTop, imgMarginRight}) => (
-    <Box>
+const SocietiesContent = ({titleQues, alignImg, alignText, twitterUrl, instaUrl, linkedInUrl, imgSrc, altText, imgMarginTop, imgMarginRight, imgWidth}) => (
+    <Box paddingX="4">
         <Box
-            width= "md" 
+            width= {["xs","md", "lg","2xl", "md"]} 
             float = {alignText}
+            paddingX ="6"
             // marginTop = "9"
-            marginX="4"
         >
         <Heading
             size= "md"
@@ -28,6 +28,7 @@ const SocietiesContent = ({titleQues, alignImg, alignText, twitterUrl, instaUrl,
         <Box 
             float ={alignText}
             marginTop ="3em"
+            marginX = "4"
         >
             <Link href= {twitterUrl}>
                 <Button colorScheme="twitter" size="lg"><FaTwitter /> </Button>
@@ -40,9 +41,10 @@ const SocietiesContent = ({titleQues, alignImg, alignText, twitterUrl, instaUrl,
             </Link>
         </Box>
         </Box>
-        <Box float={alignImg}>
+        <Box float={alignImg} marginX="6" display={["block", "block", "inline", "inline-block", "inline-block"]}> 
             <Image
                 marginTop={imgMarginTop}
+                width = {imgWidth}
                 marginRight ={imgMarginRight}
                 borderRadius = "md"
                 src={imgSrc}

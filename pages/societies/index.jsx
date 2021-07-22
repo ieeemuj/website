@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading,  Box, Text, Button, Divider} from "@chakra-ui/react";
+import { Divider } from "@chakra-ui/react";
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import SocietiesHeader from '../../components/Societies/SocietiesHeader';
@@ -21,7 +21,8 @@ const Societies = () =>{
             linkedInUrl: "#",
             twitterUrl: "#",
             imgSrc: "/svg/ieee_cs_logo.svg",
-            imgMarginTop: "5em"
+            imgMarginTop:  ["2em", "2em", null,"5em","5em"],
+            imgWidth: "100%"
         },
         {
             heading:"IEEE WIE",
@@ -37,7 +38,7 @@ const Societies = () =>{
             twitterUrl: "#",
             imgSrc: "/svg/ieee_wie_logo.svg",
             imgMarginTop: "3em",
-            imgMarginRight: "8em"
+            imgMarginRight: ["3em", "4em", "8em","15em", "8em"]
         },
     ]
     return (
@@ -64,6 +65,7 @@ const Societies = () =>{
                             imgSrc         = {item.imgSrc}
                             imgMarginTop   = {item.imgMarginTop} 
                             imgMarginRight = {item.imgMarginRight}
+                            imgWidth       = {item.imgWidth}
                         />
                     </SectionContent>
                     <Divider backgroundColor={item.dividerBg} height="0.7"/>
