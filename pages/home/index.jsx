@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 // components
 import { useEffect, useRef, useState } from 'react';
@@ -32,8 +33,8 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (window.screen.width >= 1280) {
-      if (!vantaEffect) {
+    if (window.innerWidth >= 1280) {
+      if (!vantaEffect && window.THREE) {
         setVantaEffect(GLOBE({
           el: myRef.current,
           mouseControls: true,
@@ -64,7 +65,6 @@ const Home = () => {
           content="IEEE Student Branch Manipal Univeristy Jaipur"
         />
         <link rel="icon" href="/favicon.ico" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" />
       </Head>
       <Box
         ref={myRef}
@@ -75,7 +75,7 @@ const Home = () => {
         <ResponsiveContainer>
           <VStack
             width="100%"
-            height="100vh"
+            height="calc(100vh - 96px)"
             boxSizing="border-box"
             justify="center"
             alignItems={['center', 'center', 'center', 'center', 'flex-start']}
@@ -142,6 +142,10 @@ const Home = () => {
         </SectionContent>
       </Section>
       <JoinUsBanner />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
+      />
     </main>
   );
 };
