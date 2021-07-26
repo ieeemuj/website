@@ -1,5 +1,5 @@
-import { useForm } from "react-hook-form";
-import React from "react";
+import { useForm } from 'react-hook-form';
+import React from 'react';
 import {
   useToast,
   FormErrorMessage,
@@ -8,7 +8,7 @@ import {
   Textarea,
   Button,
   FormLabel,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export default function HookForm() {
   const {
@@ -18,14 +18,13 @@ export default function HookForm() {
   } = useForm();
 
   const toast = useToast();
-  const onSubmit = (data) =>
-    toast({
-      title: "submitted",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
-    
+  const onSubmit = () => toast({
+    title: 'submitted',
+    status: 'success',
+    duration: 3000,
+    isClosable: true,
+  });
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormControl isInvalid={errors.name}>
@@ -34,9 +33,9 @@ export default function HookForm() {
           id="name"
           placeholder="Enter your Name"
           autoComplete="off"
-          {...register("name", {
-            required: "This is required",
-            minLength: { value: 4, message: "Minimum length should be 4" },
+          {...register('name', {
+            required: 'This is required',
+            minLength: { value: 4, message: 'Minimum length should be 4' },
           })}
         />
 
@@ -46,20 +45,20 @@ export default function HookForm() {
           id="email"
           autoComplete="off"
           placeholder="Enter a valid Email address"
-          {...register("email", {
-            required: "This is required",
-            minLength: { value: 4, message: "Minimum length should be 4" },
+          {...register('email', {
+            required: 'This is required',
+            minLength: { value: 4, message: 'Minimum length should be 4' },
           })}
         />
-        <br/>
+        <br />
         <FormLabel htmlFor="msg">Message</FormLabel>
         <Textarea
           id="msg"
           size="md"
           placeholder="Enter your Message"
-          {...register("msg", {
-            required: "This is required",
-            minLength: { value: 4, message: "Minimum length should be 4" },
+          {...register('msg', {
+            required: 'This is required',
+            minLength: { value: 4, message: 'Minimum length should be 4' },
           })}
         />
         <FormErrorMessage>
