@@ -7,8 +7,10 @@ import {
   Stack,
   Heading,
   Button,
+  Link,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
+import NextLink from 'next/link';
 
 import NavLink from './NavLink';
 import ResponsiveContainer from '../ResponsiveContainer';
@@ -21,8 +23,8 @@ const NavLinks = () => (
     <NavLink to="/events">
       <span>EVENTS</span>
     </NavLink>
-    <NavLink to="/projects">
-      <span>PROJECTS</span>
+    <NavLink to="https://www.medium.com">
+      <span>BLOGS</span>
     </NavLink>
     <NavLink to="/societies">
       <span>SOCIETIES</span>
@@ -33,24 +35,36 @@ const NavLinks = () => (
     <NavLink to="/ieeecs">
       <span>CONTACT US</span>
     </NavLink>
-    <Button
-      bg="white"
-      boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
-      padding="16px"
-      rounded="lg"
-      color="brand"
-      _hover={{
-        bg: 'brand',
-        border: 'none',
-      }}
-      _active={{
-        bg: 'brand',
-        transform: 'scale(0.97)',
-      }}
-      _focus={{ bg: 'brand' }}
+    <NextLink
+      href="/join-us"
+      passHref
     >
-      JOIN NOW
-    </Button>
+      <Button
+        as={Link}
+        bg="white"
+        boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+        padding="16px"
+        rounded="lg"
+        color="brand"
+        _hover={{
+          border: 'none',
+          textDecoration: 'none',
+        }}
+        _active={{
+          border: 'none',
+          boxShadow: 'none',
+          transform: 'scale(0.97)',
+        }}
+        _focus={{
+          border: 'none',
+          boxShadow: 'none',
+          bg: 'brand',
+        }}
+      >
+        JOIN NOW
+      </Button>
+    </NextLink>
+
   </>
 );
 
