@@ -30,7 +30,7 @@ const Contactus = () => (
             We would love to hear from you
           </Heading>
           <Stack mt="25px">
-            <Heading size="md" color="blue" marginTop="30px">
+            <Heading size="md" color="#00132B" marginTop="30px">
               Shaleen Poddar
             </Heading>
             <Text fontSize="sm" p="5px">
@@ -40,7 +40,7 @@ const Contactus = () => (
               <Link href="tel:+91 98254 40501">+91 98254 40501</Link>
             </Text>
             <br />
-            <Heading size="md" marginTop="20px" color="blue">
+            <Heading size="md" marginTop="20px" color="#00132B">
               Vaibhav Khandelwal
             </Heading>
             <Text fontSize="sm" p="5px">
@@ -52,7 +52,7 @@ const Contactus = () => (
           </Stack>
         </Box>
         <Box>
-          <Heading size="xs" color="blue">
+          <Heading size="xs" color="#00132B">
             Great vision without great people is irrelevant. Let&apos;s work
             together.
           </Heading>
@@ -76,7 +76,7 @@ const Contactus = () => (
           />
         </AspectRatio>
         <Box align="left">
-          <Heading color="blue">Address</Heading>
+          <Heading color="#00132B">Address</Heading>
           <br />
           <Text fontSize="lg">
             Manipal University Jaipur,

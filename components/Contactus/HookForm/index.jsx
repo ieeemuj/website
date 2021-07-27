@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
-import React from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 import {
   useToast,
   FormErrorMessage,
@@ -11,11 +12,23 @@ import {
 } from '@chakra-ui/react';
 
 export default function HookForm() {
+
+  const schema = yup.object().shape({
+    name:yup.string().required("Please enter your name").matches(/^[aA-zZ\s]+$/, "Please enter a valid name"),
+    email:yup.string().email("Please enter a valid email").required("Please enter your email id"),
+    msg:yup.string().required("Please enter your message")
+
+  })
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm(
+    {
+      mode:"onBlur",
+      resolver: yupResolver(schema)
+    }
+  );
 
   const toast = useToast();
   const onSubmit = () => toast({
@@ -31,38 +44,36 @@ export default function HookForm() {
         <FormLabel htmlFor="name">Name</FormLabel>
         <Input
           id="name"
-          placeholder="Enter your Name"
-          autoComplete="off"
-          {...register('name', {
-            required: 'This is required',
-            minLength: { value: 4, message: 'Minimum length should be 4' },
-          })}
+          placeholder="Name"
+          {...register('name')}
         />
-
+        <FormErrorMessage>
+          {errors.name?.message}
+        </FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={errors.email}>
         <FormLabel htmlFor="email">Email</FormLabel>
 
         <Input
           id="email"
-          autoComplete="off"
-          placeholder="Enter a valid Email address"
-          {...register('email', {
-            required: 'This is required',
-            minLength: { value: 4, message: 'Minimum length should be 4' },
-          })}
+          placeholder="Email id"
+          {...register('email')}
         />
-        <br />
+        <FormErrorMessage>
+        {errors.email?.message}
+        </FormErrorMessage>
+        </FormControl>
+
+        <FormControl isInvalid={errors.msg}>
         <FormLabel htmlFor="msg">Message</FormLabel>
         <Textarea
           id="msg"
           size="md"
           placeholder="Enter your Message"
-          {...register('msg', {
-            required: 'This is required',
-            minLength: { value: 4, message: 'Minimum length should be 4' },
-          })}
+          {...register('msg')}
         />
         <FormErrorMessage>
-          {errors.name && errors.name.message}
+        {errors.msg?.message}
         </FormErrorMessage>
       </FormControl>
       <Button

@@ -32,7 +32,7 @@ const NavLinks = () => (
     <NavLink to="/ieeecs">
       <span>TEAM</span>
     </NavLink>
-    <NavLink to="/ieeecs">
+    <NavLink to="/contactus">
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
