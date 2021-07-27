@@ -4,13 +4,14 @@ import EventCard from '../EventCard';
 
 const ActiveEventsCarousel = ({ activeEventsData }) => (
   <CardCarousel>
-    {activeEventsData.length > 0 ? activeEventsData.map((event) => (
+    {activeEventsData.length > 0 ? activeEventsData.map((eventObj) => (
       <EventCard
-        key={event.slug}
-        image={event.image}
-        club={event.club}
-        title={event.title}
-        status={event.status}
+        key={eventObj.slug}
+        slug={eventObj.slug}
+        image={eventObj.coverImage.url}
+        club={eventObj.club}
+        title={eventObj.prismicTitle}
+        status={eventObj.status}
       />
     ))
       : (

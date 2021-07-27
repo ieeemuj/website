@@ -4,11 +4,12 @@ import {
 
 import { Link as PrismicLink, RichText } from 'prismic-reactjs';
 import { linkResolver } from '../../../cms/config';
+import getStatus from '../../../utils';
 
 import EventDetailsGrid from './EventDetailsGrid';
 
 const Event = ({ eventObj }) => {
-  const disabled = eventObj.dateTime.status === 0;
+  const disabled = getStatus(eventObj.startISO, eventObj.endISO) === 'COMPLETED';
 
   return (
     <Stack
@@ -26,7 +27,7 @@ const Event = ({ eventObj }) => {
         flexGrow="0"
       >
         <Image
-          src={eventObj.img.url}
+          src={eventObj.coverImage.url}
           objectFit="cover"
           borderRadius="lg"
         />
@@ -42,12 +43,13 @@ const Event = ({ eventObj }) => {
           size="lg"
           textAlign="center"
         >
-          {RichText.asText(eventObj.title)}
+          {RichText.asText(eventObj.prismicTitle)}
         </Heading>
         <EventDetailsGrid eventObj={eventObj} />
         <Button
           as={Link}
-          href={disabled ? null : PrismicLink.url(eventObj.link_to_registration_form, linkResolver)}
+          href={disabled ? null : PrismicLink.url(eventObj.linkToRegistrationForm, linkResolver)}
+          target="_blank"
           bgColor="brand.700"
           boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
           padding="16px"

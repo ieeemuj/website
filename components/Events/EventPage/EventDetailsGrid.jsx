@@ -24,7 +24,7 @@ const EventDetailsGrid = ({ eventObj }) => (
       <Text
         size="sm"
       >
-        {eventObj.dateTime.dateStr}
+        {eventObj.dateTimeObj.dateStr}
       </Text>
     </HStack>
     <HStack>
@@ -37,7 +37,7 @@ const EventDetailsGrid = ({ eventObj }) => (
       <Text
         size="sm"
       >
-        {eventObj.dateTime.timeStr || 'TBD'}
+        {eventObj.dateTimeObj.timeStr || 'TBD'}
       </Text>
     </HStack>
     <HStack>

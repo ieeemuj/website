@@ -8,13 +8,14 @@ const PastEventsGrid = ({ allEventsData }) => (
     spacing="16"
     justifyItems="center"
   >
-    {allEventsData.map((event) => (
+    {allEventsData.map((eventObj) => (
       <EventCard
-        key={event.slug}
-        image={event.image}
-        club={event.club}
-        title={event.title}
-        status={event.status}
+        key={eventObj.slug}
+        slug={eventObj.slug}
+        image={eventObj.coverImage.url}
+        club={eventObj.club}
+        title={eventObj.prismicTitle}
+        status={eventObj.status}
       />
     ))}
   </SimpleGrid>

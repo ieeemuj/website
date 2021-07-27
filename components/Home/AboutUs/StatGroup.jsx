@@ -4,7 +4,6 @@ import StatBox from './StatBox';
 const StatGroup = ({ stats }) => (
   <SimpleGrid
     columns="2"
-    marginBottom={['48px', '48px', '48px', '48px', '0px']}
     height={['300px', '360px', '400px', '400px', '400px', '440px']}
     width={['300px', '360px', '400px', '400px', '400px', '440px']}
     spacing="24px"

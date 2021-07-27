@@ -1,10 +1,11 @@
 /**
- * This is the same code as https://github.com/prismicio/apollo-link-prismic/ using new Apollo v3
+ * This is the same code as https://github.com/prismicio/apollo-link-prismic/ but uses Apollo v3
  */
 
 import Prismic from '@prismicio/client';
 import { HttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { onError } from '@apollo/client/link/error';
 
 const PRISMIC_ENDPOINT_REG = /^https?:\/\/([^.]+)\.(?:cdn\.)?(wroom\.(?:test|io)|prismic\.io)\/graphql\/?/;
 
@@ -56,7 +57,7 @@ export function PrismicLink({
   const prismicClient = Prismic.client(apiEndpoint, { accessToken });
 
   const prismicLink = setContext(
-    (request, previousContext) => prismicClient
+    (_request, previousContext) => prismicClient
       .getApi()
       .then(
         (api) => ({
@@ -70,6 +71,15 @@ export function PrismicLink({
       ),
   );
 
+  const errorLink = onError(({ graphQLErrors, networkError }) => {
+    if (graphQLErrors) {
+      graphQLErrors.map(({ message, locations, path }) => console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+      ));
+    }
+    if (networkError) console.log(`[Network error]: ${networkError}`);
+  });
+
   const httpLink = new HttpLink({
     uri: gqlEndpoint,
     useGETForQueries: true,
@@ -80,7 +90,7 @@ export function PrismicLink({
     ...options,
   });
 
-  return prismicLink.concat(httpLink);
+  return prismicLink.concat(errorLink).concat(httpLink);
 }
 
 export default {

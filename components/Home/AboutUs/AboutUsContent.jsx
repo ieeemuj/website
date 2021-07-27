@@ -1,13 +1,13 @@
-import { HStack, VStack } from '@chakra-ui/react';
+import { Stack, VStack } from '@chakra-ui/react';
 import AboutUsContentText from './AboutUsContentText';
 import StatGroup from './StatGroup';
 
 const AboutUsContent = ({ visionText, missionText, stats }) => (
-  <HStack
+  <Stack
+    direction={['column', 'column', 'column', 'column', 'row']}
     alignItems={['center', 'center', 'center', 'center', 'flex-start']}
-    justify={['space-around', 'space-around', 'space-around', 'space-around', 'space-between']}
-    wrap="wrap"
-    flexGrow="1"
+    justify="space-around"
+    spacing="10"
   >
     <StatGroup stats={stats} />
     <VStack
@@ -19,7 +19,7 @@ const AboutUsContent = ({ visionText, missionText, stats }) => (
       <AboutUsContentText heading="Our Vision" text={visionText} />
       <AboutUsContentText heading="Our Mission" text={missionText} />
     </VStack>
-  </HStack>
+  </Stack>
 );
 
 export default AboutUsContent;
