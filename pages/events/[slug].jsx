@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router';
-import { Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { RichText } from 'prismic-reactjs';
 import { DateTime } from 'luxon';
 import Section from '../../components/Home/Section';
 import Event from '../../components/Events/EventPage';
 
 import { getEventByUID, getAllSlugs } from '../../cms/queries/event';
+import styles from '../../styles/EventDescription.module.css';
 
 const EventPage = ({ event }) => {
   const startTime = DateTime.fromISO(event.start_time);
@@ -64,7 +65,7 @@ const EventPage = ({ event }) => {
         <Event eventObj={eventObj} slug={router.query.slug} />
 
         {/* TODO: following event description will be markdown and needs to be redered. */}
-        <Text fontSize="lg">{RichText.render(eventObj.description)}</Text>
+        <Box className={styles.description}>{RichText.render(eventObj.description)}</Box>
       </Section>
     );
   }

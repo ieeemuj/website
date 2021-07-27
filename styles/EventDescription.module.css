@@ -1,0 +1,15 @@
+.description h1 {
+  font-size: xx-large;
+}
+
+.description h2 {
+  font-size: x-large;
+}
+
+.description h3 {
+  font-size: larger;
+}
+
+.description p {
+  font-size: medium;
+}
