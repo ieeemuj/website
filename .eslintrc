@@ -5,7 +5,9 @@
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "import/no-unresolved": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-underscore-dangle": "off"
+
   },
   "env": {
     "browser": true
