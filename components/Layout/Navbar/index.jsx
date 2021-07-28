@@ -46,7 +46,7 @@ const NavLinks = () => (
         bg="white"
         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
         padding="16px"
-        rounded="lg"
+        rounded="md"
         color="brand"
         _hover={{
           border: 'none',
@@ -84,13 +84,17 @@ const Navbar = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Heading
-              size="lg"
-              color="white"
-            >
-              IEEE SB MUJ
-            </Heading>
-            <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
+            <NextLink href="/">
+              <Heading
+                cursor="pointer"
+                size="md"
+                color="white"
+              >
+                IEEE SB MUJ
+              </Heading>
+            </NextLink>
+
+            <HStack fontSize="sm" fontWeight="500" as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
               <NavLinks />
             </HStack>
             <IconButton

@@ -12,7 +12,7 @@ const StatBox = ({ numtext, subtext }) => {
     const postFix = numtext.replace(num, '');
 
     const controls = animate(0, num, {
-      duration: 1,
+      duration: 2,
       onUpdate(val) {
         node.textContent = val.toFixed(0);
       },

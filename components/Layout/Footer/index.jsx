@@ -157,7 +157,7 @@ const Footer = () => (
       </ResponsiveContainer>
     </Box>
     <Flex
-      bgColor="brand.600"
+      bgColor="brand.700"
       width="100%"
       height="32px"
       textAlign="center"

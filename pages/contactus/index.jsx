@@ -44,7 +44,9 @@ const Contactus = () => (
                 Shaleen Poddar
               </Heading>
               <Text
-                fontSize="sm"
+                py={1}
+                color="gray.500"
+                // fontSize="sm"
               >
                 Chairperson IEEE SB MUJ
               </Text>
@@ -66,7 +68,9 @@ const Contactus = () => (
                 Vaibhav Khandelwal
               </Heading>
               <Text
-                fontSize="sm"
+                color="gray.500"
+                // fontSize="sm"
+                py={1}
               >
                 Vice-Chairperson IEEE SB MUJ
               </Text>
