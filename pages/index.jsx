@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-// components
 import { useEffect, useRef, useState } from 'react';
 import {
   Box, Heading, HStack, Text, VStack,
@@ -22,6 +21,8 @@ import ResponsiveContainer from '../components/Layout/ResponsiveContainer';
 import HeaderSvg from '../public/svg/header.svg';
 import { getAllEvents } from '../cms/queries/event';
 import getStatus from '../utils';
+
+import styles from '../styles/ScrollIndicator.module.css';
 
 const Home = ({ allEvents }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -68,6 +69,7 @@ const Home = ({ allEvents }) => {
       >
         <ResponsiveContainer>
           <HStack
+            position="relative"
             height="calc(100vh - 96px)"
             width="100%"
             spacing="10"
@@ -76,7 +78,8 @@ const Home = ({ allEvents }) => {
               width={['100%', '100%', '100%', '100%', '45%']}
               height="calc(100vh - 96px)"
               boxSizing="border-box"
-              justify="center"
+              justify={['center', 'center', 'center', 'center', 'start']}
+              py={['0px', '0px', '0px', '0px', '96px']}
               alignItems={['center', 'center', 'center', 'center', 'flex-start']}
               spacing="5"
             >
@@ -97,6 +100,12 @@ const Home = ({ allEvents }) => {
                 Aenean bibendum sit erat molestie egestas nullam suspendisse.
                 Lorem at dapibus ut at vulputate ut lobortis a. Tempus pulvinar felis, convallis eu.
               </Text>
+              <Box
+                className={styles.scrollIndicator}
+                display={['none', 'none', 'none', 'none', 'flex']}
+              >
+                <span>Scroll</span>
+              </Box>
             </VStack>
             <Box
               display={['none', 'none', 'none', 'none', 'inline-block']}

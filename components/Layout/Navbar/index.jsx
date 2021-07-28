@@ -8,6 +8,8 @@ import {
   Heading,
   Button,
   Link,
+  Icon,
+  Collapse,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import NextLink from 'next/link';
@@ -64,7 +66,6 @@ const NavLinks = () => (
         JOIN NOW
       </Button>
     </NextLink>
-
   </>
 );
 
@@ -78,7 +79,11 @@ const Navbar = () => {
         bg="#00132B"
       >
         <ResponsiveContainer>
-          <Flex h={16} alignItems="center" justifyContent="space-between">
+          <Flex
+            h={16}
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <Heading
               size="lg"
               color="white"
@@ -93,22 +98,59 @@ const Navbar = () => {
               color="white"
               borderRadius="50"
               size="lg"
-              icon={isOpen ? <MdClose /> : <MdMenu />}
+              icon={isOpen ? (
+                <Icon
+                  as={MdClose}
+                  width="24px"
+                  height="24px"
+                />
+              ) : (
+                <Icon
+                  as={MdMenu}
+                  width="24px"
+                  height="24px"
+                />
+              )}
               aria-label="Open Menu"
               display={{ xl: 'none' }}
               onClick={isOpen ? onClose : onOpen}
+              _hover={{
+                border: 'none',
+                textDecoration: 'none',
+                borderRadius: '50',
+              }}
+              _active={{
+                bgColor: 'transparent',
+              }}
+              _focus={{
+                shadow: 'none',
+                border: 'none',
+              }}
             />
           </Flex>
-
-          {isOpen ? (
-            <Box pb={4} display={{ xl: 'none' }}>
-              <Stack as="nav" spacing={4}>
-                <NavLinks />
-              </Stack>
-            </Box>
-          ) : null}
         </ResponsiveContainer>
-
+        <Collapse
+          in={isOpen}
+          animateOpacity
+        >
+          <Box
+            p={4}
+            bgColor="brand.700"
+            width="100%"
+            height="calc(100vh - 80px)"
+            display={{ xl: 'none' }}
+          >
+            <Stack
+              as="nav"
+              spacing={10}
+              alignItems="center"
+              justify="center"
+              height="100%"
+            >
+              <NavLinks />
+            </Stack>
+          </Box>
+        </Collapse>
       </Box>
     </>
   );
