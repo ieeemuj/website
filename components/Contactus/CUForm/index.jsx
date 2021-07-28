@@ -6,7 +6,7 @@ export default function App() {
   return (
     <ChakraProvider>
       <CSSReset />
-      <Box p={2}>
+      <Box py="32px">
         <HookForm />
       </Box>
     </ChakraProvider>

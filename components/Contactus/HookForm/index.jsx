@@ -66,14 +66,30 @@ export default function HookForm() {
         </FormErrorMessage>
       </FormControl>
       <Button
-        mt={4}
-        rounded="lg"
-        padding="16px"
-        colorScheme="facebook"
-        isLoading={isSubmitting}
         type="submit"
+        isLoading={isSubmitting}
+        bgColor="#00132B"
+        boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+        padding="16px"
+        rounded="lg"
+        mt={4}
+        color="white"
+        _hover={{
+          border: 'none',
+          textDecoration: 'none',
+        }}
+        _active={{
+          border: 'none',
+          boxShadow: 'none',
+          transform: 'scale(0.97)',
+        }}
+        _focus={{
+          border: 'none',
+          boxShadow: 'none',
+          bg: 'brand',
+        }}
       >
-        Submit
+        SUBMIT
       </Button>
     </form>
   );
