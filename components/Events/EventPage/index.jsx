@@ -1,11 +1,10 @@
 import {
   Box, Button, Heading, Image, Link, Stack, VStack,
 } from '@chakra-ui/react';
-import NextLink from 'next/link';
 
 import EventDetailsGrid from './EventDetailsGrid';
 
-const Event = ({ slug }) => (
+const Event = () => (
   <Stack
     direction={['column', 'column', 'column', 'column', 'row']}
     alignItems="center"
@@ -41,25 +40,32 @@ const Event = ({ slug }) => (
 
       </Heading>
       <EventDetailsGrid />
-      <NextLink
-        href={`${slug}/register`}
-        passHref
+      <Button
+        as={Link}
+        bgColor="brand.700"
+        boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+        padding="16px"
+        width="100%"
+        maxWidth="360px"
+        rounded="lg"
+        color="white"
+        _hover={{
+          border: 'none',
+          textDecoration: 'none',
+        }}
+        _active={{
+          border: 'none',
+          boxShadow: 'none',
+          transform: 'scale(0.97)',
+        }}
+        _focus={{
+          border: 'none',
+          boxShadow: 'none',
+          bg: 'brand',
+        }}
       >
-        <Button
-          as={Link}
-          colorScheme="brand"
-          width="100%"
-          maxW="360px"
-          padding="16px"
-          rounded="lg"
-          _hover={{
-            textDecoration: 'none',
-            bgColor: 'brand.600',
-          }}
-        >
-          REGISTER
-        </Button>
-      </NextLink>
+        JOIN NOW
+      </Button>
 
     </VStack>
   </Stack>
