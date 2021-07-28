@@ -24,15 +24,15 @@ const NavLinks = () => (
       <span>EVENTS</span>
     </NavLink>
     <NavLink to="https://www.medium.com">
-      <span>BLOGS</span>
+      <span>BLOG</span>
     </NavLink>
     <NavLink to="/societies">
       <span>SOCIETIES</span>
     </NavLink>
-    <NavLink to="/ieeecs">
+    <NavLink to="/team">
       <span>TEAM</span>
     </NavLink>
-    <NavLink to="/ieeecs">
+    <NavLink to="/contactus">
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
