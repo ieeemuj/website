@@ -1,9 +1,11 @@
-import { Heading } from '@chakra-ui/react';
+import { Heading, Box } from '@chakra-ui/react';
 
 const CreditsHeader = ({
-  heading, subHeading
-}) => (
-  <>
+  heading, subHeading, marginY
+}) => 
+{
+return(
+  <Box marginY={marginY}>
     <Heading
       width="100%"
       size="lg"
@@ -19,7 +21,7 @@ const CreditsHeader = ({
     >
       {subHeading}
     </Heading>
-  </>
-);
+  </Box>
+)};
 
 export default CreditsHeader;
