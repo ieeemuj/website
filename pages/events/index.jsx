@@ -6,7 +6,7 @@ import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEvent
 import SectionContent from '../../components/Home/Section/SectionContent';
 import PastEventsHeader from '../../components/Events/PastEvents/PastEventsHeader';
 import PastEventsGrid from '../../components/Events/PastEvents/PastEventsGrid';
-
+import Header from '../../components/Header';
 import ActiveEventsCarousel from '../../components/Events/ActiveEvents/ActiveEventsCarousel';
 import { getAllEvents } from '../../cms/queries/event';
 import getStatus from '../../utils';
@@ -51,6 +51,7 @@ const Events = ({ allEvents }) => {
 
   return (
     <main>
+      <Header title="Events" subtitle="What we been upto till now" />
       <Section
         bgColor="whitesmoke"
       >

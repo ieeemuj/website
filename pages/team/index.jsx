@@ -3,6 +3,7 @@ import JoinUsBanner from '../../components/Layout/JoinUsBanner';
 import Section from '../../components/Home/Section';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import TeamsContent from '../../components/Teams/TeamsContent';
+import Header from '../../components/Header';
 
 const AboutUs = () => {
   const faculty = [
@@ -212,6 +213,7 @@ const AboutUs = () => {
   ];
   return (
     <main>
+      <Header title="Our Team" subtitle="The team behind the it all!" />
       <Section>
         <SectionContent>
           <TeamsContent faculty={faculty} ieeeCS={ieeeCS} ieeeSB={ieeeSB} ieeeWIE={ieeeWIE} />

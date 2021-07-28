@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Header from '../../components/Header';
 
 const Projects = () => (
   <div>
@@ -11,7 +12,10 @@ const Projects = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    Projects
+    <main>
+      <Header title="Projects" subtitle="A glimpse of what IEEE members can build" />
+      Projects
+    </main>
   </div>
 );
 
