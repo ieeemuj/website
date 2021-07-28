@@ -79,7 +79,6 @@ const Home = ({ allEvents }) => {
               boxSizing="border-box"
               justify="center"
               alignItems={['center', 'center', 'center', 'center', 'flex-start']}
-            // paddingTop="calc(0.2 * 100vh)"
               spacing="5"
             >
               <Heading

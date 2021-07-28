@@ -9,10 +9,15 @@ const StatBox = ({ numtext, subtext }) => {
     const node = counterRef.current;
     const num = parseInt(numtext, 10);
 
+    const postFix = numtext.replace(num, '');
+
     const controls = animate(0, num, {
       duration: 1,
       onUpdate(val) {
         node.textContent = val.toFixed(0);
+      },
+      onComplete() {
+        node.textContent += postFix;
       },
     });
 
@@ -34,7 +39,7 @@ const StatBox = ({ numtext, subtext }) => {
           ref={counterRef}
           size="xl"
         >
-          {numtext}
+          0
         </Heading>
         <Heading
           size="md"
