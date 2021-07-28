@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 import ContactUsForm from '../../components/ContactUsForm';
-import Header from '../../components/Header';
+import Header from '../../components/Layout/Header';
 
 const Contactus = () => (
   <main>

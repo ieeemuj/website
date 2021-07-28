@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Flex, VStack, Heading, Text,
 } from '@chakra-ui/react';
-import ResponsiveContainer from '../Layout/ResponsiveContainer';
+import ResponsiveContainer from '../ResponsiveContainer';
 
 const Header = ({ title, subtitle }) => (
   <header>

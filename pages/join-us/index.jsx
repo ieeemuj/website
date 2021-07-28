@@ -9,7 +9,7 @@ import SocietyCard from '../../components/MembershipDrive/SocietyCard';
 import Slideshow from '../../components/MembershipDrive/Slideshow';
 import Benefits from '../../components/MembershipDrive/Benefits';
 import Plans from '../../components/MembershipDrive/plans';
-import Header from '../../components/Header';
+import Header from '../../components/Layout/Header';
 
 const JoinUs = () => (
   <div>

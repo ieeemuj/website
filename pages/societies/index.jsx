@@ -5,7 +5,7 @@ import SectionHeader from '../../components/Home/Section/SectionHeader';
 import SocietiesHeader from '../../components/Societies/SocietiesHeader';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import SocietiesContent from '../../components/Societies/SocietiesContent';
-import Header from '../../components/Header';
+import Header from '../../components/Layout/Header';
 
 const Societies = () => {
   const sectionData = [
