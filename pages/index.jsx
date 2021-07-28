@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Script from 'next/script';
 
 // components
 import { useEffect, useRef, useState } from 'react';
@@ -142,10 +141,6 @@ const Home = ({ allEvents }) => {
         </SectionContent>
       </Section>
       <JoinUsBanner />
-      <Script
-        strategy="beforeInteractive"
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
-      />
     </main>
   );
 };
