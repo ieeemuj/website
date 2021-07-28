@@ -5,9 +5,7 @@ const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 480, itemsToShow: 1 },
   { width: 768, itemsToShow: 2 },
-  { width: 992, itemsToShow: 2 },
-  { width: 1280, itemsToShow: 3 },
-  { width: 1536, itemsToShow: 3 },
+  { width: 1080, itemsToShow: 3 },
 ];
 
 const CardCarousel = ({ children }) => (

@@ -4,7 +4,10 @@ import styles from '../../../styles/Navbar.module.css';
 const FooterSectionSocialLink = ({
   icon, underline, href, children,
 }) => (
-  <Box>
+  <Box
+    width="100%"
+    textAlign="center"
+  >
     {icon}
     <a
       className={underline ? styles.underLineAnimation : ''}
