@@ -1,16 +1,14 @@
-import React from 'react';
 import {
   Box,
   Heading,
   SimpleGrid,
   Text,
   Link,
-  // Button,
   AspectRatio,
   VStack,
 } from '@chakra-ui/react';
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
-import CUForm from '../../components/Contactus/CUForm';
+import ContactUsForm from '../../components/ContactUsForm';
 
 const Contactus = () => (
   <ResponsiveContainer>
@@ -93,7 +91,7 @@ const Contactus = () => (
           <Box
             align="right"
           >
-            <CUForm />
+            <ContactUsForm />
           </Box>
         </Box>
       </SimpleGrid>
