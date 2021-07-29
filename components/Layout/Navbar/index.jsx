@@ -47,7 +47,7 @@ const NavLinks = () => (
         bg="white"
         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
         padding="16px"
-        rounded="lg"
+        rounded="md"
         color="brand"
         _hover={{
           border: 'none',
@@ -87,6 +87,7 @@ const Navbar = () => {
           >
             <VStack
               marginBottom="-18px"
+              cursor="pointer"
               spacing="0"
               textAlign="justify"
             >

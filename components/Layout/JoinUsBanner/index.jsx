@@ -8,7 +8,7 @@ const JoinUsBanner = () => (
   <Box
     width="100%"
     paddingTop="32px"
-    paddingBottom="32px"
+    paddingBottom="64px"
   >
     <ResponsiveContainer>
       <HStack

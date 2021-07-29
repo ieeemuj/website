@@ -37,9 +37,10 @@ const Event = ({ eventObj }) => {
         spacing="5"
         width={['100%', '100%', '100%', '100%', '55%']}
         height="100%"
-        justify="space-around"
+        justify="space-between"
       >
         <Heading
+          pt={2}
           size="lg"
           textAlign="center"
         >
@@ -55,7 +56,7 @@ const Event = ({ eventObj }) => {
           padding="16px"
           width="100%"
           maxWidth="360px"
-          rounded="lg"
+          rounded="md"
           color="white"
           _hover={{
             border: 'none',

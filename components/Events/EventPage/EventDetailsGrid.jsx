@@ -12,7 +12,7 @@ const EventDetailsGrid = ({ eventObj }) => (
     columns={['1', '1', '1', '1', '2']}
     width={['100%', '100%', '100%', '100%', '480px']}
     justifyItems={['center', 'center', 'center', 'center', 'start']}
-    spacing="5"
+    spacing="3"
   >
     <HStack>
       <Icon
