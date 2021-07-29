@@ -5,7 +5,7 @@
   align-self: flex-end;
   position: absolute;
   bottom: 50px;
-  left: 25px;
+  left: 100%;
   cursor: default;
   writing-mode: vertical-rl;
   color: #0087ca;
