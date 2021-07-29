@@ -85,31 +85,37 @@ const Navbar = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <VStack
-              marginBottom="-18px"
-              cursor="pointer"
-              spacing="0"
-              textAlign="justify"
+            <NextLink
+              href="/"
+              passHref
             >
-              <Heading
-                size="md"
-                color="white"
+              <VStack
+                marginBottom="-18px"
+                cursor="pointer"
+                spacing="0"
+                textAlign="justify"
               >
-                IEEE STUDENT BRANCH
-              </Heading>
-              <Heading
-                size="xs"
-                color="white"
-                width="100%"
-                _after={{
-                  content: '""',
-                  display: 'inline-block',
-                  width: '100%',
-                }}
-              >
-                MANIPAL UNIVERSITY JAIPUR
-              </Heading>
-            </VStack>
+                <Heading
+                  size="md"
+                  color="white"
+                >
+                  IEEE STUDENT BRANCH
+                </Heading>
+                <Heading
+                  size="xs"
+                  color="white"
+                  width="100%"
+                  _after={{
+                    content: '""',
+                    display: 'inline-block',
+                    width: '100%',
+                  }}
+                >
+                  MANIPAL UNIVERSITY JAIPUR
+                </Heading>
+              </VStack>
+            </NextLink>
+
             <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
               <NavLinks />
             </HStack>
