@@ -7,7 +7,7 @@ const AboutUsHeader = () => (
       size="lg"
       textAlign="center"
     >
-      What is IEEE
+      Institute of Electrical and Electronics Engineers
     </Heading>
     <Heading
       width="100%"

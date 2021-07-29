@@ -7,14 +7,15 @@ const TestimonialHeader = () => (
       size="lg"
       textAlign="center"
     >
-      What Students have to say
+      What People Have To Say
     </Heading>
     <Heading
+      color="brand.500"
       width="100%"
       textAlign="center"
       size="sm"
     >
-      IEEE members and students participating in our mentoring programmes share their perspectives.
+      IEEE members and event participants share their perspectives.
     </Heading>
   </>
 );

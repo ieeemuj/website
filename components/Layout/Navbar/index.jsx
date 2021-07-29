@@ -10,6 +10,7 @@ import {
   Link,
   Icon,
   Collapse,
+  VStack,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import NextLink from 'next/link';
@@ -84,17 +85,32 @@ const Navbar = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <NextLink href="/">
+            <VStack
+              marginBottom="-18px"
+              cursor="pointer"
+              spacing="0"
+              textAlign="justify"
+            >
               <Heading
-                cursor="pointer"
                 size="md"
                 color="white"
               >
-                IEEE SB MUJ
+                IEEE STUDENT BRANCH
               </Heading>
-            </NextLink>
-
-            <HStack fontSize="sm" fontWeight="500" as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
+              <Heading
+                size="xs"
+                color="white"
+                width="100%"
+                _after={{
+                  content: '""',
+                  display: 'inline-block',
+                  width: '100%',
+                }}
+              >
+                MANIPAL UNIVERSITY JAIPUR
+              </Heading>
+            </VStack>
+            <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
               <NavLinks />
             </HStack>
             <IconButton

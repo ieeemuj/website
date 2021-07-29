@@ -34,7 +34,7 @@ const JoinUsBanner = () => (
             color="brand.500"
             fontSize="lg"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum diam orci
+            Jumstart you career. Become an IEEE Member.
           </Text>
         </VStack>
         <NextLink

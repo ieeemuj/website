@@ -99,7 +99,7 @@ const Footer = () => (
             spacing={10}
           >
             <FooterSection>
-              <FooterSectionHeading>Links</FooterSectionHeading>
+              <FooterSectionHeading>Website Links</FooterSectionHeading>
               <FooterSectionLink
                 underline
                 href="www.ieee.org"
@@ -120,7 +120,7 @@ const Footer = () => (
               </FooterSectionLink>
             </FooterSection>
             <FooterSection>
-              <FooterSectionHeading>IEEE Links</FooterSectionHeading>
+              <FooterSectionHeading>Links</FooterSectionHeading>
               <FooterSectionLink
                 underline
                 href="http://jaipur.manipal.edu/"

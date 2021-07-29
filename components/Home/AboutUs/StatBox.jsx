@@ -2,27 +2,28 @@ import { Box, Heading, VStack } from '@chakra-ui/react';
 import { animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-const StatBox = ({ numtext, subtext }) => {
+const StatBox = ({ numtext, subtext, visible }) => {
   const counterRef = useRef();
 
   useEffect(() => {
-    const node = counterRef.current;
-    const num = parseInt(numtext, 10);
+    if (visible) {
+      const node = counterRef.current;
+      const num = parseInt(numtext, 10);
 
-    const postFix = numtext.replace(num, '');
+      const postFix = numtext.replace(num, '');
 
-    const controls = animate(0, num, {
-      duration: 2,
-      onUpdate(val) {
-        node.textContent = val.toFixed(0);
-      },
-      onComplete() {
-        node.textContent += postFix;
-      },
-    });
-
-    return () => controls.stop();
-  });
+      const controls = animate(0, num, {
+        duration: 2,
+        onUpdate(val) {
+          node.textContent = val.toFixed(0);
+        },
+        onComplete() {
+          node.textContent += postFix;
+          controls.stop();
+        },
+      });
+    }
+  }, [visible, numtext]);
 
   return (
     <Box
