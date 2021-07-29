@@ -15,9 +15,9 @@
 .scrollIndicator::after {
   content: "";
   display: block;
-  width: 2px;
-  height: 60px;
+  width: 6px;
+  height: 96px;
   background-color: #0087ca;
-  border-radius: 6px;
+  border-radius: 10px;
   margin-top: 10px;
 }
