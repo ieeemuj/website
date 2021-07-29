@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import NextLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
 import {
-  Box, Heading, HStack, Text, VStack,
+  Box, Button, Heading, HStack, Link, Text, VStack,
 } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
 import Section from '../components/Home/Section';
@@ -72,23 +73,23 @@ const Home = ({ allEvents }) => {
             position="relative"
             height="calc(100vh - 96px)"
             width="100%"
-            spacing="10"
+            spacing="7"
           >
             <VStack
               width={['100%', '100%', '100%', '100%', '45%']}
               height="calc(100vh - 96px)"
               boxSizing="border-box"
               justify={['center', 'center', 'center', 'center', 'start']}
-              py={['0px', '0px', '0px', '0px', '96px']}
+              py={['0px', '0px', '0px', '0px', '64px']}
               alignItems={['center', 'center', 'center', 'center', 'flex-start']}
-              spacing="5"
+              spacing="10"
             >
               <Heading
-                fontSize={['5xl', '6xl', '7xl', '7xl', '6xl', '6xl']}
+                fontSize={['4xl', '5xl', '7xl', '7xl', '6xl', '6xl']}
                 color="white"
                 textAlign={['center', 'center', 'center', 'center', 'left']}
               >
-                Your Growth is our Success.
+                Look Forward To Growing Your Skillset.
               </Heading>
               <Text
                 width={['100%', '100%', '100%', '100%', '100%']}
@@ -96,10 +97,58 @@ const Home = ({ allEvents }) => {
                 fontSize={['md', 'xl']}
                 textAlign={['center', 'center', 'center', 'center', 'left']}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenean bibendum sit erat molestie egestas nullam suspendisse.
-                Lorem at dapibus ut at vulputate ut lobortis a. Tempus pulvinar felis, convallis eu.
+                Make global connections along your path.
+                <br />
+                Become an IEEE Member.
               </Text>
+              <Box
+                width="100%"
+                height="100px"
+              >
+                <VStack
+                  justify={['center', 'center', 'center', 'center', 'start']}
+                  alignItems={['center', 'center', 'center', 'center', 'flex-start']}
+                  spacing="5"
+                >
+                  <Text
+                    width={['100%', '100%', '100%', '100%', '100%']}
+                    color="white"
+                    fontSize={['md', 'xl']}
+                    textAlign={['center', 'center', 'center', 'center', 'left']}
+                  >
+                    Explore our events.
+                  </Text>
+                  <NextLink
+                    href="/events"
+                    passHref
+                  >
+                    <Button
+                      as={Link}
+                      bg="white"
+                      boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+                      padding="32px"
+                      rounded="lg"
+                      color="brand"
+                      _hover={{
+                        border: 'none',
+                        textDecoration: 'none',
+                      }}
+                      _active={{
+                        border: 'none',
+                        boxShadow: 'none',
+                        transform: 'scale(0.97)',
+                      }}
+                      _focus={{
+                        border: 'none',
+                        boxShadow: 'none',
+                        bg: 'brand',
+                      }}
+                    >
+                      EVENTS
+                    </Button>
+                  </NextLink>
+                </VStack>
+              </Box>
               <Box
                 className={styles.scrollIndicator}
                 display={['none', 'none', 'none', 'none', 'flex']}
