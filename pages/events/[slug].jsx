@@ -27,7 +27,7 @@ const EventPage = ({ eventObj }) => {
 };
 
 export async function getStaticProps({ params }) {
-  const eventObj = (await getEventByUID(params.slug)).object();
+  const eventObj = (await getEventByUID(params.slug));
 
   if (eventObj) {
     return {

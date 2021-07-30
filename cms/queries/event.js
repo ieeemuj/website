@@ -116,7 +116,7 @@ export const getEventByUID = async (uid) => {
       response.data.event._meta.tags,
     );
 
-    return event;
+    return event.object();
   }
 
   return null;

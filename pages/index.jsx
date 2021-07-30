@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import NextLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
@@ -6,6 +5,8 @@ import {
   Box, Button, Heading, HStack, Link, Text, VStack,
 } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
+import { RichText } from 'prismic-reactjs';
+import { NextSeo } from 'next-seo';
 import Section from '../components/Home/Section';
 import SectionHeader from '../components/Home/Section/SectionHeader';
 import AboutUsHeader from '../components/Home/AboutUs/AboutUsHeader';
@@ -16,7 +17,6 @@ import TestimonialContent from '../components/Home/Testimonial/TestimonialConten
 import JoinUsBanner from '../components/Layout/JoinUsBanner';
 import ActiveEventsHeader from '../components/Events/ActiveEvents/ActiveEventsHeader';
 
-import homeContent from '../content/pages/home.json';
 import ActiveEventsCarousel from '../components/Events/ActiveEvents/ActiveEventsCarousel';
 import ResponsiveContainer from '../components/Layout/ResponsiveContainer';
 import HeaderSvg from '../public/svg/header.svg';
@@ -24,8 +24,9 @@ import { getAllEvents } from '../cms/queries/event';
 import getStatus from '../utils';
 
 import styles from '../styles/ScrollIndicator.module.css';
+import getHomeData from '../cms/queries/home';
 
-const Home = ({ allEvents }) => {
+const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
   const myRef = useRef(null);
 
@@ -53,14 +54,22 @@ const Home = ({ allEvents }) => {
 
   return (
     <main>
-      <Head>
-        <title>IEEE SB MUJ</title>
-        <meta
-          name="description"
-          content="IEEE Student Branch Manipal Univeristy Jaipur"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo
+        title="Home"
+        description={homeData.seo.description}
+        canonical="https://ieeemuj.com/"
+        openGraph={{
+          description: homeData.seo.description,
+          images: [
+            {
+              height: homeData.seo.image.dimensions.height,
+              width: homeData.seo.image.dimensions.width,
+              url: homeData.seo.image.url,
+              alt: homeData.seo.image.alt,
+            },
+          ],
+        }}
+      />
       <Box
         ref={myRef}
         width="100%"
@@ -89,7 +98,7 @@ const Home = ({ allEvents }) => {
                 color="white"
                 textAlign={['center', 'center', 'center', 'center', 'left']}
               >
-                Look Forward To Growing Your Skillset.
+                {homeData.headerTagLine}
               </Heading>
               <Text
                 width={['100%', '100%', '100%', '100%', '100%']}
@@ -97,9 +106,7 @@ const Home = ({ allEvents }) => {
                 fontSize={['md', 'xl']}
                 textAlign={['center', 'center', 'center', 'center', 'left']}
               >
-                Make global connections along your path.
-                <br />
-                Become an IEEE Member.
+                {RichText.render(homeData.headerSubTagLine)}
               </Text>
               <Box
                 width="100%"
@@ -116,10 +123,10 @@ const Home = ({ allEvents }) => {
                     fontSize={['md', 'xl']}
                     textAlign={['center', 'center', 'center', 'center', 'left']}
                   >
-                    Explore our events.
+                    {homeData.featuredText}
                   </Text>
                   <NextLink
-                    href="/events"
+                    href={homeData.featuredButtonLink}
                     passHref
                   >
                     <Button
@@ -144,7 +151,7 @@ const Home = ({ allEvents }) => {
                         bg: 'brand',
                       }}
                     >
-                      EVENTS
+                      {homeData.featuredButtonText}
                     </Button>
                   </NextLink>
                 </VStack>
@@ -172,9 +179,11 @@ const Home = ({ allEvents }) => {
         </SectionHeader>
         <SectionContent>
           <AboutUsContent
-            visionText={homeContent.vision}
-            missionText={homeContent.mission}
-            stats={homeContent.stats}
+            aboutIEEE={homeData.aboutIEEE}
+            aboutIEEESBMUJ={homeData.aboutIEEESBMUJ}
+            visionText={homeData.ieeeSBVision}
+            missionText={homeData.ieeeSBMission}
+            stats={homeData.stats}
           />
         </SectionContent>
       </Section>
@@ -195,7 +204,7 @@ const Home = ({ allEvents }) => {
           <TestimonialHeader />
         </SectionHeader>
         <SectionContent>
-          <TestimonialContent testimonials={homeContent.testimonials} />
+          <TestimonialContent testimonials={homeData.testimonials} />
         </SectionContent>
       </Section>
       <JoinUsBanner />
@@ -205,11 +214,13 @@ const Home = ({ allEvents }) => {
 
 export async function getStaticProps() {
   const allEvents = await getAllEvents();
+  const homeData = await getHomeData();
 
   if (allEvents) {
     return {
       props: {
         allEvents,
+        homeData,
       },
     };
   }
