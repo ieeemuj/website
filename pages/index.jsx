@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import NextLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
@@ -7,6 +6,7 @@ import {
 } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
 import { RichText } from 'prismic-reactjs';
+import { NextSeo } from 'next-seo';
 import Section from '../components/Home/Section';
 import SectionHeader from '../components/Home/Section/SectionHeader';
 import AboutUsHeader from '../components/Home/AboutUs/AboutUsHeader';
@@ -54,14 +54,22 @@ const Home = ({ allEvents, homeData }) => {
 
   return (
     <main>
-      <Head>
-        <title>IEEE SB MUJ</title>
-        <meta
-          name="description"
-          content="IEEE Student Branch Manipal Univeristy Jaipur"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo
+        title="Home"
+        description={homeData.seo.description}
+        canonical="https://ieeemuj.com/"
+        openGraph={{
+          description: homeData.seo.description,
+          images: [
+            {
+              height: homeData.seo.image.dimensions.height,
+              width: homeData.seo.image.dimensions.width,
+              url: homeData.seo.image.url,
+              alt: homeData.seo.image.alt,
+            },
+          ],
+        }}
+      />
       <Box
         ref={myRef}
         width="100%"

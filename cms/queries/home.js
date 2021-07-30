@@ -66,22 +66,14 @@ const getHomeData = async () => {
           featured_button_text
           featured_button_link
           body {
-            ... on HomepageBodyGeneral_card {
+            ... on HomepageBodySocial_card {
               type
               primary {
-                title
-                description
-                image
-              }
-            }
-            ... on HomepageBodyTwitter_card {
-              type
-              primary {
-                title
+                page_title
                 description
                 image
                 twitter_handle
-                card_type
+                twitter_card_type
               }
             }
           }
