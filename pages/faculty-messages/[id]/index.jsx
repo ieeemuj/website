@@ -14,7 +14,7 @@ const Facultymessages = () => (
         size="lg"
         textAlign="center"
       >
-        Dr.Sandeep Sancheti
+        Dr. Sandeep Sancheti
       </Heading>
       <Heading
         width="100%"
@@ -29,12 +29,14 @@ const Facultymessages = () => (
       <Stack
         direction={['column', 'column', 'column', 'column', 'row']}
         justify="center"
-        align="center"
+        align={['center', 'center', 'center', 'center', 'start']}
         spacing="10"
         fontSize="lg"
         textAlign={['center', 'center', 'center', 'center', 'left']}
       >
         <Image
+          flexShrink="0"
+          flexGrow="0"
           rounded="lg"
           width="320px"
           height="320px"

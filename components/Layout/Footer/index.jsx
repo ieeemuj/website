@@ -102,7 +102,7 @@ const Footer = () => (
               <FooterSectionHeading>Website Links</FooterSectionHeading>
               <FooterSectionLink
                 underline
-                href="www.ieee.org"
+                href="/faculty-messages/ex-president"
               >
                 Ex-President&apos;s Message
               </FooterSectionLink>
