@@ -10,6 +10,7 @@ import PastEventsGrid from '../../components/Events/PastEvents/PastEventsGrid';
 import ActiveEventsCarousel from '../../components/Events/ActiveEvents/ActiveEventsCarousel';
 import { getAllEvents } from '../../cms/queries/event';
 import getStatus from '../../utils';
+import TitleHeader from '../../components/Layout/TitleHeader';
 
 const Events = ({ allEvents }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -51,6 +52,7 @@ const Events = ({ allEvents }) => {
 
   return (
     <main>
+      <TitleHeader />
       <Section
         bgColor="whitesmoke"
       >
