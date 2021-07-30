@@ -12,23 +12,30 @@ import {
 } from '@chakra-ui/react';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
+import * as yup from 'yup';
 
 const ContactUsForm = () => {
-
-  const schema=yup.object().shape({
-    name:yup.string().required("Please enter your name").matches(/^[A-Za-z ]*$/, "Please enter a valid name"),
-    email:yup.string().email("Please enter a valid email").required("Please enter your email id"),
-    msg:yup.string().required("Please enter your message")
-  })
+  const schema = yup.object().shape({
+    name: yup.string()
+      .required('Please enter your name')
+      .matches(/^[A-Za-z ]*$/, 'Please enter a valid name')
+      .max(1500, 'Message must be at most 250 characters'),
+    email: yup.string()
+      .email('Please enter a valid email')
+      .required('Please enter your email id')
+      .max(1500, 'Message must be at most 250 characters'),
+    msg: yup.string()
+      .required('Please enter your message')
+      .max(1500, 'Message must be at most 1500 characters'),
+  });
 
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm({
-    mode:"onBlur",
-    resolver:yupResolver(schema)
+    mode: 'onBlur',
+    resolver: yupResolver(schema),
   });
 
   const toast = useToast();
@@ -55,7 +62,7 @@ const ContactUsForm = () => {
           <FormErrorMessage>
             {errors.name?.message}
           </FormErrorMessage>
-          </FormControl>
+        </FormControl>
         <FormControl isInvalid={errors.email}>
           <FormLabel htmlFor="email">Email</FormLabel>
 
@@ -68,8 +75,8 @@ const ContactUsForm = () => {
           <FormErrorMessage>
             {errors.email?.message}
           </FormErrorMessage>
-          </FormControl>
-          <FormControl isInvalid={errors.msg}>
+        </FormControl>
+        <FormControl isInvalid={errors.msg}>
           <FormLabel htmlFor="msg">Message</FormLabel>
           <Textarea
             id="msg"
