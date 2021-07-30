@@ -9,11 +9,12 @@ import SocietiesContent from '../../components/Societies/SocietiesContent';
 const Societies = () => {
   const sectionData = [
     {
-      heading: 'IEEE CS Society',
+      alignment: 'left',
+      heading: 'IEEE CS',
       headingColor: '#f89a0f',
       subHeading: 'Iusto laudantium dolorum consequuntur quae',
-      subHeadingColor: '#DBB81A',
-      titleQues: 'Lorem ipsum dolor sit, amet consectetur',
+      subHeadingColor: 'darkblue',
+      titleQues: 'IEEE Computer Society',
       alignText: 'right',
       alignImg: 'left',
       dividerBg: '#FF8427',
@@ -21,15 +22,16 @@ const Societies = () => {
       linkedInUrl: '#',
       twitterUrl: '#',
       imgSrc: '/svg/ieee_cs_logo.svg',
-      imgMarginTop: ['2em', '2em', null, '5em', '5em'],
+      imgMarginBottom: '3em',
       imgWidth: '100%',
     },
     {
+      alignment: 'right',
       heading: 'IEEE WIE',
       headingColor: '#6c258c',
       subHeading: 'Quae blanditiis ipsum aut vero atque doloribus',
       subHeadingColor: '#F04273',
-      titleQues: 'Lorem ipsum dolor sit, amet consectetur',
+      titleQues: 'IEEE Women In Engineering',
       alignText: 'left',
       alignImg: 'right',
       dividerBg: '#D11149',
@@ -56,6 +58,7 @@ const Societies = () => {
           <Divider backgroundColor={item.dividerBg} height="0.7" />
           <SectionContent>
             <SocietiesContent
+              alignment={item.alignment}
               altText={item.heading}
               titleQues={item.titleQues}
               alignText={item.alignText}
@@ -65,6 +68,7 @@ const Societies = () => {
               linkedInUrl={item.linkedInUrl}
               imgSrc={item.imgSrc}
               imgMarginTop={item.imgMarginTop}
+              imgMarginBottom={item.imgMarginBottom}
               imgMarginRight={item.imgMarginRight}
               imgWidth={item.imgWidth}
             />

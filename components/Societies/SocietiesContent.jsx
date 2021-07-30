@@ -1,15 +1,40 @@
 import {
-  Box, Heading, Text, Image, Link, Button,
+  Box, Heading, Text, Image, Link, Button, Stack,
 } from '@chakra-ui/react';
 import { FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const SocietiesContent = ({
+  alignment,
   titleQues, alignImg, alignText, twitterUrl, instaUrl,
-  linkedInUrl, imgSrc, altText, imgMarginTop, imgMarginRight, imgWidth,
+  linkedInUrl, imgSrc, altText, imgMarginTop, imgMarginBottom, imgMarginRight, imgWidth,
 }) => (
-  <Box paddingX="4">
+  <Stack
+    direction={['column', 'column', 'column', 'column', 'row']}
+    spacing="2"
+    alignItems="center"
+    justify="space-between"
+  >
+    {alignment === 'left'
+      && (
+      <Box
+        float={alignImg}
+        marginX="6"
+        maxW="480px"
+        display={['block', 'block', 'inline', 'inline-block', 'inline-block']}
+      >
+        <Image
+          marginTop={imgMarginTop}
+          marginBottom={imgMarginBottom}
+          width={imgWidth}
+          marginRight={imgMarginRight}
+          borderRadius="md"
+          src={imgSrc}
+          alt={`${altText} logo`}
+        />
+      </Box>
+      )}
     <Box
-      width={['xs', 'md', 'lg', '2xl', 'md']}
+      width={['100%', '100%', '100%', '100%', '50%']}
       float={alignText}
       paddingX="6"
     >
@@ -18,7 +43,6 @@ const SocietiesContent = ({
         marginBottom="2"
       >
         {titleQues}
-        ?
       </Heading>
       <Text>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -34,7 +58,6 @@ const SocietiesContent = ({
       <Box
         float={alignText}
         marginTop="3em"
-        marginX="4"
       >
         <Link href={twitterUrl}>
           <Button colorScheme="twitter" size="lg">
@@ -50,17 +73,24 @@ const SocietiesContent = ({
         </Link>
       </Box>
     </Box>
-    <Box float={alignImg} marginX="6" display={['block', 'block', 'inline', 'inline-block', 'inline-block']}>
-      <Image
-        marginTop={imgMarginTop}
-        width={imgWidth}
-        marginRight={imgMarginRight}
-        borderRadius="md"
-        src={imgSrc}
-        alt={`${altText} logo`}
-      />
-    </Box>
-  </Box>
+    {alignment === 'right'
+      && (
+      <Box
+        float={alignImg}
+        marginX="6"
+        display={['block', 'block', 'inline', 'inline-block', 'inline-block']}
+      >
+        <Image
+          marginTop={imgMarginTop}
+          width={imgWidth}
+          marginRight={imgMarginRight}
+          borderRadius="md"
+          src={imgSrc}
+          alt={`${altText} logo`}
+        />
+      </Box>
+      )}
+  </Stack>
 );
 
 export default SocietiesContent;

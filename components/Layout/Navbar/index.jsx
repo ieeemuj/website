@@ -8,6 +8,9 @@ import {
   Heading,
   Button,
   Link,
+  Icon,
+  Collapse,
+  VStack,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import NextLink from 'next/link';
@@ -24,15 +27,15 @@ const NavLinks = () => (
       <span>EVENTS</span>
     </NavLink>
     <NavLink to="https://www.medium.com">
-      <span>BLOGS</span>
+      <span>BLOG</span>
     </NavLink>
     <NavLink to="/societies">
       <span>SOCIETIES</span>
     </NavLink>
-    <NavLink to="/ieeecs">
+    <NavLink to="/team">
       <span>TEAM</span>
     </NavLink>
-    <NavLink to="/ieeecs">
+    <NavLink to="/contactus">
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
@@ -44,7 +47,7 @@ const NavLinks = () => (
         bg="white"
         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
         padding="16px"
-        rounded="lg"
+        rounded="md"
         color="brand"
         _hover={{
           border: 'none',
@@ -64,7 +67,6 @@ const NavLinks = () => (
         JOIN NOW
       </Button>
     </NextLink>
-
   </>
 );
 
@@ -78,13 +80,42 @@ const Navbar = () => {
         bg="#00132B"
       >
         <ResponsiveContainer>
-          <Flex h={16} alignItems="center" justifyContent="space-between">
-            <Heading
-              size="lg"
-              color="white"
+          <Flex
+            h={16}
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <NextLink
+              href="/"
+              passHref
             >
-              IEEE SB MUJ
-            </Heading>
+              <VStack
+                marginBottom="-18px"
+                cursor="pointer"
+                spacing="0"
+                textAlign="justify"
+              >
+                <Heading
+                  size="md"
+                  color="white"
+                >
+                  IEEE STUDENT BRANCH
+                </Heading>
+                <Heading
+                  size="xs"
+                  color="white"
+                  width="100%"
+                  _after={{
+                    content: '""',
+                    display: 'inline-block',
+                    width: '100%',
+                  }}
+                >
+                  MANIPAL UNIVERSITY JAIPUR
+                </Heading>
+              </VStack>
+            </NextLink>
+
             <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
               <NavLinks />
             </HStack>
@@ -93,22 +124,59 @@ const Navbar = () => {
               color="white"
               borderRadius="50"
               size="lg"
-              icon={isOpen ? <MdClose /> : <MdMenu />}
+              icon={isOpen ? (
+                <Icon
+                  as={MdClose}
+                  width="24px"
+                  height="24px"
+                />
+              ) : (
+                <Icon
+                  as={MdMenu}
+                  width="24px"
+                  height="24px"
+                />
+              )}
               aria-label="Open Menu"
               display={{ xl: 'none' }}
               onClick={isOpen ? onClose : onOpen}
+              _hover={{
+                border: 'none',
+                textDecoration: 'none',
+                borderRadius: '50',
+              }}
+              _active={{
+                bgColor: 'transparent',
+              }}
+              _focus={{
+                shadow: 'none',
+                border: 'none',
+              }}
             />
           </Flex>
-
-          {isOpen ? (
-            <Box pb={4} display={{ xl: 'none' }}>
-              <Stack as="nav" spacing={4}>
-                <NavLinks />
-              </Stack>
-            </Box>
-          ) : null}
         </ResponsiveContainer>
-
+        <Collapse
+          in={isOpen}
+          animateOpacity
+        >
+          <Box
+            p={4}
+            bgColor="brand.700"
+            width="100%"
+            height="calc(100vh - 80px)"
+            display={{ xl: 'none' }}
+          >
+            <Stack
+              as="nav"
+              spacing={10}
+              alignItems="center"
+              justify="center"
+              height="100%"
+            >
+              <NavLinks />
+            </Stack>
+          </Box>
+        </Collapse>
       </Box>
     </>
   );

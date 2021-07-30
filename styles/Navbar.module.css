@@ -16,7 +16,7 @@
   left: 0;
   background-color: #0087ca;
   transform-origin: bottom left;
-  transition: transform 0.4s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 .underLineAnimation:hover:after {

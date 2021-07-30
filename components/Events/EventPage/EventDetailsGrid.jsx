@@ -7,12 +7,12 @@ import {
 import { BsPersonPlus } from 'react-icons/bs';
 import { FaRegClock } from 'react-icons/fa';
 
-const EventDetailsGrid = () => (
+const EventDetailsGrid = ({ eventObj }) => (
   <SimpleGrid
     columns={['1', '1', '1', '1', '2']}
-    width={['100%', '100%', '100%', '100%', '440px']}
+    width={['100%', '100%', '100%', '100%', '480px']}
     justifyItems={['center', 'center', 'center', 'center', 'start']}
-    spacing="5"
+    spacing="3"
   >
     <HStack>
       <Icon
@@ -24,7 +24,7 @@ const EventDetailsGrid = () => (
       <Text
         size="sm"
       >
-        31st July, 2021
+        {eventObj.dateTimeObj.dateStr}
       </Text>
     </HStack>
     <HStack>
@@ -37,7 +37,7 @@ const EventDetailsGrid = () => (
       <Text
         size="sm"
       >
-        10:00 AM - 3:00 PM
+        {eventObj.dateTimeObj.timeStr || 'TBD'}
       </Text>
     </HStack>
     <HStack>
@@ -50,7 +50,7 @@ const EventDetailsGrid = () => (
       <Text
         size="sm"
       >
-        Microsoft Teams
+        {eventObj.location || 'TBD'}
       </Text>
     </HStack>
     <HStack>
@@ -63,7 +63,7 @@ const EventDetailsGrid = () => (
       <Text
         size="sm"
       >
-        Free
+        {eventObj.fee || 'Free'}
       </Text>
     </HStack>
     <HStack>
@@ -76,7 +76,7 @@ const EventDetailsGrid = () => (
       <Text
         size="sm"
       >
-        No Prize
+        {eventObj.prize || 'No Prize'}
       </Text>
     </HStack>
     <HStack>
@@ -89,7 +89,9 @@ const EventDetailsGrid = () => (
       <Text
         size="sm"
       >
-        2 - 4 Member(s)
+        {eventObj.teamSize || '1'}
+        {' '}
+        Member(s)
       </Text>
     </HStack>
   </SimpleGrid>
