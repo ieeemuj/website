@@ -6,6 +6,7 @@ import {
   Box, Button, Heading, HStack, Link, Text, VStack,
 } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
+import { RichText } from 'prismic-reactjs';
 import Section from '../components/Home/Section';
 import SectionHeader from '../components/Home/Section/SectionHeader';
 import AboutUsHeader from '../components/Home/AboutUs/AboutUsHeader';
@@ -16,7 +17,6 @@ import TestimonialContent from '../components/Home/Testimonial/TestimonialConten
 import JoinUsBanner from '../components/Layout/JoinUsBanner';
 import ActiveEventsHeader from '../components/Events/ActiveEvents/ActiveEventsHeader';
 
-import homeContent from '../content/pages/home.json';
 import ActiveEventsCarousel from '../components/Events/ActiveEvents/ActiveEventsCarousel';
 import ResponsiveContainer from '../components/Layout/ResponsiveContainer';
 import HeaderSvg from '../public/svg/header.svg';
@@ -24,8 +24,9 @@ import { getAllEvents } from '../cms/queries/event';
 import getStatus from '../utils';
 
 import styles from '../styles/ScrollIndicator.module.css';
+import getHomeData from '../cms/queries/home';
 
-const Home = ({ allEvents }) => {
+const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
   const myRef = useRef(null);
 
@@ -89,7 +90,7 @@ const Home = ({ allEvents }) => {
                 color="white"
                 textAlign={['center', 'center', 'center', 'center', 'left']}
               >
-                Look Forward To Growing Your Skillset.
+                {homeData.headerTagLine}
               </Heading>
               <Text
                 width={['100%', '100%', '100%', '100%', '100%']}
@@ -97,9 +98,7 @@ const Home = ({ allEvents }) => {
                 fontSize={['md', 'xl']}
                 textAlign={['center', 'center', 'center', 'center', 'left']}
               >
-                Make global connections along your path.
-                <br />
-                Become an IEEE Member.
+                {RichText.render(homeData.headerSubTagLine)}
               </Text>
               <Box
                 width="100%"
@@ -116,10 +115,10 @@ const Home = ({ allEvents }) => {
                     fontSize={['md', 'xl']}
                     textAlign={['center', 'center', 'center', 'center', 'left']}
                   >
-                    Explore our events.
+                    {homeData.featuredText}
                   </Text>
                   <NextLink
-                    href="/events"
+                    href={homeData.featuredButtonLink}
                     passHref
                   >
                     <Button
@@ -144,7 +143,7 @@ const Home = ({ allEvents }) => {
                         bg: 'brand',
                       }}
                     >
-                      EVENTS
+                      {homeData.featuredButtonText}
                     </Button>
                   </NextLink>
                 </VStack>
@@ -172,9 +171,11 @@ const Home = ({ allEvents }) => {
         </SectionHeader>
         <SectionContent>
           <AboutUsContent
-            visionText={homeContent.vision}
-            missionText={homeContent.mission}
-            stats={homeContent.stats}
+            aboutIEEE={homeData.aboutIEEE}
+            aboutIEEESBMUJ={homeData.aboutIEEESBMUJ}
+            visionText={homeData.ieeeSBVision}
+            missionText={homeData.ieeeSBMission}
+            stats={homeData.stats}
           />
         </SectionContent>
       </Section>
@@ -195,7 +196,7 @@ const Home = ({ allEvents }) => {
           <TestimonialHeader />
         </SectionHeader>
         <SectionContent>
-          <TestimonialContent testimonials={homeContent.testimonials} />
+          <TestimonialContent testimonials={homeData.testimonials} />
         </SectionContent>
       </Section>
       <JoinUsBanner />
@@ -205,11 +206,13 @@ const Home = ({ allEvents }) => {
 
 export async function getStaticProps() {
   const allEvents = await getAllEvents();
+  const homeData = await getHomeData();
 
   if (allEvents) {
     return {
       props: {
         allEvents,
+        homeData,
       },
     };
   }

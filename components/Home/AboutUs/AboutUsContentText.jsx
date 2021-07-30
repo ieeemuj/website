@@ -1,4 +1,5 @@
 import { Heading, Text, VStack } from '@chakra-ui/react';
+import { RichText } from 'prismic-reactjs';
 
 const AboutUsContentText = ({ heading, text }) => (
   <VStack
@@ -8,7 +9,7 @@ const AboutUsContentText = ({ heading, text }) => (
     <Text
       textAlign={['center', 'center', 'center', 'center', 'left']}
     >
-      {text}
+      {RichText.render(text)}
     </Text>
   </VStack>
 );

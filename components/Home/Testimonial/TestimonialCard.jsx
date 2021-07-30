@@ -1,5 +1,5 @@
 import {
-  Avatar, Box, Heading, HStack, Text, VStack,
+  Box, Heading, Text, VStack,
 } from '@chakra-ui/react';
 
 const TestimonialCard = ({ testimonial }) => (
@@ -21,21 +21,21 @@ const TestimonialCard = ({ testimonial }) => (
         fontStyle="italic"
       >
         &ldquo;
-        {testimonial.text}
+        {testimonial.testimonial_text}
         &rdquo;
       </Text>
-      <HStack
-        spacing="10"
-      >
-        <Avatar
-          src={testimonial.authorImg}
-        />
+      <VStack>
         <Heading
           size="sm"
         >
-          {testimonial.author}
+          {testimonial.testimonial_author}
         </Heading>
-      </HStack>
+        <Heading
+          size="xs"
+        >
+          {testimonial.testimonial_author_title}
+        </Heading>
+      </VStack>
     </VStack>
   </Box>
 );
