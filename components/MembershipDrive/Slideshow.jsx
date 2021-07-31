@@ -21,31 +21,31 @@ const Slideshow = () => (
     pagination
   >
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
     <Box borderRadius="10px">
-      <Image src={testImg} />
+      <Image rounded="lg" src={testImg} />
     </Box>
   </Carousel>
 );
