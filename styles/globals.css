@@ -1,5 +1,5 @@
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap');
+@import "nprogress.css";
+
 html,
 body {
   padding: 0;
