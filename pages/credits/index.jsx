@@ -5,6 +5,7 @@ import CreditsHeader from '../../components/Credits/CreditsHeader';
 import Section from '../../components/Home/Section';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
+import TitleHeader from '../../components/Layout/TitleHeader';
 
 const Credits = () => {
   const teamData = [
@@ -74,6 +75,10 @@ const Credits = () => {
   ];
   return (
     <main>
+      <TitleHeader
+        heading="Website Team & Credits"
+        subheading=""
+      />
       <Section>
         <SectionHeader>
           <CreditsHeader heading="Website Team" />

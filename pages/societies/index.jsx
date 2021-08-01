@@ -5,6 +5,7 @@ import SectionHeader from '../../components/Home/Section/SectionHeader';
 import SocietiesHeader from '../../components/Societies/SocietiesHeader';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import SocietiesContent from '../../components/Societies/SocietiesContent';
+import TitleHeader from '../../components/Layout/TitleHeader';
 
 const Societies = () => {
   const sectionData = [
@@ -45,6 +46,10 @@ const Societies = () => {
   ];
   return (
     <main>
+      <TitleHeader
+        heading="Societies"
+        subheading="Take advantage of specialized opportunities."
+      />
       {sectionData.map((item) => (
         <Section key={item.heading}>
           <SectionHeader>

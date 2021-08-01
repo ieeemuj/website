@@ -74,19 +74,19 @@ const Home = ({ allEvents, homeData }) => {
         ref={myRef}
         width="100%"
         bgColor="brand.700"
-        height="calc(100vh - 96px)"
+        minH="calc(100vh - 96px)"
         borderBottom="solid #0087ca"
       >
         <ResponsiveContainer>
           <HStack
             position="relative"
-            height="calc(100vh - 96px)"
+            minH="calc(100vh - 96px)"
             width="100%"
             spacing="7"
           >
             <VStack
               width={['100%', '100%', '100%', '100%', '45%']}
-              height="calc(100vh - 96px)"
+              minH="calc(100vh - 96px)"
               boxSizing="border-box"
               justify={['center', 'center', 'center', 'center', 'start']}
               py={['0px', '0px', '0px', '0px', '64px']}

@@ -52,7 +52,10 @@ const Events = ({ allEvents }) => {
 
   return (
     <main>
-      <TitleHeader />
+      <TitleHeader
+        heading="Events"
+        subheading="“The only source of knowledge is experience.” - Albert Einstein"
+      />
       <Section
         bgColor="whitesmoke"
       >

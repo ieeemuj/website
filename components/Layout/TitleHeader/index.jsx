@@ -3,7 +3,7 @@ import {
 } from '@chakra-ui/react';
 import ResponsiveContainer from '../ResponsiveContainer';
 
-const TitleHeader = () => (
+const TitleHeader = ({ heading, subheading }) => (
   <Box
     width="100%"
     bgColor="brand.700"
@@ -11,23 +11,29 @@ const TitleHeader = () => (
   >
     <ResponsiveContainer>
       <VStack
+        rounded="lg"
         py="32px"
-        spacing="5"
+        spacing="2"
       >
         <Heading
-          width="100%"
           size="lg"
           textAlign="center"
           color="white"
+          backgroundColor="brand.700"
+          padding="16px"
+          rounded="lg"
         >
-          Events
+          { heading }
         </Heading>
         <Text
-          fontSize="md"
+          fontSize="lg"
           color="white"
           textAlign="center"
+          backgroundColor="brand.700"
+          padding="8px"
+          rounded="lg"
         >
-          “The only source of knowledge is experience.” – Albert Einstein
+          { subheading }
         </Text>
       </VStack>
     </ResponsiveContainer>
