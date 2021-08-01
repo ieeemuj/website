@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
+import { Heading, Text } from '@chakra-ui/react';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEventsHeader';
@@ -10,6 +11,8 @@ import PastEventsGrid from '../../components/Events/PastEvents/PastEventsGrid';
 import ActiveEventsCarousel from '../../components/Events/ActiveEvents/ActiveEventsCarousel';
 import { getAllEvents } from '../../cms/queries/event';
 import getStatus from '../../utils';
+import TitleHeader from '../../components/Layout/TitleHeader';
+import FadeInUp from '../../components/FadeInUp';
 
 const Events = ({ allEvents }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -51,27 +54,55 @@ const Events = ({ allEvents }) => {
 
   return (
     <main>
+      <TitleHeader>
+        <FadeInUp>
+          <Heading
+            size="lg"
+            textAlign="center"
+            color="white"
+            backgroundColor="brand.700"
+            padding="16px"
+            rounded="lg"
+          >
+            EVENTS
+          </Heading>
+          <Text
+            fontSize="lg"
+            color="white"
+            textAlign="center"
+            backgroundColor="brand.700"
+            padding="8px"
+            rounded="lg"
+          >
+            “The only source of knowledge is experience.” - Albert Einstein
+          </Text>
+        </FadeInUp>
+      </TitleHeader>
       <Section
         bgColor="whitesmoke"
       >
-        <SectionHeader>
-          <ActiveEventsHeader />
-        </SectionHeader>
-        <SectionContent>
-          <ActiveEventsCarousel
-            activeEventsData={activeEventsData}
-          />
-        </SectionContent>
+        <FadeInUp>
+          <SectionHeader>
+            <ActiveEventsHeader />
+          </SectionHeader>
+          <SectionContent>
+            <ActiveEventsCarousel
+              activeEventsData={activeEventsData}
+            />
+          </SectionContent>
+        </FadeInUp>
       </Section>
       <Section>
-        <SectionHeader>
-          <PastEventsHeader />
-        </SectionHeader>
-        <SectionContent>
-          <PastEventsGrid
-            allEventsData={pastEventsData}
-          />
-        </SectionContent>
+        <FadeInUp>
+          <SectionHeader>
+            <PastEventsHeader />
+          </SectionHeader>
+          <SectionContent>
+            <PastEventsGrid
+              allEventsData={pastEventsData}
+            />
+          </SectionContent>
+        </FadeInUp>
       </Section>
     </main>
   );

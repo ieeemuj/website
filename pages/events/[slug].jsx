@@ -8,20 +8,27 @@ import {
   getEventByUID, getAllSlugs,
 } from '../../cms/queries/event';
 import styles from '../../styles/EventDescription.module.css';
+import FadeInUp from '../../components/FadeInUp';
+import SectionContent from '../../components/Home/Section/SectionContent';
 
 const EventPage = ({ eventObj }) => {
   const router = useRouter();
   return (
     <Section>
-      <Event
-        eventObj={eventObj}
-        slug={router.query.slug}
-      />
-      <Box
-        className={styles.description}
-      >
-        {RichText.render(eventObj.prismicDescription)}
-      </Box>
+      <FadeInUp>
+        <SectionContent>
+          <Event
+            eventObj={eventObj}
+            slug={router.query.slug}
+          />
+          <Box
+            className={styles.description}
+            marginTop="32px"
+          >
+            {RichText.render(eventObj.prismicDescription)}
+          </Box>
+        </SectionContent>
+      </FadeInUp>
     </Section>
   );
 };
