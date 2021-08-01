@@ -50,7 +50,7 @@ const ContactUsForm = () => {
     <Box
       py="32px"
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form name="contact" data-netlify="true" action="/contactus" method="POST" onSubmit={handleSubmit(onSubmit)}>
         <FormControl isInvalid={errors.name}>
           <FormLabel htmlFor="name">Name</FormLabel>
           <Input
