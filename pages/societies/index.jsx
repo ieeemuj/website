@@ -1,11 +1,12 @@
 import React from 'react';
-import { Divider } from '@chakra-ui/react';
+import { Divider, Heading, Text } from '@chakra-ui/react';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import SocietiesHeader from '../../components/Societies/SocietiesHeader';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import SocietiesContent from '../../components/Societies/SocietiesContent';
 import TitleHeader from '../../components/Layout/TitleHeader';
+import FadeInUp from '../../components/FadeInUp';
 
 const Societies = () => {
   const sectionData = [
@@ -46,39 +47,61 @@ const Societies = () => {
   ];
   return (
     <main>
-      <TitleHeader
-        heading="Societies"
-        subheading="Take advantage of specialized opportunities."
-      />
+      <TitleHeader>
+        <FadeInUp>
+          <Heading
+            size="lg"
+            textAlign="center"
+            color="white"
+            backgroundColor="brand.700"
+            padding="16px"
+            rounded="lg"
+          >
+            SOCIETIES
+          </Heading>
+          <Text
+            fontSize="lg"
+            color="white"
+            textAlign="center"
+            backgroundColor="brand.700"
+            padding="8px"
+            rounded="lg"
+          >
+            Take advantage of specialized opportunities.
+          </Text>
+        </FadeInUp>
+      </TitleHeader>
       {sectionData.map((item) => (
         <Section key={item.heading}>
-          <SectionHeader>
-            <SocietiesHeader
-              heading={item.heading}
-              headingColor={item.headingColor}
-              subHeading={item.subHeading}
-              subHeadingColor={item.subHeadingColor}
-            />
-          </SectionHeader>
-          <Divider backgroundColor={item.dividerBg} height="0.7" />
-          <SectionContent>
-            <SocietiesContent
-              alignment={item.alignment}
-              altText={item.heading}
-              titleQues={item.titleQues}
-              alignText={item.alignText}
-              alignImg={item.alignImg}
-              instaUrl={item.instaUrl}
-              twitterUrl={item.twitterUrl}
-              linkedInUrl={item.linkedInUrl}
-              imgSrc={item.imgSrc}
-              imgMarginTop={item.imgMarginTop}
-              imgMarginBottom={item.imgMarginBottom}
-              imgMarginRight={item.imgMarginRight}
-              imgWidth={item.imgWidth}
-            />
-          </SectionContent>
-          <Divider backgroundColor={item.dividerBg} height="0.7" />
+          <FadeInUp>
+            <SectionHeader>
+              <SocietiesHeader
+                heading={item.heading}
+                headingColor={item.headingColor}
+                subHeading={item.subHeading}
+                subHeadingColor={item.subHeadingColor}
+              />
+            </SectionHeader>
+            <Divider backgroundColor={item.dividerBg} height="0.7" />
+            <SectionContent>
+              <SocietiesContent
+                alignment={item.alignment}
+                altText={item.heading}
+                titleQues={item.titleQues}
+                alignText={item.alignText}
+                alignImg={item.alignImg}
+                instaUrl={item.instaUrl}
+                twitterUrl={item.twitterUrl}
+                linkedInUrl={item.linkedInUrl}
+                imgSrc={item.imgSrc}
+                imgMarginTop={item.imgMarginTop}
+                imgMarginBottom={item.imgMarginBottom}
+                imgMarginRight={item.imgMarginRight}
+                imgWidth={item.imgWidth}
+              />
+            </SectionContent>
+            <Divider backgroundColor={item.dividerBg} height="0.7" />
+          </FadeInUp>
         </Section>
       ))}
     </main>

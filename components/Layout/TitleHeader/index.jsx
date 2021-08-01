@@ -1,9 +1,9 @@
 import {
-  Box, Heading, Text, VStack,
+  Box, VStack,
 } from '@chakra-ui/react';
 import ResponsiveContainer from '../ResponsiveContainer';
 
-const TitleHeader = ({ heading, subheading }) => (
+const TitleHeader = ({ children }) => (
   <Box
     width="100%"
     bgColor="brand.700"
@@ -15,26 +15,7 @@ const TitleHeader = ({ heading, subheading }) => (
         py="32px"
         spacing="2"
       >
-        <Heading
-          size="lg"
-          textAlign="center"
-          color="white"
-          backgroundColor="brand.700"
-          padding="16px"
-          rounded="lg"
-        >
-          { heading }
-        </Heading>
-        <Text
-          fontSize="lg"
-          color="white"
-          textAlign="center"
-          backgroundColor="brand.700"
-          padding="8px"
-          rounded="lg"
-        >
-          { subheading }
-        </Text>
+        {children}
       </VStack>
     </ResponsiveContainer>
   </Box>

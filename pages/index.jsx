@@ -25,6 +25,7 @@ import getStatus from '../utils';
 
 import styles from '../styles/ScrollIndicator.module.css';
 import getHomeData from '../cms/queries/home';
+import FadeInUp from '../components/FadeInUp';
 
 const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -77,137 +78,147 @@ const Home = ({ allEvents, homeData }) => {
         minH="calc(100vh - 96px)"
         borderBottom="solid #0087ca"
       >
-        <ResponsiveContainer>
-          <HStack
-            position="relative"
-            minH="calc(100vh - 96px)"
-            width="100%"
-            spacing="7"
-          >
-            <VStack
-              width={['100%', '100%', '100%', '100%', '45%']}
+        <FadeInUp>
+          <ResponsiveContainer>
+            <HStack
+              position="relative"
               minH="calc(100vh - 96px)"
-              boxSizing="border-box"
-              justify={['center', 'center', 'center', 'center', 'start']}
-              py={['0px', '0px', '0px', '0px', '64px']}
-              alignItems={['center', 'center', 'center', 'center', 'flex-start']}
-              spacing="10"
+              width="100%"
+              spacing="7"
             >
-              <Heading
-                fontSize={['4xl', '5xl', '7xl', '7xl', '6xl', '6xl']}
-                color="white"
-                textAlign={['center', 'center', 'center', 'center', 'left']}
+              <VStack
+                width={['100%', '100%', '100%', '100%', '45%']}
+                minH="calc(100vh - 96px)"
+                boxSizing="border-box"
+                justify={['center', 'center', 'center', 'center', 'start']}
+                py={['0px', '0px', '0px', '0px', '64px']}
+                alignItems={['center', 'center', 'center', 'center', 'flex-start']}
+                spacing="10"
               >
-                {homeData.headerTagLine}
-              </Heading>
-              <Text
-                width={['100%', '100%', '100%', '100%', '100%']}
-                color="white"
-                fontSize={['md', 'xl']}
-                textAlign={['center', 'center', 'center', 'center', 'left']}
-              >
-                {RichText.render(homeData.headerSubTagLine)}
-              </Text>
-              <Box
-                width="100%"
-                height="100px"
-              >
-                <VStack
-                  justify={['center', 'center', 'center', 'center', 'start']}
-                  alignItems={['center', 'center', 'center', 'center', 'flex-start']}
-                  spacing="5"
+                <Heading
+                  fontSize={['4xl', '5xl', '7xl', '7xl', '6xl', '6xl']}
+                  color="white"
+                  textAlign={['center', 'center', 'center', 'center', 'left']}
                 >
-                  <Text
-                    width={['100%', '100%', '100%', '100%', '100%']}
-                    color="white"
-                    fontSize={['md', 'xl']}
-                    textAlign={['center', 'center', 'center', 'center', 'left']}
+                  {homeData.headerTagLine}
+                </Heading>
+                <Text
+                  width={['100%', '100%', '100%', '100%', '100%']}
+                  color="white"
+                  fontSize={['md', 'xl']}
+                  textAlign={['center', 'center', 'center', 'center', 'left']}
+                >
+                  {RichText.render(homeData.headerSubTagLine)}
+                </Text>
+                <Box
+                  width="100%"
+                  height="100px"
+                >
+                  <VStack
+                    justify={['center', 'center', 'center', 'center', 'start']}
+                    alignItems={['center', 'center', 'center', 'center', 'flex-start']}
+                    spacing="5"
                   >
-                    {homeData.featuredText}
-                  </Text>
-                  <NextLink
-                    href={homeData.featuredButtonLink}
-                    passHref
-                  >
-                    <Button
-                      as={Link}
-                      bg="white"
-                      boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
-                      padding="32px"
-                      rounded="lg"
-                      color="brand"
-                      _hover={{
-                        border: 'none',
-                        textDecoration: 'none',
-                      }}
-                      _active={{
-                        border: 'none',
-                        boxShadow: 'none',
-                        transform: 'scale(0.97)',
-                      }}
-                      _focus={{
-                        border: 'none',
-                        boxShadow: 'none',
-                        bg: 'brand',
-                      }}
+                    <Text
+                      width={['100%', '100%', '100%', '100%', '100%']}
+                      color="white"
+                      fontSize={['md', 'xl']}
+                      textAlign={['center', 'center', 'center', 'center', 'left']}
                     >
-                      {homeData.featuredButtonText}
-                    </Button>
-                  </NextLink>
-                </VStack>
-              </Box>
+                      {homeData.featuredText}
+                    </Text>
+                    <NextLink
+                      href={homeData.featuredButtonLink}
+                      passHref
+                    >
+                      <Button
+                        as={Link}
+                        bg="white"
+                        boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+                        padding="32px"
+                        rounded="lg"
+                        color="brand"
+                        _hover={{
+                          border: 'none',
+                          textDecoration: 'none',
+                        }}
+                        _active={{
+                          border: 'none',
+                          boxShadow: 'none',
+                          transform: 'scale(0.97)',
+                        }}
+                        _focus={{
+                          border: 'none',
+                          boxShadow: 'none',
+                          bg: 'brand',
+                        }}
+                      >
+                        {homeData.featuredButtonText}
+                      </Button>
+                    </NextLink>
+                  </VStack>
+                </Box>
+                <Box
+                  className={styles.scrollIndicator}
+                  display={['none', 'none', 'none', 'none', 'flex']}
+                >
+                  <span>Scroll</span>
+                </Box>
+              </VStack>
               <Box
-                className={styles.scrollIndicator}
-                display={['none', 'none', 'none', 'none', 'flex']}
+                display={['none', 'none', 'none', 'none', 'inline-block']}
+                width="60%"
+                height="100%"
               >
-                <span>Scroll</span>
+                <HeaderSvg height="100%" />
               </Box>
-            </VStack>
-            <Box
-              display={['none', 'none', 'none', 'none', 'inline-block']}
-              width="60%"
-              height="100%"
-            >
-              <HeaderSvg height="100%" />
-            </Box>
-          </HStack>
-        </ResponsiveContainer>
+            </HStack>
+          </ResponsiveContainer>
+        </FadeInUp>
       </Box>
       <Section>
-        <SectionHeader>
-          <AboutUsHeader />
-        </SectionHeader>
-        <SectionContent>
-          <AboutUsContent
-            aboutIEEE={homeData.aboutIEEE}
-            aboutIEEESBMUJ={homeData.aboutIEEESBMUJ}
-            visionText={homeData.ieeeSBVision}
-            missionText={homeData.ieeeSBMission}
-            stats={homeData.stats}
-          />
-        </SectionContent>
+        <FadeInUp>
+          <SectionHeader>
+            <AboutUsHeader />
+          </SectionHeader>
+          <SectionContent>
+            <AboutUsContent
+              aboutIEEE={homeData.aboutIEEE}
+              aboutIEEESBMUJ={homeData.aboutIEEESBMUJ}
+              visionText={homeData.ieeeSBVision}
+              missionText={homeData.ieeeSBMission}
+              stats={homeData.stats}
+            />
+          </SectionContent>
+        </FadeInUp>
       </Section>
       <Section
         bgColor="whitesmoke"
       >
-        <SectionHeader>
-          <ActiveEventsHeader />
-        </SectionHeader>
-        <SectionContent>
-          <ActiveEventsCarousel
-            activeEventsData={activeEventsData}
-          />
-        </SectionContent>
+        <FadeInUp>
+          <SectionHeader>
+            <ActiveEventsHeader />
+          </SectionHeader>
+          <SectionContent>
+            <ActiveEventsCarousel
+              activeEventsData={activeEventsData}
+            />
+          </SectionContent>
+        </FadeInUp>
       </Section>
       <Section>
-        <SectionHeader>
-          <TestimonialHeader />
-        </SectionHeader>
-        <SectionContent>
-          <TestimonialContent testimonials={homeData.testimonials} />
-        </SectionContent>
+        <FadeInUp>
+          <SectionHeader>
+            <TestimonialHeader />
+          </SectionHeader>
+          <SectionContent>
+            <TestimonialContent testimonials={homeData.testimonials} />
+          </SectionContent>
+        </FadeInUp>
       </Section>
-      <JoinUsBanner />
+      <FadeInUp>
+        <JoinUsBanner />
+      </FadeInUp>
     </main>
   );
 };
