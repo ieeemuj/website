@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import { Heading, Text } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEventsHeader';
@@ -55,6 +56,10 @@ const Events = ({ allEvents }) => {
   return (
     <main>
       <TitleHeader>
+        <NextSeo
+          title="Events"
+          canonical="https://ieeemuj.com/events"
+        />
         <FadeInUp>
           <Heading
             size="lg"

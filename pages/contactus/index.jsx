@@ -7,13 +7,32 @@ import {
   AspectRatio,
   VStack,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
+import { RichText } from 'prismic-reactjs';
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 import ContactUsForm from '../../components/ContactUsForm';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
+import getContactUsData from '../../cms/queries/contactus';
 
-const Contactus = () => (
+const Contactus = ({ contactUsData }) => (
   <main>
+    <NextSeo
+      title={contactUsData.seo.title}
+      description={contactUsData.seo.description}
+      canonical="https://ieeemuj.com/contactus"
+      openGraph={{
+        description: contactUsData.seo.description,
+        images: [
+          {
+            height: contactUsData.seo.image.dimensions.height,
+            width: contactUsData.seo.image.dimensions.width,
+            url: contactUsData.seo.image.url,
+            alt: contactUsData.seo.image.alt,
+          },
+        ],
+      }}
+    />
     <TitleHeader>
       <FadeInUp>
         <Heading
@@ -52,55 +71,35 @@ const Contactus = () => (
                 alignItems="flex-start"
                 spacing="10"
               >
-                <Box
-                  width="100%"
-                >
-                  <Heading
-                    size="md"
-                    color="brand.400"
+                {contactUsData.contacts.map((contact) => (
+                  <Box
+                    width="100%"
                   >
-                    Shaleen Poddar
-                  </Heading>
-                  <Text
-                    py={1}
-                    color="gray.500"
-                  >
-                    Chairperson IEEE SB MUJ
-                  </Text>
-                  <Text
-                    fontSize="md"
-                  >
-                    <Link
-                      href="tel:+91 98254 40501"
+                    <Heading
+                      size="md"
+                      color="brand.500"
                     >
-                      +91 98254 40501
-                    </Link>
-                  </Text>
-                </Box>
-                <Box>
-                  <Heading
-                    size="md"
-                    color="brand.400"
-                  >
-                    Vaibhav Khandelwal
-                  </Heading>
-                  <Text
-                    color="gray.500"
-                // fontSize="sm"
-                    py={1}
-                  >
-                    Vice-Chairperson IEEE SB MUJ
-                  </Text>
-                  <Text
-                    fontSize="md"
-                  >
-                    <Link
-                      href="tel:+91 75035 84851"
+                      {contact.name}
+                    </Heading>
+                    <Text
+                      py={1}
+                      color="gray.500"
                     >
-                      +91 75035 84851
-                    </Link>
-                  </Text>
-                </Box>
+                      {contact.position}
+                    </Text>
+                    <Text
+                      fontSize="md"
+                    >
+                      <Link
+                        href={`tel:+91${contact.indian_mobile_number}`}
+                      >
+                        +91
+                        {' '}
+                        {contact.indian_mobile_number}
+                      </Link>
+                    </Text>
+                  </Box>
+                ))}
               </VStack>
             </Box>
             <Box>
@@ -135,13 +134,7 @@ const Contactus = () => (
                 paddingY="32px"
                 fontSize="lg"
               >
-                Manipal University Jaipur,
-                <br />
-                Dehmi Kalan, Near GVK Toll Plaza,
-                <br />
-                Jaipur-Ajmer Expressway,
-                <br />
-                Jaipur, Rajasthan 303007
+                {RichText.render(contactUsData.address)}
               </Text>
             </Box>
             <AspectRatio
@@ -159,5 +152,20 @@ const Contactus = () => (
     </ResponsiveContainer>
   </main>
 );
+
+export async function getStaticProps() {
+  const contactUsData = await getContactUsData();
+
+  if (contactUsData) {
+    return {
+      props: {
+        contactUsData,
+      },
+    };
+  }
+  return {
+    notFound: true,
+  };
+}
 
 export default Contactus;
