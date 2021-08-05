@@ -1,5 +1,10 @@
 class SEO {
   constructor(body) {
+    this.title = null;
+    this.description = null;
+    this.image = null;
+    this.twitterHandle = null;
+    this.twitterCardType = null;
     if (body) {
       body.forEach((card) => {
         if (card.type === 'social_card') {

@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 
 const CreditsContent = ({
-  name, title, linkedIn, insta, github,
+  name, image, position, linkedIn, instagram, github,
 }) => (
   <VStack
     marginY="2em"
@@ -16,7 +16,7 @@ const CreditsContent = ({
   >
     <Avatar
       size="xl"
-      src="https://bit.ly/code-beast"
+      src={image}
     />
     <Heading
       as="h4"
@@ -29,7 +29,7 @@ const CreditsContent = ({
       color="#8a9494"
       fontWeight="medium"
     >
-      {title}
+      {position}
     </Text>
     <HStack
       width="100%"
@@ -45,7 +45,7 @@ const CreditsContent = ({
       />
       <IconButton
         as={Link}
-        href={`https://www.instagram.com/${insta}`}
+        href={`https://www.instagram.com/${instagram}`}
         variant="ghost"
         aria-label={`Instagram link of ${name}`}
         icon={<FaInstagram />}
