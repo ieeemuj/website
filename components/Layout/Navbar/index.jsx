@@ -26,7 +26,7 @@ const NavLinks = () => (
     <NavLink to="/events">
       <span>EVENTS</span>
     </NavLink>
-    <NavLink to="https://www.medium.com">
+    <NavLink to="/blogs">
       <span>BLOG</span>
     </NavLink>
     <NavLink to="/societies">
