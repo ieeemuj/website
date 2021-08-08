@@ -10,7 +10,7 @@ const Benefits = () => (
       as="h1"
       size="lg"
     >
-      Why IEE?
+      Why IEEE?
     </Heading>
     <VStack
       width="100%"
