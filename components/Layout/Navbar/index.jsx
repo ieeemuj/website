@@ -39,7 +39,7 @@ const NavLinks = () => (
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
-      href="/join-us"
+      href="/membership"
       passHref
     >
       <Button

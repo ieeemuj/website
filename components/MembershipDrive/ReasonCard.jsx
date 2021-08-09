@@ -5,7 +5,7 @@ import {
 
 const testImg = 'https://source.unsplash.com/100x100';
 
-const ReasonCard = () => (
+const ReasonCard = ({ reason }) => (
   <Box
     maxW="600px"
     rounded="md"
@@ -24,7 +24,7 @@ const ReasonCard = () => (
         <Image
           src={testImg}
           rounded="lg"
-          width="100px"
+          width="72px"
         />
       </Box>
 
@@ -37,14 +37,12 @@ const ReasonCard = () => (
           as="h3"
           size="md"
         >
-          Discover
+          {reason.heading}
         </Heading>
         <Text
           fontSize="sm"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras sed sapien ornare lacus imperdiet efficitur posuere vel justo.
-          Proin fringilla pellentesque neque, nec venenatis metus.
+          {reason.text}
         </Text>
       </VStack>
     </HStack>
