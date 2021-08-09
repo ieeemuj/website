@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import NLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -26,6 +26,7 @@ import getStatus from '../utils';
 import styles from '../styles/ScrollIndicator.module.css';
 import getHomeData from '../cms/queries/home';
 import FadeInUp from '../components/FadeInUp';
+import NextLink from '../components/NextLink';
 
 const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -127,7 +128,7 @@ const Home = ({ allEvents, homeData }) => {
                     >
                       {homeData.featuredText}
                     </Text>
-                    <NextLink
+                    <NLink
                       href={homeData.featuredButtonLink}
                       passHref
                     >
@@ -155,7 +156,7 @@ const Home = ({ allEvents, homeData }) => {
                       >
                         {homeData.featuredButtonText}
                       </Button>
-                    </NextLink>
+                    </NLink>
                   </VStack>
                 </Box>
                 <Box
@@ -203,6 +204,20 @@ const Home = ({ allEvents, homeData }) => {
             <ActiveEventsCarousel
               activeEventsData={activeEventsData}
             />
+            <Box
+              width="100%"
+              textAlign="center"
+              marginTop="16px"
+            >
+              <NextLink
+                to="/events"
+                color="brand.500"
+                fontWeight="bold"
+                marginTop="16px"
+              >
+                Have a look at our past events.
+              </NextLink>
+            </Box>
           </SectionContent>
         </FadeInUp>
       </Section>
