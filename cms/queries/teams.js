@@ -4,14 +4,14 @@ import PrismicClient from '../PrismicClient';
 import SEO from '../seo/SEO';
 
 class TeamsData {
-  constructor(faculty, ecSb, ocSb, ccSb, ecCs, ocCs, ccCs, ecWie, ocWie, ccWie, body) {
+  constructor(faculty, ecSb, ocSb, ccSb, ecCs, ccCs, ttCS, ecWie, ocWie, ccWie, body) {
     this.faculty = TeamsData.mapToMember(faculty);
     this.ecSb = TeamsData.mapToMember(ecSb);
     this.ocSb = TeamsData.mapToMember(ocSb);
     this.ccSb = TeamsData.mapToMember(ccSb);
     this.ecCs = TeamsData.mapToMember(ecCs);
-    this.ocCs = TeamsData.mapToMember(ocCs);
     this.ccCs = TeamsData.mapToMember(ccCs);
+    this.ttCS = TeamsData.mapToMember(ttCS);
     this.ecWie = TeamsData.mapToMember(ecWie);
     this.ocWie = TeamsData.mapToMember(ocWie);
     this.ccWie = TeamsData.mapToMember(ccWie);
@@ -19,7 +19,14 @@ class TeamsData {
   }
 
   static mapToMember(group) {
-    return group.map((type) => type.member);
+    return group.map((type) => type.member).map((member) => ({
+      ...member,
+      linkedIn: member.linkedin ? member.linkedin.url : null,
+      instagram: member.instagram ? member.instagram.url : null,
+      github: member.github ? member.github.url : null,
+      twitter: member.twitter ? member.twitter.url : null,
+      behance: member.behance ? member.behance.url : null,
+    }));
   }
 
   object() {
@@ -29,8 +36,8 @@ class TeamsData {
       ocSb: this.ocSb,
       ccSb: this.ccSb,
       ecCs: this.ecCs,
-      ocCs: this.ocCs,
       ccCs: this.ccCs,
+      ttCS: this.ttCS,
       ecWie: this.ecWie,
       ocWie: this.ocWie,
       ccWie: this.ccWie,
@@ -69,7 +76,7 @@ const getTeamsData = async () => {
             ...memberDetails
           }
         }
-        oc_cs {
+        tt_cs {
           member {
             ...memberDetails
           }
@@ -128,6 +135,16 @@ const getTeamsData = async () => {
           url
         }
       }
+      twitter {
+        ... on _ExternalLink {
+          url
+        }
+      }
+      behance {
+        ... on _ExternalLink {
+          url
+        }
+      }
     }
     `,
   });
@@ -138,15 +155,15 @@ const getTeamsData = async () => {
     if (node) {
       return new TeamsData(
         node.ec_wie,
+        node.ec_sb,
+        node.oc_sb,
+        node.cc_sb,
+        node.ec_cs,
+        node.cc_cs,
+        node.tt_cs,
         node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
-        node.ec_wie,
+        node.oc_wie,
+        node.cc_wie,
         node.body,
       ).object();
     }

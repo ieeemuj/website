@@ -7,7 +7,7 @@ const TeamsGrid = ({ members }) => (
     height="100%"
     width="100%"
     gap="10"
-    alignItems="center"
+    alignItems="start"
     wrap="wrap"
   >
     {members.map((member) => (
@@ -19,6 +19,8 @@ const TeamsGrid = ({ members }) => (
         linkedIn={member.linkedIn}
         instagram={member.instagram}
         github={member.github}
+        twitter={member.twitter}
+        behance={member.behance}
       />
     ))}
   </SimpleGrid>
