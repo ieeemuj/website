@@ -28,7 +28,7 @@ const TeamsContent = ({
           >
             Executive Committee
           </Heading>
-          <TeamsGrid members={teamsData.ecWie} />
+          <TeamsGrid members={teamsData.ecSb} />
           <Heading
             as="h6"
             width="100%"
@@ -38,7 +38,7 @@ const TeamsContent = ({
           >
             Core Committee
           </Heading>
-          <TeamsGrid members={teamsData.ccWie} />
+          <TeamsGrid members={teamsData.ccSb} />
           <Heading
             as="h6"
             width="100%"
@@ -48,7 +48,7 @@ const TeamsContent = ({
           >
             Operating Committee
           </Heading>
-          <TeamsGrid members={teamsData.ocWie} />
+          <TeamsGrid members={teamsData.ocSb} />
         </TabPanel>
         <TabPanel>
           <Heading
@@ -60,7 +60,7 @@ const TeamsContent = ({
           >
             Executive Committee
           </Heading>
-          <TeamsGrid members={teamsData.ecWie} />
+          <TeamsGrid members={teamsData.ecCs} />
           <Heading
             as="h6"
             width="100%"
@@ -70,7 +70,7 @@ const TeamsContent = ({
           >
             Core Committee
           </Heading>
-          <TeamsGrid members={teamsData.ccWie} />
+          <TeamsGrid members={teamsData.ccCs} />
           <Heading
             as="h6"
             width="100%"
@@ -78,9 +78,9 @@ const TeamsContent = ({
             padding={4}
             textAlign="center"
           >
-            Operating Committee
+            Technical Team
           </Heading>
-          <TeamsGrid members={teamsData.ocWie} />
+          <TeamsGrid members={teamsData.ttCS} />
         </TabPanel>
         <TabPanel>
           <Heading

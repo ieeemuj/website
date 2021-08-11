@@ -3,15 +3,15 @@ import {
 } from '@chakra-ui/react';
 
 import {
-  FaLinkedinIn, FaInstagram, FaGithub,
+  FaLinkedinIn, FaInstagram, FaGithub, FaTwitter, FaBehance,
 } from 'react-icons/fa';
 
 const CreditsContent = ({
-  name, image, position, linkedIn, instagram, github,
+  name, image, position, linkedIn, instagram, github, twitter, behance,
 }) => (
   <VStack
     marginY="2em"
-    justifyItems="center"
+    justifyItems="start"
     alignItems="center"
   >
     <Avatar
@@ -35,30 +35,56 @@ const CreditsContent = ({
       width="100%"
       justify="center"
     >
+      {linkedIn && (
       <IconButton
         as={Link}
-        href={`https://www.linkedin.com/in/${linkedIn}`}
+        href={linkedIn}
         variant="ghost"
         aria-label={`Linkedin link of ${name}`}
         icon={<FaLinkedinIn />}
         colorScheme="linkedin"
       />
+      )}
+      {instagram && (
       <IconButton
         as={Link}
-        href={`https://www.instagram.com/${instagram}`}
+        href={instagram}
         variant="ghost"
         aria-label={`Instagram link of ${name}`}
         icon={<FaInstagram />}
         colorScheme="pink"
       />
+      )}
+      {github && (
       <IconButton
         as={Link}
-        href={`https://www.github.com/${github}`}
+        href={github}
         variant="ghost"
         aria-label={`GitHub link of ${name}`}
         icon={<FaGithub />}
         colorScheme="facebook"
       />
+      )}
+      {twitter && (
+      <IconButton
+        as={Link}
+        href={twitter}
+        variant="ghost"
+        aria-label={`GitHub link of ${name}`}
+        icon={<FaTwitter />}
+        colorScheme="facebook"
+      />
+      )}
+      {behance && (
+      <IconButton
+        as={Link}
+        href={twitter}
+        variant="ghost"
+        aria-label={`GitHub link of ${name}`}
+        icon={<FaBehance />}
+        colorScheme="facebook"
+      />
+      )}
     </HStack>
   </VStack>
 );
