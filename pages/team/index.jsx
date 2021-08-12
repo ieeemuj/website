@@ -39,13 +39,11 @@ const AboutUs = ({ teamsData }) => (
       </FadeInUp>
     </TitleHeader>
     <Section>
-      <FadeInUp>
-        <SectionContent>
-          <TeamsContent
-            teamsData={teamsData}
-          />
-        </SectionContent>
-      </FadeInUp>
+      <SectionContent>
+        <TeamsContent
+          teamsData={teamsData}
+        />
+      </SectionContent>
     </Section>
     <FadeInUp>
       <JoinUsBanner />

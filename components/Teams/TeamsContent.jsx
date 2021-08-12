@@ -1,118 +1,91 @@
 import {
-  Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading,
+  Tabs, TabList, TabPanels, Tab, TabPanel, Box, Divider,
 } from '@chakra-ui/react';
-import TeamsGrid from './TeamsGrid';
+import TeamsSection from './TeamsSection';
 
 const TeamsContent = ({
   teamsData,
 }) => (
   <Box>
-    <Tabs isFitted>
+    <Tabs
+      defaultIndex={1}
+      isFitted
+    >
       <TabList>
-        <Tab _focus={{ outline: 'none' }}>Faculty</Tab>
-        <Tab _focus={{ outline: 'none' }}>IEEE SB MUJ</Tab>
-        <Tab _focus={{ outline: 'none' }}>IEEE CS Society</Tab>
-        <Tab _focus={{ outline: 'none' }}>IEEE WIE</Tab>
+        <Tab
+          _focus={{ outline: 'none' }}
+        >
+          Faculty
+        </Tab>
+        <Tab
+          _focus={{ outline: 'none' }}
+        >
+          IEEE SB MUJ
+        </Tab>
+        <Tab
+          _focus={{ outline: 'none' }}
+        >
+          IEEE CS Society
+        </Tab>
+        <Tab
+          _focus={{ outline: 'none' }}
+        >
+          IEEE WIE
+        </Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
-          <TeamsGrid members={teamsData.ecWie} />
+          <TeamsSection
+            data={teamsData.ecSb}
+          />
         </TabPanel>
         <TabPanel>
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Executive Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ecSb} />
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Core Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ccSb} />
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Operating Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ocSb} />
+          <TeamsSection
+            heading="Executive Committee"
+            data={teamsData.ecSb}
+          />
+          <Divider />
+          <TeamsSection
+            heading="Core Committee"
+            data={teamsData.ccSb}
+          />
+          <Divider />
+          <TeamsSection
+            heading="Operating Committee"
+            data={teamsData.ocSb}
+          />
         </TabPanel>
         <TabPanel>
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Executive Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ecCs} />
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Core Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ccCs} />
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Technical Team
-          </Heading>
-          <TeamsGrid members={teamsData.ttCS} />
+          <TeamsSection
+            heading="Executive Committee"
+            data={teamsData.ecCs}
+          />
+          <Divider />
+          <TeamsSection
+            heading="Core Committee"
+            data={teamsData.ccCs}
+          />
+          <Divider />
+          <TeamsSection
+            heading="Technical Team"
+            data={teamsData.ttCS}
+          />
         </TabPanel>
         <TabPanel>
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Executive Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ecWie} />
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Core Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ccWie} />
-          <Heading
-            as="h6"
-            width="100%"
-            size="md"
-            padding={4}
-            textAlign="center"
-          >
-            Operating Committee
-          </Heading>
-          <TeamsGrid members={teamsData.ocWie} />
+          <TeamsSection
+            heading="Executive Committee"
+            data={teamsData.ecWie}
+          />
+          <Divider />
+          <TeamsSection
+            heading="Core Committee"
+            data={teamsData.ccWie}
+          />
+          <Divider />
+          <TeamsSection
+            heading="Operating Committee"
+            data={teamsData.ocWie}
+          />
         </TabPanel>
       </TabPanels>
     </Tabs>
