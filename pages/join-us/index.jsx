@@ -6,8 +6,6 @@ import {
 
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 import SocietyCard from '../../components/MembershipDrive/SocietyCard';
-import Slideshow from '../../components/MembershipDrive/Slideshow';
-import Benefits from '../../components/MembershipDrive/Benefits';
 import Plans from '../../components/MembershipDrive/plans';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
@@ -87,7 +85,6 @@ const JoinUs = () => (
           spacing="10"
         >
           <Plans />
-          <Benefits />
         </SimpleGrid>
       </FadeInUp>
       <FadeInUp>
@@ -142,9 +139,7 @@ const JoinUs = () => (
           spacingX="80px"
           spacingY="90px"
           minChildWidth="150px"
-        >
-          <Slideshow />
-        </SimpleGrid>
+        />
       </FadeInUp>
     </ResponsiveContainer>
   </main>

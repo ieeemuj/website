@@ -136,8 +136,6 @@ const Membership = ({ membershipData }) => (
 export async function getStaticProps() {
   const membershipData = await getMembershipData();
 
-  console.log(membershipData);
-
   if (membershipData) {
     return {
       props: {
