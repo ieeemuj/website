@@ -38,7 +38,7 @@ const JoinUsBanner = () => (
           </Text>
         </VStack>
         <NextLink
-          href="/join-us"
+          href="/membership"
           passHref
         >
           <Button
