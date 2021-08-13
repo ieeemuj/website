@@ -20,11 +20,14 @@ const ActiveEventsCarousel = ({ activeEventsData }) => (
           height="455px"
           justify="center"
           alignItems="center"
+          textAlign="center"
         >
           <Heading
             size="md"
           >
-            Come back later!
+            None at the moment.
+            <br />
+            Have a look at our past events!
           </Heading>
         </Flex>
       )}

@@ -98,16 +98,14 @@ const Events = ({ allEvents }) => {
         </FadeInUp>
       </Section>
       <Section>
-        <FadeInUp>
-          <SectionHeader>
-            <PastEventsHeader />
-          </SectionHeader>
-          <SectionContent>
-            <PastEventsGrid
-              allEventsData={pastEventsData}
-            />
-          </SectionContent>
-        </FadeInUp>
+        <SectionHeader>
+          <PastEventsHeader />
+        </SectionHeader>
+        <SectionContent>
+          <PastEventsGrid
+            allEventsData={pastEventsData}
+          />
+        </SectionContent>
       </Section>
     </main>
   );
