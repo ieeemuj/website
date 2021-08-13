@@ -12,8 +12,6 @@ const NextLink = ({ to, children, ...props }) => (
       passHref
     >
       <Link
-        px={2}
-        py={1}
         _hover={{
           textDecoration: 'none',
         }}
