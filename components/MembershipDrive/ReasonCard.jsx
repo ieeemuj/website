@@ -1,53 +1,35 @@
-import React from 'react';
-import {
-  Image, Box, Heading, HStack, Text, VStack,
-} from '@chakra-ui/react';
-
-const testImg = 'https://source.unsplash.com/100x100';
+import React from "react";
+import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 
 const ReasonCard = () => (
   <Box
     maxW="600px"
-    rounded="md"
+    rounded=""
     width="100%"
+    paddingTop="30px"
+    borderTop="5px solid #f0f0f0"
   >
-    <HStack
-      spacing="2"
-      width="100%"
-      alignItems="flex-start"
-    >
-      <Box
-        height="auto"
-        flexShrink="0"
-        flexGrow="0"
-      >
-        <Image
-          src={testImg}
-          rounded="lg"
-          width="100px"
-        />
-      </Box>
-
-      <VStack
-        spacing="2"
-        align="left"
-        paddingX="20px"
-      >
-        <Heading
-          as="h3"
-          size="md"
-        >
-          Discover
-        </Heading>
-        <Text
-          fontSize="sm"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras sed sapien ornare lacus imperdiet efficitur posuere vel justo.
-          Proin fringilla pellentesque neque, nec venenatis metus.
+    <VStack spacing="2" align="" paddingX="20px" paddingY="5px">
+      <HStack spacing="10" width="100%" alignItems="flex-start">
+        <Box height="auto" flexShrink="0" flexGrow="0" float="left">
+          <StarIcon />
+        </Box>
+        <Box height="auto" float="right">
+          <Heading as="h3" size="md">
+            IEEE Accelerator Program
+          </Heading>
+          <br />
+        </Box>
+      </HStack>
+      <HStack>
+        <Text fontSize="sm" color="grey" marginBottom="20px">
+          Learn important industry-relevant skills from senior IEEE CS members.
+          Curated tasks and projects to advance your programming skills! Build
+          your career with your IEEE industry mentors!
         </Text>
-      </VStack>
-    </HStack>
+      </HStack>
+    </VStack>
   </Box>
 );
 

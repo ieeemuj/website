@@ -8,7 +8,6 @@ import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 import SocietyCard from '../../components/MembershipDrive/SocietyCard';
 import Slideshow from '../../components/MembershipDrive/Slideshow';
 import Benefits from '../../components/MembershipDrive/Benefits';
-import Plans from '../../components/MembershipDrive/plans';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
 
@@ -81,14 +80,7 @@ const JoinUs = () => (
         </SimpleGrid>
       </FadeInUp>
       <FadeInUp>
-        <SimpleGrid
-          py="32px"
-          columns={['1', '1', '1', '2', '2']}
-          spacing="10"
-        >
-          <Plans />
           <Benefits />
-        </SimpleGrid>
       </FadeInUp>
       <FadeInUp>
         <SimpleGrid
@@ -115,7 +107,6 @@ const JoinUs = () => (
           spacingX="50px"
           spacingY="50px"
         >
-          <SocietyCard />
           <SocietyCard />
           <SocietyCard />
         </SimpleGrid>
