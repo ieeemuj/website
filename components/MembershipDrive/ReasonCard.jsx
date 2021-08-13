@@ -8,6 +8,7 @@ const testImg = 'https://source.unsplash.com/100x100';
 const ReasonCard = ({ reason }) => (
   <Box
     maxW="600px"
+    minH="120px"
     rounded="md"
     width="100%"
   >

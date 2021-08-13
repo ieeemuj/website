@@ -8,7 +8,7 @@ const Benefits = ({ data }) => (
   >
     <Heading
       as="h1"
-      size="lg"
+      size="md"
       width="100%"
       textAlign={['center', 'center', 'center', 'center', 'left']}
     >
@@ -16,7 +16,7 @@ const Benefits = ({ data }) => (
     </Heading>
     <VStack
       width="100%"
-      spacing="10"
+      spacing="5"
     >
       {data.reasons.map((reason) => (
         <ReasonCard reason={reason} />
