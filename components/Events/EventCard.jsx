@@ -12,8 +12,8 @@ import FadeInUp from '../FadeInUp';
 const EventCard = ({
   slug, image, club, title, status,
 }) => (
-  <FadeInUp>
-    <LinkBox>
+  <LinkBox>
+    <FadeInUp>
       <Box
         boxShadow="md"
         margin="10px"
@@ -58,8 +58,8 @@ const EventCard = ({
           </VStack>
         </VStack>
       </Box>
-    </LinkBox>
-  </FadeInUp>
+    </FadeInUp>
+  </LinkBox>
 );
 
 export default EventCard;

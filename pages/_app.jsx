@@ -37,7 +37,7 @@ const MyApp = ({ Component, pageProps }) => {
     <ChakraProvider theme={theme}>
       <CSSReset />
       <DefaultSeo
-        titleTemplate="IEEE SB MUJ | %s"
+        titleTemplate="%s | IEEE SB MUJ"
         description="IEEE Student Branch, Manipal University Jaipur is a group of driven individuals striving to create and spread awareness about various technologies that surround us."
         openGraph={{
           type: 'website',

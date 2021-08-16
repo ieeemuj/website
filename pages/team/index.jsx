@@ -1,16 +1,33 @@
 import React from 'react';
 import { Heading, Text } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import JoinUsBanner from '../../components/Layout/JoinUsBanner';
 import Section from '../../components/Home/Section';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import TeamsContent from '../../components/Teams/TeamsContent';
 import TitleHeader from '../../components/Layout/TitleHeader';
-import NavLink from '../../components/Layout/Navbar/NavLink';
 import FadeInUp from '../../components/FadeInUp';
 import getTeamsData from '../../cms/queries/teams';
+import NextLink from '../../components/NextLink';
 
 const AboutUs = ({ teamsData }) => (
   <main>
+    <NextSeo
+      title={teamsData.seo.title}
+      description={teamsData.seo.description}
+      canonical="https://ieeemuj.com/team"
+      openGraph={{
+        description: teamsData.seo.description,
+        images: [
+          {
+            height: teamsData.seo.image.dimensions.height,
+            width: teamsData.seo.image.dimensions.width,
+            url: teamsData.seo.image.url,
+            alt: teamsData.seo.image.alt,
+          },
+        ],
+      }}
+    />
     <TitleHeader>
       <FadeInUp>
         <Heading
@@ -21,7 +38,7 @@ const AboutUs = ({ teamsData }) => (
           padding="16px"
           rounded="lg"
         >
-          TEAMS
+          TEAM
         </Heading>
         <Text
           fontSize="lg"
@@ -32,9 +49,13 @@ const AboutUs = ({ teamsData }) => (
           rounded="lg"
         >
           Looking for Website Team?
-          <NavLink to="/credits">
+          <br />
+          <NextLink
+            color="white"
+            to="/credits"
+          >
             <span>WEBSITE CREDITS</span>
-          </NavLink>
+          </NextLink>
         </Text>
       </FadeInUp>
     </TitleHeader>
