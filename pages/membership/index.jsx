@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useState, useRef, useEffect } from "react";
 import {
-  SimpleGrid, Heading, Button, Box, Link, Text,
+  SimpleGrid, Heading, Button, Link, Text, Flex,
 } from '@chakra-ui/react';
 
 import { NextSeo } from 'next-seo';
@@ -57,39 +57,6 @@ const Membership = ({ membershipData }) => (
     </TitleHeader>
     <ResponsiveContainer>
       <FadeInUp>
-        <SimpleGrid py="32px" columns={2} minChildWidth="180px">
-          <Box>
-            <Link href="https://www.ieee.org">
-              <Button
-                as={Link}
-                float="right"
-                bgColor="brand.700"
-                boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
-                padding="16px"
-                rounded="lg"
-                color="white"
-                _hover={{
-                  border: 'none',
-                  textDecoration: 'none',
-                }}
-                _active={{
-                  border: 'none',
-                  boxShadow: 'none',
-                  transform: 'scale(0.97)',
-                }}
-                _focus={{
-                  border: 'none',
-                  boxShadow: 'none',
-                  bg: 'brand',
-                }}
-              >
-                REGISTER
-              </Button>
-            </Link>
-          </Box>
-        </SimpleGrid>
-      </FadeInUp>
-      <FadeInUp>
         <SimpleGrid
           py="32px"
           columns={['1', '1', '1', '1', '3']}
@@ -99,6 +66,41 @@ const Membership = ({ membershipData }) => (
           <Benefits data={membershipData.reason2} />
           <Benefits data={membershipData.reason3} />
         </SimpleGrid>
+      </FadeInUp>
+      <FadeInUp>
+        <Flex
+          direction="row"
+          justify="center"
+        >
+          <Link
+            target="_blank"
+            href="https://www.ieee.org"
+          >
+            <Button
+              bgColor="brand.700"
+              boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+              padding="16px"
+              rounded="lg"
+              color="white"
+              _hover={{
+                border: 'none',
+                textDecoration: 'none',
+              }}
+              _active={{
+                border: 'none',
+                boxShadow: 'none',
+                transform: 'scale(0.97)',
+              }}
+              _focus={{
+                border: 'none',
+                boxShadow: 'none',
+                bg: 'brand',
+              }}
+            >
+              REGISTER
+            </Button>
+          </Link>
+        </Flex>
       </FadeInUp>
 
       <FadeInUp>
