@@ -1,55 +1,58 @@
 import {
   Box,
-  Circle,
   Flex,
-  HStack,
   Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { Quotee } from "./Quotee";
-import { QuoteIcon } from "./QuoteIcon";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import Quotee from './Quotee';
+import QuoteIcon from './QuoteIcon';
 
 const TestimonialCard = ({ testimonial }) => (
   <Box
     as="section"
-    bg={useColorModeValue("gray.50", "gray.800")}
-    borderRadius="20px"
+    bg="gray.50"
+    borderRadius="lg"
     boxShadow="xl"
   >
     <Box
       maxW="3xl"
+      height="100%"
       mx="auto"
       px={{
-        base: "6",
-        md: "8",
+        base: '6',
+        md: '8',
       }}
       pt="12"
       pb="16"
-      // borderLeftRadius="20px"
     >
-      <Flex direction="column" align="left" textAlign="center">
+      <Flex
+        direction="column"
+        align="left"
+        justify="space-between"
+        height="100%"
+        textAlign="center"
+      >
         <QuoteIcon
-          color={useColorModeValue("gray.200", "gray.400")}
+          color="gray.200"
           fontSize={{
-            base: "3xl",
-            md: "6xl",
+            base: '3xl',
+            md: '6xl',
           }}
         />
         <Text
           fontSize={{
-            base: "md",
-            md: "lg",
+            base: 'md',
+            md: 'lg',
           }}
           fontWeight="medium"
           mt="6"
         >
-          &ldquo;{testimonial.testimonial_text}&rdquo;
+          {testimonial.testimonial_text}
         </Text>
         <Quotee
           name={testimonial.testimonial_author}
           jobTitle={testimonial.testimonial_author_title}
-          imageSrc="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTN8fGxhZHklMjBoZWFkc2hvdCUyMHNtaWxpbmd8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          imageSrc={testimonial.author_profile_pic.url}
           mt="8"
         />
       </Flex>

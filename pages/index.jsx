@@ -92,12 +92,12 @@ const Home = ({ allEvents, homeData }) => {
                 minH="calc(100vh - 96px)"
                 boxSizing="border-box"
                 justify={['center', 'center', 'center', 'center', 'start']}
-                py={['0px', '0px', '0px', '0px', '64px']}
+                pt={['0px', '0px', '0px', '0px', '64px']}
                 alignItems={['center', 'center', 'center', 'center', 'flex-start']}
                 spacing="10"
               >
                 <Heading
-                  fontSize={['4xl', '5xl', '7xl', '7xl', '6xl', '6xl']}
+                  fontSize={['4xl', '5xl', '7xl', '7xl', '5xl', '5xl']}
                   color="white"
                   textAlign={['center', 'center', 'center', 'center', 'left']}
                 >
@@ -194,7 +194,7 @@ const Home = ({ allEvents, homeData }) => {
         </FadeInUp>
       </Section>
       <Section
-        bgColor="whitesmoke"
+        bgColor="gray.50"
       >
         <FadeInUp>
           <SectionHeader>

@@ -28,8 +28,12 @@ const Events = ({ allEvents }) => {
 
       if (status === 'COMPLETED') {
         tempObj.status = status;
+        delete tempObj.linkToRegistrationForm;
         tempPast.push(tempObj);
       } else {
+        if (status === 'ONGOING') {
+          delete tempObj.linkToRegistrationForm;
+        }
         tempObj.status = status;
         tempActive.push(tempObj);
       }
@@ -84,7 +88,7 @@ const Events = ({ allEvents }) => {
         </FadeInUp>
       </TitleHeader>
       <Section
-        bgColor="whitesmoke"
+        bgColor="gray.50"
       >
         <FadeInUp>
           <SectionHeader>

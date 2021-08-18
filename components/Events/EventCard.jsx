@@ -15,12 +15,16 @@ const EventCard = ({
   <LinkBox>
     <FadeInUp>
       <Box
-        boxShadow="md"
+        boxShadow="xl"
         margin="10px"
         rounded="lg"
         bg="white"
         width={320}
         minH={455}
+        transition="transform 250ms"
+        _hover={{
+          transform: 'translate(0px, -5px)',
+        }}
       >
         {/* <Link passHref href={`/events/${title}`}> */}
         <VStack align="flex-start">

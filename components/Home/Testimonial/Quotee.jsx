@@ -1,8 +1,10 @@
-import { Box, Img, Text } from '@chakra-ui/react'
-import * as React from 'react'
+import { Box, Img, Text } from '@chakra-ui/react';
+import * as React from 'react';
 
-export const Quotee = (props) => {
-  const { name, jobTitle, imageSrc, ...boxProps } = props
+const Quotee = (props) => {
+  const {
+    name, jobTitle, imageSrc, ...boxProps
+  } = props;
   return (
     <Box {...boxProps}>
       <Img src={imageSrc} mx="auto" objectFit="cover" w="16" h="16" rounded="full" />
@@ -15,5 +17,7 @@ export const Quotee = (props) => {
         </Text>
       </Box>
     </Box>
-  )
-}
+  );
+};
+
+export default Quotee;

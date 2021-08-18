@@ -7,7 +7,7 @@ const TestimonialHeader = () => (
       size="lg"
       textAlign="center"
     >
-      What People Have To Say
+      Straight from the heart. ❤️
     </Heading>
     <Heading
       color="brand.500"
