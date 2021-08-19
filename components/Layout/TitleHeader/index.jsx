@@ -12,7 +12,8 @@ const TitleHeader = ({ children }) => (
     <ResponsiveContainer>
       <VStack
         rounded="lg"
-        py="32px"
+        pt="32px"
+        pb="56px"
         spacing="2"
       >
         {children}
