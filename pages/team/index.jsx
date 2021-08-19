@@ -223,14 +223,14 @@ const AboutUs = () => {
             textAlign="center"
             color="white"
             backgroundColor="brand.700"
-            padding="16px"
+            padding="8px"
             rounded="lg"
           >
             TEAMS
           </Heading>
           <Text
-            fontSize="lg"
-            color="white"
+            fontSize="md"
+            color="gray.200"
             textAlign="center"
             backgroundColor="brand.700"
             padding="8px"

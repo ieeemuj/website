@@ -85,7 +85,7 @@ const Credits = () => {
             textAlign="center"
             color="white"
             backgroundColor="brand.700"
-            padding="16px"
+            padding="8px"
             rounded="lg"
           >
             Website Team & Credits
