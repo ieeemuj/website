@@ -3,8 +3,6 @@ import {
   Image, Box, Heading, HStack, Text, VStack,
 } from '@chakra-ui/react';
 
-const testImg = 'https://source.unsplash.com/100x100';
-
 const ReasonCard = ({ reason }) => (
   <Box
     maxW="600px"
@@ -23,9 +21,9 @@ const ReasonCard = ({ reason }) => (
         flexGrow="0"
       >
         <Image
-          src={testImg}
+          src={reason.icon.url}
           rounded="lg"
-          width="72px"
+          width="48px"
         />
       </Box>
 
