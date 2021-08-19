@@ -16,6 +16,7 @@ const PastEventsGrid = ({ allEventsData }) => (
         club={eventObj.club}
         title={eventObj.prismicTitle}
         status={eventObj.status}
+        fade
       />
     ))}
   </SimpleGrid>
