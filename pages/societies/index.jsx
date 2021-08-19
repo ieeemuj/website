@@ -77,8 +77,8 @@ const Societies = () => {
       </TitleHeader>
       <Box marginBottom="3rem">
         {sectionData.map((item) => (
-          <Box paddingTop="32px" paddingBottom="32px">
-            <ResponsiveContainer key={item.heading}>
+          <Box paddingTop="32px" paddingBottom="32px" key={item.heading}>
+            <ResponsiveContainer>
               <FadeInUp>
                 {/* <SectionHeader> */}
                 {/* <SocietiesHeader
