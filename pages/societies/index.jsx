@@ -1,5 +1,7 @@
 import React from 'react';
-import { Divider, Heading, Text } from '@chakra-ui/react';
+import {
+  Divider, Heading, Text, Box,
+} from '@chakra-ui/react';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import SocietiesHeader from '../../components/Societies/SocietiesHeader';
@@ -7,6 +9,8 @@ import SectionContent from '../../components/Home/Section/SectionContent';
 import SocietiesContent from '../../components/Societies/SocietiesContent';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
+
+import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 
 const Societies = () => {
   const sectionData = [
@@ -54,14 +58,14 @@ const Societies = () => {
             textAlign="center"
             color="white"
             backgroundColor="brand.700"
-            padding="16px"
+            padding="8px"
             rounded="lg"
           >
             SOCIETIES
           </Heading>
           <Text
-            fontSize="lg"
-            color="white"
+            fontSize="md"
+            color="gray.200"
             textAlign="center"
             backgroundColor="brand.700"
             padding="8px"
@@ -71,39 +75,43 @@ const Societies = () => {
           </Text>
         </FadeInUp>
       </TitleHeader>
-      {sectionData.map((item) => (
-        <Section key={item.heading}>
-          <FadeInUp>
-            <SectionHeader>
-              <SocietiesHeader
+      <Box marginBottom="3rem">
+        {sectionData.map((item) => (
+          <Box paddingTop="32px" paddingBottom="32px">
+            <ResponsiveContainer key={item.heading}>
+              <FadeInUp>
+                {/* <SectionHeader> */}
+                {/* <SocietiesHeader
                 heading={item.heading}
                 headingColor={item.headingColor}
                 subHeading={item.subHeading}
                 subHeadingColor={item.subHeadingColor}
-              />
-            </SectionHeader>
-            <Divider backgroundColor={item.dividerBg} height="0.7" />
-            <SectionContent>
-              <SocietiesContent
-                alignment={item.alignment}
-                altText={item.heading}
-                titleQues={item.titleQues}
-                alignText={item.alignText}
-                alignImg={item.alignImg}
-                instaUrl={item.instaUrl}
-                twitterUrl={item.twitterUrl}
-                linkedInUrl={item.linkedInUrl}
-                imgSrc={item.imgSrc}
-                imgMarginTop={item.imgMarginTop}
-                imgMarginBottom={item.imgMarginBottom}
-                imgMarginRight={item.imgMarginRight}
-                imgWidth={item.imgWidth}
-              />
-            </SectionContent>
-            <Divider backgroundColor={item.dividerBg} height="0.7" />
-          </FadeInUp>
-        </Section>
-      ))}
+              /> */}
+                {/* </SectionHeader> */}
+                {/* <Divider backgroundColor={item.dividerBg} height="0.7" /> */}
+                <SectionContent>
+                  <SocietiesContent
+                    alignment={item.alignment}
+                    altText={item.heading}
+                    titleQues={item.titleQues}
+                    alignText={item.alignText}
+                    alignImg={item.alignImg}
+                    instaUrl={item.instaUrl}
+                    twitterUrl={item.twitterUrl}
+                    linkedInUrl={item.linkedInUrl}
+                    imgSrc={item.imgSrc}
+                    imgMarginTop={item.imgMarginTop}
+                    imgMarginBottom={item.imgMarginBottom}
+                    imgMarginRight={item.imgMarginRight}
+                    imgWidth={item.imgWidth}
+                  />
+                </SectionContent>
+                {/* <Divider backgroundColor={item.dividerBg} height="0.7" /> */}
+              </FadeInUp>
+            </ResponsiveContainer>
+          </Box>
+        ))}
+      </Box>
     </main>
   );
 };

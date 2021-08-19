@@ -1,5 +1,5 @@
 import {
-  Box, Heading, Text, Image, Link, Button, Stack,
+  Box, Heading, Text, Image, Link, Button, Stack, HStack,
 } from '@chakra-ui/react';
 import { FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 
@@ -19,7 +19,7 @@ const SocietiesContent = ({
       <Box
         float={alignImg}
         marginX="6"
-        maxW="480px"
+        maxW="300px"
         display={['block', 'block', 'inline', 'inline-block', 'inline-block']}
       >
         <Image
@@ -34,13 +34,13 @@ const SocietiesContent = ({
       </Box>
       )}
     <Box
-      width={['100%', '100%', '100%', '100%', '50%']}
+      width={['100%', '100%', '100%', '100%', '100%']}
       float={alignText}
       paddingX="6"
     >
       <Heading
         size="md"
-        marginBottom="2"
+        marginBottom="4"
       >
         {titleQues}
       </Heading>
@@ -55,23 +55,27 @@ const SocietiesContent = ({
         Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 
       </Text>
-      <Box
-        float={alignText}
-        marginTop="3em"
+      <HStack
+        spacing="1"
+        // float={alignText}
+        marginTop="1em"
       >
         <Link href={twitterUrl}>
-          <Button colorScheme="twitter" size="lg">
-            <FaTwitter />
-            {' '}
+          <Button colorScheme="twitter" variant="ghost" size="sm" rounded="full" w="10" h="10">
+            <FaTwitter color="twitter" />
           </Button>
         </Link>
         <Link href={instaUrl}>
-          <Button marginX="4" colorScheme="pink" size="lg"><FaInstagram /></Button>
+          <Button colorScheme="pink" variant="ghost" size="sm" rounded="full" w="10" h="10">
+            <FaInstagram />
+          </Button>
         </Link>
         <Link href={linkedInUrl}>
-          <Button colorScheme="linkedin" size="lg"><FaLinkedinIn /></Button>
+          <Button colorScheme="linkedin" variant="ghost" size="sm" rounded="full" w="10" h="10">
+            <FaLinkedinIn />
+          </Button>
         </Link>
-      </Box>
+      </HStack>
     </Box>
     {alignment === 'right'
       && (
@@ -79,6 +83,7 @@ const SocietiesContent = ({
         float={alignImg}
         marginX="6"
         display={['block', 'block', 'inline', 'inline-block', 'inline-block']}
+        maxW="300px"
       >
         <Image
           marginTop={imgMarginTop}
