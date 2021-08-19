@@ -34,7 +34,7 @@ const JoinUsBanner = () => (
             color="brand.500"
             fontSize="lg"
           >
-            Jumstart you career. Become an IEEE Member.
+            Jumpstart you career. Become an IEEE Member.
           </Text>
         </VStack>
         <NextLink
