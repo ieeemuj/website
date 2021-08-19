@@ -90,7 +90,7 @@ const Navbar = () => {
               passHref
             >
               <VStack
-                marginBottom="-18px"
+                // marginBottom="-18px"
                 cursor="pointer"
                 spacing="0"
                 textAlign="justify"
@@ -99,9 +99,9 @@ const Navbar = () => {
                   size="md"
                   color="white"
                 >
-                  IEEE STUDENT BRANCH
+                  IEEE SB MUJ
                 </Heading>
-                <Heading
+                {/* <Heading
                   size="xs"
                   color="white"
                   width="100%"
@@ -112,7 +112,7 @@ const Navbar = () => {
                   }}
                 >
                   MANIPAL UNIVERSITY JAIPUR
-                </Heading>
+                </Heading> */}
               </VStack>
             </NextLink>
 
