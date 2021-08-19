@@ -87,20 +87,22 @@ const Events = ({ allEvents }) => {
           </Text>
         </FadeInUp>
       </TitleHeader>
-      <Section
-        bgColor="gray.50"
-      >
-        <FadeInUp>
-          <SectionHeader>
-            <ActiveEventsHeader />
-          </SectionHeader>
-          <SectionContent>
-            <ActiveEventsCarousel
-              activeEventsData={activeEventsData}
-            />
-          </SectionContent>
-        </FadeInUp>
-      </Section>
+      {activeEventsData.length > 0 && (
+        <Section
+          bgColor="gray.50"
+        >
+          <FadeInUp>
+            <SectionHeader>
+              <ActiveEventsHeader />
+            </SectionHeader>
+            <SectionContent>
+              <ActiveEventsCarousel
+                activeEventsData={activeEventsData}
+              />
+            </SectionContent>
+          </FadeInUp>
+        </Section>
+      )}
       <Section>
         <SectionHeader>
           <PastEventsHeader />
