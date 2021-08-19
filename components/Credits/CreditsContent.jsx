@@ -11,7 +11,6 @@ const CreditsContent = ({
   name, image, position, linkedIn, instagram, github, twitter, behance,
 }) => (
   <FadeInUp>
-
     <VStack
       marginY="2em"
       justifyItems="start"
@@ -77,7 +76,7 @@ const CreditsContent = ({
           as={Link}
           href={twitter}
           variant="ghost"
-          aria-label={`GitHub link of ${name}`}
+          aria-label={`Twitter link of ${name}`}
           icon={<FaTwitter />}
           colorScheme="facebook"
         />
@@ -86,9 +85,9 @@ const CreditsContent = ({
         <IconButton
           target="_blank"
           as={Link}
-          href={twitter}
+          href={behance}
           variant="ghost"
-          aria-label={`GitHub link of ${name}`}
+          aria-label={`Behance link of ${name}`}
           icon={<FaBehance />}
           colorScheme="facebook"
         />
