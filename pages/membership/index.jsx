@@ -149,4 +149,5 @@ export async function getStaticProps() {
     notFound: true,
   };
 }
+
 export default Membership;
