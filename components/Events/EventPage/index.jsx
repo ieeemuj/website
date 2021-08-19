@@ -9,7 +9,8 @@ import getStatus from '../../../utils';
 import EventDetailsGrid from './EventDetailsGrid';
 
 const Event = ({ eventObj }) => {
-  const disabled = getStatus(eventObj.startISO, eventObj.endISO) === 'COMPLETED';
+  const status = getStatus(eventObj.startISO, eventObj.endISO);
+  const disabled = status === 'COMPLETED' || status === 'ONGOING';
 
   return (
     <Stack

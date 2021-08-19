@@ -28,12 +28,8 @@ const Events = ({ allEvents }) => {
 
       if (status === 'COMPLETED') {
         tempObj.status = status;
-        delete tempObj.linkToRegistrationForm;
         tempPast.push(tempObj);
       } else {
-        if (status === 'ONGOING') {
-          delete tempObj.linkToRegistrationForm;
-        }
         tempObj.status = status;
         tempActive.push(tempObj);
       }

@@ -1,3 +1,6 @@
+.rec .rec-slider-container {
+  margin: 0px !important;
+}
 .rec.rec-arrow {
   height: 32px !important;
   width: 32px !important;
