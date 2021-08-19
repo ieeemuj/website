@@ -1,7 +1,6 @@
 import {
   Box, Flex, HStack, Stack, Text, VStack,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import FadeInUp from '../../FadeInUp';
 import ResponsiveContainer from '../ResponsiveContainer';
@@ -12,6 +11,7 @@ import FooterSectionLink from './FooterSectionLink';
 import FooterSectionSocialIcon from './FooterSectionSocialIcon';
 import FooterSectionSocialLink from './FooterSectionSocialLink';
 import NextLink from '../../NextLink';
+import IEEELogo from '../../../public/svg/ieeelogo.svg';
 
 const Footer = () => (
   <>
@@ -39,10 +39,9 @@ const Footer = () => (
             <VStack
               width={['100%', '100%', '100%', '100%', '200%']}
             >
-              <Image
+              <IEEELogo
                 width="256"
                 height="75"
-                src="https://www.dawex.com/hubfs/migration-assets/img/events/ieee-logo.svg"
               />
               <HStack
                 width="100%"

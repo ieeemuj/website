@@ -17,24 +17,42 @@ import NextLink from 'next/link';
 import NavLink from './NavLink';
 import ResponsiveContainer from '../ResponsiveContainer';
 
-const NavLinks = () => (
+const NavLinks = ({ closeMenu }) => (
   <>
-    <NavLink to="/">
+    <NavLink
+      to="/"
+      onClick={closeMenu}
+    >
       <span>HOME</span>
     </NavLink>
-    <NavLink to="/events">
+    <NavLink
+      to="/events"
+      onClick={closeMenu}
+    >
       <span>EVENTS</span>
     </NavLink>
-    <NavLink to="https://medium.com/@ieeemuj">
+    <NavLink
+      to="https://medium.com/@ieeemuj"
+      onClick={closeMenu}
+    >
       <span>BLOG</span>
     </NavLink>
-    <NavLink to="/societies">
+    <NavLink
+      to="/societies"
+      onClick={closeMenu}
+    >
       <span>SOCIETIES</span>
     </NavLink>
-    <NavLink to="/team">
+    <NavLink
+      to="/team"
+      onClick={closeMenu}
+    >
       <span>TEAM</span>
     </NavLink>
-    <NavLink to="/contactus">
+    <NavLink
+      to="/contactus"
+      onClick={closeMenu}
+    >
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
@@ -154,7 +172,7 @@ const Navbar = () => {
               justify="center"
               height="100%"
             >
-              <NavLinks />
+              <NavLinks closeMenu={onClose} />
             </Stack>
           </Box>
         </Collapse>

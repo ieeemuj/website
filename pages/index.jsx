@@ -27,6 +27,8 @@ import styles from '../styles/ScrollIndicator.module.css';
 import getHomeData from '../cms/queries/home';
 import FadeInUp from '../components/FadeInUp';
 import NextLink from '../components/NextLink';
+import BlogsHeader from '../components/Home/Blogs/BlogsHeader';
+import BlogsContent from '../components/Home/Blogs/BlogContent';
 
 const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -91,8 +93,7 @@ const Home = ({ allEvents, homeData }) => {
                 width={['100%', '100%', '100%', '100%', '45%']}
                 minH="calc(100vh - 96px)"
                 boxSizing="border-box"
-                justify={['center', 'center', 'center', 'center', 'start']}
-                pt={['0px', '0px', '0px', '0px', '64px']}
+                justify={['center', 'center', 'center', 'center', 'center']}
                 alignItems={['center', 'center', 'center', 'center', 'flex-start']}
                 spacing="10"
               >
@@ -218,6 +219,16 @@ const Home = ({ allEvents, homeData }) => {
                 Have a look at our past events.
               </NextLink>
             </Box>
+          </SectionContent>
+        </FadeInUp>
+      </Section>
+      <Section>
+        <FadeInUp>
+          <SectionHeader>
+            <BlogsHeader />
+          </SectionHeader>
+          <SectionContent>
+            <BlogsContent blogs={homeData.blogs} />
           </SectionContent>
         </FadeInUp>
       </Section>
