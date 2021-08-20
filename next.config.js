@@ -13,7 +13,7 @@ module.exports = {
           options: {
             prettier: false,
             svgo: true,
-            svgoConfig: { plugins: [{ removeViewBox: true }] },
+            svgoConfig: { plugins: [{ removeViewBox: false }] },
             titleProp: true,
           },
         },
