@@ -74,7 +74,7 @@ const Membership = ({ membershipData }) => (
         >
           <Link
             target="_blank"
-            href="https://www.ieee.org"
+            href="https://www.ieee.org/membership/join/index.html"
           >
             <Button
               bgColor="brand.700"

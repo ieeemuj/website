@@ -18,7 +18,6 @@ const ReasonCard = ({ reason }) => (
       paddingY="5px"
     >
       <HStack
-        spacing="5"
         width="100%"
         alignItems="flex-start"
       >
@@ -40,7 +39,7 @@ const ReasonCard = ({ reason }) => (
       <HStack>
         <Text
           fontSize="sm"
-          color="grey"
+          paddingX="24px"
           marginBottom="20px"
         >
           {RichText.render(reason.summary)}

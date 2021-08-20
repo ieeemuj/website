@@ -41,7 +41,7 @@ const JoinUs = ({ joinUsData }) => (
           padding="8px"
           rounded="lg"
         >
-          LOCAL MEMBERSHIP
+          MEMBERSHIP
         </Heading>
         <Text
           fontSize="md"
