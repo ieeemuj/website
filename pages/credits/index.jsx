@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Box, Heading, SimpleGrid, Text,
+  Heading, Image, SimpleGrid, Wrap,
 } from '@chakra-ui/react';
 import CreditsContent from '../../components/Credits/CreditsContent';
 import CreditsHeader from '../../components/Credits/CreditsHeader';
@@ -9,158 +9,100 @@ import SectionContent from '../../components/Home/Section/SectionContent';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
+import getCreditsData from '../../cms/queries/credits';
 
-const Credits = () => {
-  const teamData = [
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      github: '#',
-    },
-  ];
-  return (
-    <main>
-      <TitleHeader>
-        <FadeInUp>
-          <Heading
-            size="lg"
-            textAlign="center"
-            color="white"
-            backgroundColor="brand.700"
-            padding="8px"
-            rounded="lg"
+const Credits = ({ creditsData }) => (
+  <main>
+    <TitleHeader>
+      <FadeInUp>
+        <Heading
+          size="lg"
+          textAlign="center"
+          color="white"
+          backgroundColor="brand.700"
+          padding="8px"
+          rounded="lg"
+        >
+          Website Team & Credits
+        </Heading>
+      </FadeInUp>
+    </TitleHeader>
+    <Section>
+      <FadeInUp>
+        <SectionHeader>
+          <CreditsHeader
+            heading="Development Team"
+          />
+        </SectionHeader>
+        <SectionContent>
+          <SimpleGrid
+            columns={['1', '1', '2', '2', '3']}
+            height="100%"
+            width="100%"
+            gap="10"
+            alignItems="center"
+            wrap="wrap"
           >
-            Website Team & Credits
-          </Heading>
-        </FadeInUp>
-      </TitleHeader>
-      <Section>
-        <FadeInUp>
-          <SectionHeader>
-            <CreditsHeader heading="Website Team" />
-          </SectionHeader>
-          <SectionContent>
-            <SimpleGrid
-              columns={['1', '1', '2', '2', '3']}
-              height="100%"
-              width="100%"
-              gap="10"
-              alignItems="center"
-              wrap="wrap"
-            >
-              {teamData.map((teamMember) => (
-                <CreditsContent
-                  key={teamMember.name}
-                  name={teamMember.name}
-                  title={teamMember.title}
-                  linkedIn={teamMember.linkedIn}
-                  insta={teamMember.insta}
-                  github={teamMember.github}
-                />
-              ))}
-            </SimpleGrid>
-          </SectionContent>
-        </FadeInUp>
-      </Section>
-      <Section>
-        <FadeInUp>
-          <SectionHeader>
-            <CreditsHeader heading="Tech Stack Used" subHeading="Lorem ipsum dolor sit amet, consectetur adipisicing elit" />
-          </SectionHeader>
-          <SectionContent>
-            <Box paddingX={['2.4em', '6em', '6em', '7em', '8em']} marginBottom="10">
-              <Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium magnam rerum nihil assumenda!
-                Delectus numquam harum necessitatibus culpa non atque error.
-                Ea quae, tempora vero excepturi itaque explicabo quasi officiis!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium magnam rerum nihil assumenda!
-                Delectus numquam harum necessitatibus culpa non atque error.
-                Ea quae, tempora vero excepturi itaque explicabo quasi officiis!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium magnam rerum nihil assumenda!
-                Delectus numquam harum necessitatibus culpa non atque error.
-                Ea quae, tempora vero excepturi itaque explicabo quasi officiis!
-              </Text>
-              <Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium magnam rerum nihil assumenda!
-                Delectus numquam harum necessitatibus culpa non atque error.
-                Ea quae, tempora vero excepturi itaque explicabo quasi officiis!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium magnam rerum nihil assumenda!
-                Delectus numquam harum necessitatibus culpa non atque error.
-                Ea quae, tempora vero excepturi itaque explicabo quasi officiis!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium magnam rerum nihil assumenda!
-                Delectus numquam harum necessitatibus culpa non atque error.
-                Ea quae, tempora vero excepturi itaque explicabo quasi officiis!
-              </Text>
-            </Box>
-          </SectionContent>
-        </FadeInUp>
-      </Section>
-    </main>
-  );
-};
+            {creditsData.team.map((member) => (
+              <CreditsContent
+                key={member.title}
+                image={member.image.url}
+                name={member.title}
+                position={member.dev_position}
+                linkedIn={member.linkedIn}
+                instagram={member.instagram}
+                github={member.github}
+                twitter={member.twitter}
+                behance={member.behance}
+              />
+            ))}
+          </SimpleGrid>
+        </SectionContent>
+      </FadeInUp>
+    </Section>
+    <Section>
+      <FadeInUp>
+        <SectionHeader>
+          <CreditsHeader
+            heading="Technologies"
+          />
+        </SectionHeader>
+        <SectionContent>
+          <Wrap
+            align="center"
+            justify="center"
+            spacing="16"
+          >
+            {creditsData.technologyLogos.map((logoObj) => (
+              <Image
+                objectFit="cover"
+                height="100%"
+                minHeight="72px"
+                maxHeight="128px"
+                src={logoObj.logo.url}
+                alt={logoObj.logo.alt}
+              />
+            ))}
+          </Wrap>
+        </SectionContent>
+      </FadeInUp>
+    </Section>
+  </main>
+);
+
+export async function getStaticProps() {
+  const creditsData = await getCreditsData();
+
+  if (creditsData) {
+    return {
+      props: {
+        creditsData,
+      },
+    };
+  }
+  return {
+    notFound: false,
+  };
+}
 
 export default Credits;

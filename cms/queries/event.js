@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { gql } from '@apollo/client';
 import { DateTime } from 'luxon';
 
@@ -71,6 +72,22 @@ class EventData {
   }
 }
 
+// helper function for pagination
+const getMore = async (QUERY, cursor) => {
+  if (cursor) {
+    return PrismicClient.query({
+      query: QUERY,
+      variables: {
+        cursor,
+      },
+    });
+  }
+
+  return PrismicClient.query({
+    query: QUERY,
+  });
+};
+
 export const getEventByUID = async (uid) => {
   const response = await PrismicClient.query({
     query: gql`
@@ -123,10 +140,9 @@ export const getEventByUID = async (uid) => {
 };
 
 export const getAllSlugs = async () => {
-  const response = await PrismicClient.query({
-    query: gql`
-    query GetAllSlugs {
-      allEvents {
+  const QUERY = gql`
+    query GetAllSlugs ($cursor: String) {
+      allEvents (after: $cursor) {
         edges {
           node {
             _meta {
@@ -134,204 +150,109 @@ export const getAllSlugs = async () => {
             }
           }
         }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
       }
-    }`,
-  });
+    }`;
 
   const arr = [];
+  let hasNext = false;
+  let cursor = null;
 
-  if (response.data.allEvents) {
-    const nodes = response.data.allEvents.edges;
-    nodes.forEach((event) => arr.push(event.node._meta.uid));
-  }
+  do {
+    let response;
+    if (cursor) response = await getMore(QUERY, cursor);
+    else response = await getMore(QUERY);
+
+    hasNext = response.data.allEvents.pageInfo.hasNextPage;
+    cursor = response.data.allEvents.pageInfo.endCursor;
+
+    if (response.data.allEvents) {
+      const nodes = response.data.allEvents.edges;
+      nodes.forEach((event) => arr.push(event.node._meta.uid));
+    }
+  } while (hasNext);
+
+  await Promise.all(arr);
 
   return arr;
 };
 
 export const getAllEvents = async () => {
-  const response = await PrismicClient.query({
-    query: gql`
-    query GetActiveEvents {
-      allEvents {
+  const QUERY = gql`
+    query GetActiveEvents ($cursor: String) {
+      allEvents (after: $cursor) {
         edges {
           node {
-            title,
-            club,
-            cover_image,
-            start_time,
-            end_time,
-            location,
-            fee,
-            prize,
-            team_size,
+            title
+            club
+            cover_image
+            start_time
+            end_time
+            location
+            fee
+            prize
+            team_size
             link_to_registration_form {
               ... on _ExternalLink {
                 url
               }
-            },
-            description,
+            }
+            description
             _meta {
-              uid,
+              uid
               tags
             }
           }
+          cursor
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
         }
       }
-    }`,
-  });
+    }
+  `;
 
   const arr = [];
+  let hasNext = false;
+  let cursor = null;
 
-  if (response.data.allEvents) {
-    const nodes = response.data.allEvents.edges;
-    nodes.forEach((event) => {
-      const { node } = event;
-      const newEvent = new EventData(
-        node.title,
-        node.club,
-        node.cover_image,
-        node.start_time,
-        node.end_time,
-        node.location,
-        node.fee,
-        node.prize,
-        node.team_size,
-        node.link_to_registration_form,
-        node.description,
-        node._meta.uid,
-        node._meta.tags,
-      );
-      arr.push(newEvent.object());
-    });
-  }
+  do {
+    let response;
+    if (cursor) response = await getMore(QUERY, cursor);
+    else response = await getMore(QUERY);
 
-  return arr;
-};
+    hasNext = response.data.allEvents.pageInfo.hasNextPage;
+    cursor = response.data.allEvents.pageInfo.endCursor;
 
-export const getAllPastEvents = async (isoDateString) => {
-  const prismicISOStr = EventData.formatISOWithoutMillis(isoDateString);
-  const response = await PrismicClient.query({
-    query: gql`
-    query GetActiveEvents {
-      allEvents(where: { end_time_before: $currentDateTime }) {
-        edges {
-          node {
-            title,
-            club,
-            cover_image,
-            start_time,
-            end_time,
-            location,
-            fee,
-            prize,
-            team_size,
-            link_to_registration_form {
-              ... on _ExternalLink {
-                url
-              }
-            },
-            description,
-            _meta {
-              uid,
-              tags
-            }
-          }
-        }
-      }
-    }`,
-    variables: {
-      currentDateTime: prismicISOStr,
-    },
-  });
+    if (response.data.allEvents) {
+      const nodes = response.data.allEvents.edges;
+      nodes.forEach((event) => {
+        const { node } = event;
+        const newEvent = new EventData(
+          node.title,
+          node.club,
+          node.cover_image,
+          node.start_time,
+          node.end_time,
+          node.location,
+          node.fee,
+          node.prize,
+          node.team_size,
+          node.link_to_registration_form,
+          node.description,
+          node._meta.uid,
+          node._meta.tags,
+        );
+        arr.push(newEvent.object());
+      });
+    }
+  } while (hasNext);
 
-  const arr = [];
-
-  if (response.data.allEvents) {
-    const nodes = response.data.allEvents.edges;
-    nodes.forEach((event) => {
-      const { node } = event;
-      const newEvent = new EventData(
-        node.title,
-        node.club,
-        node.cover_image,
-        node.start_time,
-        node.end_time,
-        node.location,
-        node.fee,
-        node.prize,
-        node.team_size,
-        node.link_to_registration_form,
-        node.description,
-        node._meta.uid,
-        node._meta.tags,
-      );
-      arr.push(newEvent.object());
-    });
-  }
-
-  return arr;
-};
-
-export const getAllActiveEvents = async (isoDateString) => {
-  const prismicISOStr = EventData.formatISOWithoutMillis(isoDateString);
-  const response = await PrismicClient.query({
-    query: gql`
-    query GetActiveEvents {
-      allEvents(where: { end_time_after: $currentDateTime }) {
-        edges {
-          node {
-            title,
-            club,
-            cover_image,
-            start_time,
-            end_time,
-            location,
-            fee,
-            prize,
-            team_size,
-            link_to_registration_form {
-              ... on _ExternalLink {
-                url
-              }
-            },
-            description,
-            _meta {
-              uid,
-              tags
-            }
-          }
-        }
-      }
-    }`,
-    variables: {
-      currentDateTime: prismicISOStr,
-    },
-  });
-
-  const arr = [];
-
-  if (response.data.allEvents) {
-    const nodes = response.data.allEvents.edges;
-    nodes.forEach((event) => {
-      const { node } = event;
-      const newEvent = new EventData(
-        node.title,
-        node.club,
-        node.cover_image,
-        node.start_time,
-        node.end_time,
-        node.location,
-        node.fee,
-        node.prize,
-        node.team_size,
-        node.link_to_registration_form,
-        node.description,
-        node._meta.uid,
-        node._meta.tags,
-      );
-      arr.push(newEvent.object());
-    });
-  }
+  await Promise.all(arr);
 
   return arr;
 };

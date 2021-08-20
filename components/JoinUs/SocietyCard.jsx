@@ -1,51 +1,46 @@
 import React from 'react';
 import {
-  Image, Box, Heading, HStack, Text, VStack,
+  Image, Box, Heading, Stack, Text, VStack,
 } from '@chakra-ui/react';
 
-const ReasonCard = ({ reason }) => (
+const SocietyCard = ({ society }) => (
   <Box
     maxW="600px"
-    minH="120px"
     rounded="md"
-    width="100%"
   >
-    <HStack
-      spacing="2"
-      width="100%"
-      alignItems="flex-start"
+    <Stack
+      direction={['column', 'row']}
+      spacing="10"
     >
       <Box
         height="auto"
-        flexShrink="0"
-        flexGrow="0"
       >
         <Image
-          src={reason.icon.url}
+          src={society.logo}
           rounded="lg"
-          width="48px"
+          width="250px"
+          margin="auto"
         />
       </Box>
 
       <VStack
         spacing="2"
         align="left"
-        paddingX="20px"
+        px="8px"
       >
         <Heading
           as="h3"
           size="md"
         >
-          {reason.heading}
+          {society.name}
         </Heading>
         <Text
           fontSize="sm"
         >
-          {reason.text}
+          {society.summary}
         </Text>
       </VStack>
-    </HStack>
+    </Stack>
   </Box>
 );
-
-export default ReasonCard;
+export default SocietyCard;

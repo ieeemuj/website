@@ -1,42 +1,62 @@
 import {
-  Box, Heading, Text, VStack,
+  Box,
+  Flex,
+  Text,
 } from '@chakra-ui/react';
+import * as React from 'react';
+import Quotee from './Quotee';
+import QuoteIcon from './QuoteIcon';
 
 const TestimonialCard = ({ testimonial }) => (
   <Box
-    maxW="600px"
-    rounded="lg"
-    border="2px dashed"
-    borderColor="gray.200"
-    boxSizing="border-box"
-    padding="48px"
+    as="section"
+    bg="gray.50"
+    borderRadius="lg"
+    boxShadow="xl"
   >
-    <VStack
-      spacing="10"
+    <Box
+      maxW="3xl"
       height="100%"
-      justify="space-between"
+      mx="auto"
+      px={{
+        base: '6',
+        md: '8',
+      }}
+      pt="12"
+      pb="16"
     >
-      <Text
+      <Flex
+        direction="column"
+        align="left"
+        justify="space-between"
+        height="100%"
         textAlign="center"
-        fontStyle="italic"
       >
-        &ldquo;
-        {testimonial.testimonial_text}
-        &rdquo;
-      </Text>
-      <VStack>
-        <Heading
-          size="sm"
+        <QuoteIcon
+          color="gray.200"
+          fontSize={{
+            base: '3xl',
+            md: '6xl',
+          }}
+        />
+        <Text
+          fontSize={{
+            base: 'md',
+            md: 'lg',
+          }}
+          fontWeight="medium"
+          mt="6"
         >
-          {testimonial.testimonial_author}
-        </Heading>
-        <Heading
-          size="xs"
-        >
-          {testimonial.testimonial_author_title}
-        </Heading>
-      </VStack>
-    </VStack>
+          {testimonial.testimonial_text}
+        </Text>
+        <Quotee
+          name={testimonial.testimonial_author}
+          jobTitle={testimonial.testimonial_author_title}
+          imageSrc={testimonial.author_profile_pic.url}
+          mt="8"
+        />
+      </Flex>
+    </Box>
   </Box>
 );
 

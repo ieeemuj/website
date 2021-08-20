@@ -1,24 +1,26 @@
 import { Heading, VStack } from '@chakra-ui/react';
 import ReasonCard from './ReasonCard';
 
-const Benefits = () => (
+const Benefits = ({ data }) => (
   <VStack
-    alignItems="flex-start"
+    alignItems="center"
     spacing="5"
   >
     <Heading
       as="h1"
-      size="lg"
+      size="md"
+      width="100%"
+      textAlign={['center', 'center', 'center', 'center', 'left']}
     >
-      Why IEE?
+      {data.title}
     </Heading>
     <VStack
       width="100%"
       spacing="5"
     >
-      <ReasonCard />
-      <ReasonCard />
-      <ReasonCard />
+      {data.reasons.map((reason) => (
+        <ReasonCard reason={reason} />
+      ))}
     </VStack>
   </VStack>
 );

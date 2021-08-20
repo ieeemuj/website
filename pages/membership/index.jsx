@@ -1,32 +1,32 @@
 import React from 'react';
+// import { useState, useRef, useEffect } from "react";
 import {
-  SimpleGrid, Heading,
-  Button, Box, Link, Text,
+  SimpleGrid, Heading, Button, Link, Text, Flex,
 } from '@chakra-ui/react';
 
 import { NextSeo } from 'next-seo';
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
-import SocietyCard from '../../components/JoinUs/SocietyCard';
-import Benefits from '../../components/JoinUs/Benefits';
+import Slideshow from '../../components/MembershipDrive/Slideshow';
+import Benefits from '../../components/MembershipDrive/Benefits';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
-import getJoinUsData from '../../cms/queries/joinus';
-import Slideshow from '../../components/MembershipDrive/Slideshow';
 
-const JoinUs = ({ joinUsData }) => (
+import getMembershipData from '../../cms/queries/membership';
+
+const Membership = ({ membershipData }) => (
   <main>
     <NextSeo
-      title={joinUsData.seo.title}
-      description={joinUsData.seo.description}
+      title={membershipData.seo.title}
+      description={membershipData.seo.description}
       canonical="https://ieeemuj.com/membership"
       openGraph={{
-        description: joinUsData.seo.description,
+        description: membershipData.seo.description,
         images: [
           {
-            height: joinUsData.seo.image.dimensions.height,
-            width: joinUsData.seo.image.dimensions.width,
-            url: joinUsData.seo.image.url,
-            alt: joinUsData.seo.image.alt,
+            height: membershipData.seo.image.dimensions.height,
+            width: membershipData.seo.image.dimensions.width,
+            url: membershipData.seo.image.url,
+            alt: membershipData.seo.image.alt,
           },
         ],
       }}
@@ -38,20 +38,20 @@ const JoinUs = ({ joinUsData }) => (
           textAlign="center"
           color="white"
           backgroundColor="brand.700"
-          padding="8px"
+          padding="16px"
           rounded="lg"
         >
-          LOCAL MEMBERSHIP
+          Membership
         </Heading>
         <Text
-          fontSize="md"
-          color="gray.200"
+          fontSize="lg"
+          color="white"
           textAlign="center"
           backgroundColor="brand.700"
           padding="8px"
           rounded="lg"
         >
-          We see the future of engineering in you.
+          Become the future of engineering.
         </Text>
       </FadeInUp>
     </TitleHeader>
@@ -59,20 +59,24 @@ const JoinUs = ({ joinUsData }) => (
       <FadeInUp>
         <SimpleGrid
           py="32px"
-          columns={2}
-          minChildWidth="180px"
+          columns={['1', '1', '1', '1', '3']}
+          spacing="16"
         >
-          <Heading
-            as="h3"
-            size="md"
+          <Benefits data={membershipData.reason1} />
+          <Benefits data={membershipData.reason2} />
+          <Benefits data={membershipData.reason3} />
+        </SimpleGrid>
+      </FadeInUp>
+      <FadeInUp>
+        <Flex
+          direction="row"
+          justify="center"
+        >
+          <Link
+            target="_blank"
+            href="https://www.ieee.org"
           >
-            Registration is now Open!
-          </Heading>
-          <Box>
             <Button
-              as={Link}
-              href={joinUsData.registrationFormLink}
-              float="right"
               bgColor="brand.700"
               boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
               padding="16px"
@@ -95,42 +99,10 @@ const JoinUs = ({ joinUsData }) => (
             >
               REGISTER
             </Button>
-          </Box>
-        </SimpleGrid>
+          </Link>
+        </Flex>
       </FadeInUp>
-      <FadeInUp>
-        <Benefits reasons={joinUsData.reasons} />
-      </FadeInUp>
-      <FadeInUp>
-        <SimpleGrid
-          py="32px"
-          columns={1}
-          spacing="10"
-          minChildWidth="200px"
-          marginTop="10"
-        >
-          <Heading
-            as="h7"
-            size="sm"
-          >
-            All Societies & Affinity Groups included in membership.
-          </Heading>
-        </SimpleGrid>
-      </FadeInUp>
-      <FadeInUp>
-        <SimpleGrid
-          py="32px"
-          columns={['1', '1', '1', '2', '2']}
-          width="100%"
-          justifyItems="center"
-          spacingX="50px"
-          spacingY="50px"
-        >
-          {joinUsData.societies.map((society) => (
-            <SocietyCard society={society} />
-          ))}
-        </SimpleGrid>
-      </FadeInUp>
+
       <FadeInUp>
         <SimpleGrid
           py="32px"
@@ -156,7 +128,7 @@ const JoinUs = ({ joinUsData }) => (
           spacingY="90px"
           minChildWidth="150px"
         >
-          <Slideshow gallery={joinUsData.gallery} />
+          <Slideshow gallery={membershipData.gallery} />
         </SimpleGrid>
       </FadeInUp>
     </ResponsiveContainer>
@@ -164,12 +136,12 @@ const JoinUs = ({ joinUsData }) => (
 );
 
 export async function getStaticProps() {
-  const joinUsData = await getJoinUsData();
+  const membershipData = await getMembershipData();
 
-  if (joinUsData) {
+  if (membershipData) {
     return {
       props: {
-        joinUsData,
+        membershipData,
       },
     };
   }
@@ -178,4 +150,4 @@ export async function getStaticProps() {
   };
 }
 
-export default JoinUs;
+export default Membership;

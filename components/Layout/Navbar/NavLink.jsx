@@ -29,6 +29,7 @@ const NavLink = ({ to, children, ...props }) => {
           _focus={{
             border: 'none',
           }}
+          {...props}
         >
           {React.cloneElement(child, {
             className: `${styles.underLineAnimation} ${match ? styles.active : ''}`,

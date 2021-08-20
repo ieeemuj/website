@@ -3,64 +3,98 @@ import {
 } from '@chakra-ui/react';
 
 import {
-  FaLinkedinIn, FaInstagram, FaGithub,
+  FaLinkedinIn, FaInstagram, FaGithub, FaTwitter, FaBehance,
 } from 'react-icons/fa';
+import FadeInUp from '../FadeInUp';
 
 const CreditsContent = ({
-  name, title, linkedIn, insta, github,
+  name, image, position, linkedIn, instagram, github, twitter, behance,
 }) => (
-  <VStack
-    marginY="2em"
-    justifyItems="center"
-    alignItems="center"
-  >
-    <Avatar
-      size="xl"
-      src="https://bit.ly/code-beast"
-    />
-    <Heading
-      as="h4"
-      size="md"
+  <FadeInUp>
+    <VStack
+      marginY="2em"
+      justifyItems="start"
+      alignItems="center"
     >
-      {name}
-    </Heading>
-    <Text
-      fontSize="lg"
-      color="#8a9494"
-      fontWeight="medium"
-    >
-      {title}
-    </Text>
-    <HStack
-      width="100%"
-      justify="center"
-    >
-      <IconButton
-        as={Link}
-        href={`https://www.linkedin.com/in/${linkedIn}`}
-        variant="ghost"
-        aria-label={`Linkedin link of ${name}`}
-        icon={<FaLinkedinIn />}
-        colorScheme="linkedin"
+      <Avatar
+        size="xl"
+        src={image}
       />
-      <IconButton
-        as={Link}
-        href={`https://www.instagram.com/${insta}`}
-        variant="ghost"
-        aria-label={`Instagram link of ${name}`}
-        icon={<FaInstagram />}
-        colorScheme="pink"
-      />
-      <IconButton
-        as={Link}
-        href={`https://www.github.com/${github}`}
-        variant="ghost"
-        aria-label={`GitHub link of ${name}`}
-        icon={<FaGithub />}
-        colorScheme="facebook"
-      />
-    </HStack>
-  </VStack>
+      <Heading
+        as="h4"
+        size="md"
+      >
+        {name}
+      </Heading>
+      <Text
+        fontSize="lg"
+        color="#8a9494"
+        fontWeight="medium"
+      >
+        {position}
+      </Text>
+      <HStack
+        width="100%"
+        justify="center"
+      >
+        {linkedIn && (
+        <IconButton
+          target="_blank"
+          as={Link}
+          href={linkedIn}
+          variant="ghost"
+          aria-label={`Linkedin link of ${name}`}
+          icon={<FaLinkedinIn />}
+          colorScheme="linkedin"
+        />
+        )}
+        {instagram && (
+        <IconButton
+          target="_blank"
+          as={Link}
+          href={instagram}
+          variant="ghost"
+          aria-label={`Instagram link of ${name}`}
+          icon={<FaInstagram />}
+          colorScheme="pink"
+        />
+        )}
+        {github && (
+        <IconButton
+          target="_blank"
+          as={Link}
+          href={github}
+          variant="ghost"
+          aria-label={`GitHub link of ${name}`}
+          icon={<FaGithub />}
+          colorScheme="facebook"
+        />
+        )}
+        {twitter && (
+        <IconButton
+          target="_blank"
+          as={Link}
+          href={twitter}
+          variant="ghost"
+          aria-label={`Twitter link of ${name}`}
+          icon={<FaTwitter />}
+          colorScheme="facebook"
+        />
+        )}
+        {behance && (
+        <IconButton
+          target="_blank"
+          as={Link}
+          href={behance}
+          variant="ghost"
+          aria-label={`Behance link of ${name}`}
+          icon={<FaBehance />}
+          colorScheme="facebook"
+        />
+        )}
+      </HStack>
+    </VStack>
+  </FadeInUp>
 );
 
 export default CreditsContent;

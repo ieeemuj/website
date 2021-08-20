@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import { Heading, Text } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
 import ActiveEventsHeader from '../../components/Events/ActiveEvents/ActiveEventsHeader';
@@ -55,6 +56,10 @@ const Events = ({ allEvents }) => {
   return (
     <main>
       <TitleHeader>
+        <NextSeo
+          title="Events"
+          canonical="https://ieeemuj.com/events"
+        />
         <FadeInUp>
           <Heading
             size="lg"
@@ -78,31 +83,31 @@ const Events = ({ allEvents }) => {
           </Text>
         </FadeInUp>
       </TitleHeader>
-      <Section
-        bgColor="whitesmoke"
-      >
-        <FadeInUp>
-          <SectionHeader>
-            <ActiveEventsHeader />
-          </SectionHeader>
-          <SectionContent>
-            <ActiveEventsCarousel
-              activeEventsData={activeEventsData}
-            />
-          </SectionContent>
-        </FadeInUp>
-      </Section>
+      {activeEventsData.length > 0 && (
+        <Section
+          bgColor="gray.50"
+        >
+          <FadeInUp>
+            <SectionHeader>
+              <ActiveEventsHeader />
+            </SectionHeader>
+            <SectionContent>
+              <ActiveEventsCarousel
+                activeEventsData={activeEventsData}
+              />
+            </SectionContent>
+          </FadeInUp>
+        </Section>
+      )}
       <Section>
-        <FadeInUp>
-          <SectionHeader>
-            <PastEventsHeader />
-          </SectionHeader>
-          <SectionContent>
-            <PastEventsGrid
-              allEventsData={pastEventsData}
-            />
-          </SectionContent>
-        </FadeInUp>
+        <SectionHeader>
+          <PastEventsHeader />
+        </SectionHeader>
+        <SectionContent>
+          <PastEventsGrid
+            allEventsData={pastEventsData}
+          />
+        </SectionContent>
       </Section>
     </main>
   );

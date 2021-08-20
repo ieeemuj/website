@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { Box } from '@chakra-ui/react';
 import { RichText } from 'prismic-reactjs';
 import Section from '../../components/Home/Section';
@@ -10,31 +9,32 @@ import {
 import styles from '../../styles/EventDescription.module.css';
 import FadeInUp from '../../components/FadeInUp';
 import SectionContent from '../../components/Home/Section/SectionContent';
+import getStatus from '../../utils';
 
-const EventPage = ({ eventObj }) => {
-  const router = useRouter();
-  return (
-    <Section>
-      <FadeInUp>
-        <SectionContent>
-          <Event
-            eventObj={eventObj}
-            slug={router.query.slug}
-          />
-          <Box
-            className={styles.description}
-            marginTop="32px"
-          >
-            {RichText.render(eventObj.prismicDescription)}
-          </Box>
-        </SectionContent>
-      </FadeInUp>
-    </Section>
-  );
-};
+const EventPage = ({ eventObj }) => (
+  <Section>
+    <FadeInUp>
+      <SectionContent>
+        <Event
+          eventObj={eventObj}
+        />
+        <Box
+          className={styles.description}
+          marginTop="32px"
+        >
+          {RichText.render(eventObj.prismicDescription)}
+        </Box>
+      </SectionContent>
+    </FadeInUp>
+  </Section>
+);
 
 export async function getStaticProps({ params }) {
   const eventObj = (await getEventByUID(params.slug));
+
+  const status = getStatus(eventObj.startISO, eventObj.endISO);
+
+  if (status === 'ONGOING' || status === 'COMPLETED') delete eventObj.linkToRegistrationForm;
 
   if (eventObj) {
     return {
