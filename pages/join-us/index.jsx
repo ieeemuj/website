@@ -18,7 +18,7 @@ const JoinUs = ({ joinUsData }) => (
     <NextSeo
       title={joinUsData.seo.title}
       description={joinUsData.seo.description}
-      canonical="https://ieeemuj.com/membership"
+      canonical="https://ieeemuj.com/join-us"
       openGraph={{
         description: joinUsData.seo.description,
         images: [

@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { RichText } from 'prismic-reactjs';
+import { NextSeo } from 'next-seo';
 import Section from '../../components/Home/Section';
 import Event from '../../components/Events/EventPage';
 
@@ -12,21 +13,27 @@ import SectionContent from '../../components/Home/Section/SectionContent';
 import getStatus from '../../utils';
 
 const EventPage = ({ eventObj }) => (
-  <Section>
-    <FadeInUp>
-      <SectionContent>
-        <Event
-          eventObj={eventObj}
-        />
-        <Box
-          className={styles.description}
-          marginTop="32px"
-        >
-          {RichText.render(eventObj.prismicDescription)}
-        </Box>
-      </SectionContent>
-    </FadeInUp>
-  </Section>
+  <>
+    <NextSeo
+      title={RichText.asText(eventObj.prismicTitle)}
+      canonical={`https://ieeemuj.com/events/${eventObj.slug}`}
+    />
+    <Section>
+      <FadeInUp>
+        <SectionContent>
+          <Event
+            eventObj={eventObj}
+          />
+          <Box
+            className={styles.description}
+            marginTop="32px"
+          >
+            {RichText.render(eventObj.prismicDescription)}
+          </Box>
+        </SectionContent>
+      </FadeInUp>
+    </Section>
+  </>
 );
 
 export async function getStaticProps({ params }) {
