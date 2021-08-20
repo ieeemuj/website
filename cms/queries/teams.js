@@ -4,8 +4,9 @@ import PrismicClient from '../PrismicClient';
 import SEO from '../seo/SEO';
 
 class TeamsData {
-  constructor(faculty, ecSb, ocSb, ccSb, ecCs, ccCs, ttCS, ecWie, ocWie, ccWie, body) {
+  constructor(faculty, advisors, ecSb, ocSb, ccSb, ecCs, ccCs, ttCS, ecWie, ocWie, ccWie, body) {
     this.faculty = TeamsData.mapToMember(faculty);
+    this.advisors = TeamsData.mapToMember(advisors);
     this.ecSb = TeamsData.mapToMember(ecSb);
     this.ocSb = TeamsData.mapToMember(ocSb);
     this.ccSb = TeamsData.mapToMember(ccSb);
@@ -32,6 +33,7 @@ class TeamsData {
   object() {
     return {
       faculty: this.faculty,
+      advisors: this.advisors,
       ecSb: this.ecSb,
       ocSb: this.ocSb,
       ccSb: this.ccSb,
@@ -52,6 +54,11 @@ const getTeamsData = async () => {
       query GetTeamsPage {
       teams_page(uid: "teams-page", lang: "en-us") {
         faculty {
+          member {
+            ...memberDetails
+          }
+        }
+        advisors {
           member {
             ...memberDetails
           }
@@ -154,7 +161,8 @@ const getTeamsData = async () => {
 
     if (node) {
       return new TeamsData(
-        node.ec_wie,
+        node.faculty,
+        node.advisors,
         node.ec_sb,
         node.oc_sb,
         node.cc_sb,

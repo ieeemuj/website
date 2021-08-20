@@ -15,7 +15,7 @@ const TeamsContent = ({
         <Tab
           _focus={{ outline: 'none' }}
         >
-          Faculty
+          Advisory
         </Tab>
         <Tab
           _focus={{ outline: 'none' }}
@@ -36,7 +36,12 @@ const TeamsContent = ({
       <TabPanels>
         <TabPanel>
           <TeamsSection
-            data={teamsData.ecSb}
+            heading="Faculty"
+            data={teamsData.faculty}
+          />
+          <TeamsSection
+            heading="Advisors"
+            data={teamsData.advisors}
           />
         </TabPanel>
         <TabPanel>

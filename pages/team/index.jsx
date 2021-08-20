@@ -54,7 +54,7 @@ const AboutUs = ({ teamsData }) => (
             color="white"
             to="/credits"
           >
-            <span>WEBSITE CREDITS</span>
+            <span>Click Here.</span>
           </NextLink>
         </Text>
       </FadeInUp>
