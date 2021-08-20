@@ -16,7 +16,19 @@ const EventPage = ({ eventObj }) => (
   <>
     <NextSeo
       title={RichText.asText(eventObj.prismicTitle)}
+      description={RichText.asText(eventObj.prismicDescription)}
       canonical={`https://ieeemuj.com/events/${eventObj.slug}`}
+      openGraph={{
+        description: RichText.asText(eventObj.prismicDescription),
+        images: [
+          {
+            height: eventObj.coverImage.dimensions.height,
+            width: eventObj.coverImage.dimensions.width,
+            url: eventObj.coverImage.url,
+            alt: RichText.asText(eventObj.prismicTitle),
+          },
+        ],
+      }}
     />
     <Section>
       <FadeInUp>

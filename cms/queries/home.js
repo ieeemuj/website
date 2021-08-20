@@ -56,7 +56,7 @@ const getHomeData = async () => {
           ieee_sb_muj_mission
           testimonial {
             author_profile_pic
-            testimonial_text
+            text
             testimonial_author
             testimonial_author_title
           },

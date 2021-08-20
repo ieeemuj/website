@@ -1,6 +1,7 @@
 import {
   Heading, Image, LinkBox, LinkOverlay, Stack, Text, VStack,
 } from '@chakra-ui/react';
+import styles from '../../../styles/NextLink.module.css';
 
 const BlogCard = ({ blog }) => (
   <LinkBox as="article">
@@ -30,8 +31,8 @@ const BlogCard = ({ blog }) => (
           href={blog.blog_link.url}
         >
           <Heading
-            width="100%"
             size="md"
+            className={styles.link}
           >
             {blog.title}
           </Heading>

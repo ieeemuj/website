@@ -2,7 +2,7 @@ import NLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
 import {
-  Box, Button, Heading, HStack, Link, Text, VStack,
+  Box, Button, Divider, Heading, HStack, Link, Text, VStack,
 } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
 import { RichText } from 'prismic-reactjs';
@@ -229,9 +229,32 @@ const Home = ({ allEvents, homeData }) => {
           </SectionHeader>
           <SectionContent>
             <BlogsContent blogs={homeData.blogs} />
+            <Box
+              width="100%"
+              textAlign="center"
+              marginTop="16px"
+            >
+              <NextLink
+                to="https://medium.com/@ieeemuj"
+                color="brand.500"
+                fontWeight="bold"
+                marginTop="16px"
+              >
+                See more blog posts.
+              </NextLink>
+            </Box>
           </SectionContent>
         </FadeInUp>
       </Section>
+      <Divider
+        margin="auto"
+        height="2px"
+        borderBottomWidth="2px"
+        borderColor="brand.500"
+        opacity="0.1"
+        width="50vw"
+        maxWidth="700px"
+      />
       <Section>
         <FadeInUp>
           <SectionHeader>

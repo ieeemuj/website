@@ -3,6 +3,7 @@ import {
   Flex,
   Text,
 } from '@chakra-ui/react';
+import { RichText } from 'prismic-reactjs';
 import * as React from 'react';
 import Quotee from './Quotee';
 import QuoteIcon from './QuoteIcon';
@@ -15,15 +16,11 @@ const TestimonialCard = ({ testimonial }) => (
     boxShadow="xl"
   >
     <Box
-      maxW="3xl"
+      maxW="xl"
       height="100%"
       mx="auto"
-      px={{
-        base: '6',
-        md: '8',
-      }}
-      pt="12"
-      pb="16"
+      px="12"
+      py="12"
     >
       <Flex
         direction="column"
@@ -34,20 +31,15 @@ const TestimonialCard = ({ testimonial }) => (
       >
         <QuoteIcon
           color="gray.200"
-          fontSize={{
-            base: '3xl',
-            md: '6xl',
-          }}
+          fontSize="5xl"
         />
         <Text
-          fontSize={{
-            base: 'md',
-            md: 'lg',
-          }}
+          fontSize="md"
           fontWeight="medium"
+          textAlign="justify"
           mt="6"
         >
-          {testimonial.testimonial_text}
+          {RichText.render(testimonial.text)}
         </Text>
         <Quotee
           name={testimonial.testimonial_author}
