@@ -101,7 +101,7 @@ const Navbar = () => {
             h={16}
             alignItems="center"
             justifyContent="space-between"
-            
+
           >
             <NextLink
               href="/"
