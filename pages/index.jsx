@@ -87,7 +87,7 @@ const Home = ({ allEvents, homeData }) => {
               position="relative"
               minH="calc(100vh - 96px)"
               width="100%"
-              spacing="7"
+              spacing="10"
             >
               <VStack
                 width={['100%', '100%', '100%', '100%', '45%']}
@@ -123,7 +123,7 @@ const Home = ({ allEvents, homeData }) => {
                   >
                     <Text
                       width={['100%', '100%', '100%', '100%', '100%']}
-                      color="white"
+                      color="gray.100"
                       fontSize={['md', 'xl']}
                       textAlign={['center', 'center', 'center', 'center', 'left']}
                     >
@@ -137,7 +137,7 @@ const Home = ({ allEvents, homeData }) => {
                         as={Link}
                         bg="white"
                         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
-                        padding="32px"
+                        px="32px"
                         rounded="lg"
                         color="brand"
                         _hover={{

@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Heading, Image, SimpleGrid, Wrap,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import CreditsContent from '../../components/Credits/CreditsContent';
 import CreditsHeader from '../../components/Credits/CreditsHeader';
 import Section from '../../components/Home/Section';
@@ -13,6 +14,22 @@ import getCreditsData from '../../cms/queries/credits';
 
 const Credits = ({ creditsData }) => (
   <main>
+    <NextSeo
+      title={creditsData.seo.title}
+      description={creditsData.seo.description}
+      canonical="https://ieeemuj.com/credits"
+      openGraph={{
+        description: creditsData.seo.description,
+        images: [
+          {
+            height: creditsData.seo.image.dimensions.height,
+            width: creditsData.seo.image.dimensions.width,
+            url: creditsData.seo.image.url,
+            alt: creditsData.seo.image.alt,
+          },
+        ],
+      }}
+    />
     <TitleHeader>
       <FadeInUp>
         <Heading
@@ -20,7 +37,7 @@ const Credits = ({ creditsData }) => (
           textAlign="center"
           color="white"
           backgroundColor="brand.700"
-          padding="16px"
+          padding="8px"
           rounded="lg"
         >
           Website Team & Credits
