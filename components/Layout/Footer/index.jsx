@@ -2,6 +2,7 @@ import {
   Box, Flex, HStack, Stack, Text, VStack,
 } from '@chakra-ui/react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import NextImage from 'next/image';
 import FadeInUp from '../../FadeInUp';
 import ResponsiveContainer from '../ResponsiveContainer';
 import FooterSection from './FooterSection';
@@ -11,14 +12,14 @@ import FooterSectionLink from './FooterSectionLink';
 import FooterSectionSocialIcon from './FooterSectionSocialIcon';
 import FooterSectionSocialLink from './FooterSectionSocialLink';
 import NextLink from '../../NextLink';
-import IEEELogo from '../../../public/svg/ieeelogo.svg';
+import ieeeLogo from '../../../public/imgs/logo.png';
 
 const Footer = () => (
   <>
     <Box
       bgColor="brand.700"
       width="100%"
-      backgroundImage="url(/footer.svg)"
+      backgroundImage="url(/svg/footer.svg)"
       backgroundAttachment="fixed"
       backgroundPosition="center"
       backgroundSize="cover"
@@ -39,9 +40,9 @@ const Footer = () => (
             <VStack
               width={['100%', '100%', '100%', '100%', '200%']}
             >
-              <IEEELogo
-                width="256"
-                height="75"
+              <NextImage
+                src={ieeeLogo}
+                alt="IEEE SB MUJ Logo"
               />
               <HStack
                 width="100%"
@@ -149,7 +150,7 @@ const Footer = () => (
                 </NextLink>
                 <NextLink
                   color="white"
-                  to="http://www.ieee.org/membership_services/membership/students/awards/index.html"
+                  to="https://site.ieee.org/r1-sac/resources/student-scholarships/"
                 >
                   IEEE Scholarships
                 </NextLink>

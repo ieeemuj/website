@@ -101,6 +101,7 @@ const Navbar = () => {
             h={16}
             alignItems="center"
             justifyContent="space-between"
+
           >
             <NextLink
               href="/"
@@ -169,7 +170,7 @@ const Navbar = () => {
               spacing={10}
               alignItems="center"
               justify="center"
-              height="100%"
+              height="85%"
             >
               <NavLinks closeMenu={onClose} />
             </Stack>

@@ -30,6 +30,7 @@ const CreditsContent = ({
         fontSize="lg"
         color="#8a9494"
         fontWeight="medium"
+        textAlign="center"
       >
         {position}
       </Text>
