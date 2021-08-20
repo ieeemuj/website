@@ -111,7 +111,7 @@ const Navbar = () => {
                 size="md"
                 color="white"
               >
-                  IEEE SB MUJ
+                IEEE SB MUJ
               </Heading>
             </NextLink>
             <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
