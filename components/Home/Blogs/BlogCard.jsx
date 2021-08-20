@@ -2,6 +2,7 @@ import {
   Heading, Image, LinkBox, LinkOverlay, Stack, Text, VStack,
 } from '@chakra-ui/react';
 import styles from '../../../styles/NextLink.module.css';
+import { formatBlogDate } from '../../../utils';
 
 const BlogCard = ({ blog }) => (
   <LinkBox as="article">
@@ -14,8 +15,8 @@ const BlogCard = ({ blog }) => (
     >
       <Image
         rounded="lg"
-        width="300px"
-        height="194px"
+        width={['300px', '300px', '300px', '300px', '250px']}
+        height={['194px', '194px', '194px', '194px', '144px']}
         src={blog.image.url}
       />
       <VStack
@@ -48,7 +49,9 @@ const BlogCard = ({ blog }) => (
           width="100%"
           color="gray"
         >
-          Jul 29, &#39;21 |
+          {formatBlogDate(blog.published_date)}
+          {' '}
+          |
           {' '}
           {blog.author_name}
         </Text>
