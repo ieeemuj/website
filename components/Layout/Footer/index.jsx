@@ -149,7 +149,7 @@ const Footer = () => (
                 </NextLink>
                 <NextLink
                   color="white"
-                  to="http://www.ieee.org/membership_services/membership/students/awards/index.html"
+                  to="https://site.ieee.org/r1-sac/resources/student-scholarships/"
                 >
                   IEEE Scholarships
                 </NextLink>

@@ -14,8 +14,8 @@ const BlogCard = ({ blog }) => (
     >
       <Image
         rounded="lg"
-        width="250px"
-        height="144px"
+        width="300px"
+        height="194px"
         src={blog.image.url}
       />
       <VStack

@@ -24,6 +24,7 @@ const SocietiesContent = ({
           borderRadius="md"
           src={society.logo.url}
           alt={society.logo.alt}
+          paddingBottom="20px"
         />
       </Box>
       <Box
