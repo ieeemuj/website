@@ -1,0 +1,25 @@
+.description h1 {
+  font-size: xx-large;
+}
+
+.description h1,
+.description h2,
+.description h3,
+.description h4,
+.description h5,
+.description h6 {
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+
+.description h2 {
+  font-size: x-large;
+}
+
+.description h3 {
+  font-size: larger;
+}
+
+.description p {
+  font-size: medium;
+}

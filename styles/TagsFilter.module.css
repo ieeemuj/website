@@ -1,0 +1,9 @@
+.Option {
+  padding: 0.2em;
+  border-radius: 5px;
+}
+
+.Option:hover {
+  background-color: #034188;
+  color: white;
+}

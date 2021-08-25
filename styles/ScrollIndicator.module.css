@@ -1,0 +1,23 @@
+.scrollIndicator {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 50px;
+  left: 100%;
+  cursor: default;
+  writing-mode: vertical-rl;
+  color: #0087ca;
+  font-weight: bold;
+}
+
+.scrollIndicator::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 96px;
+  background-color: #0087ca;
+  border-radius: 10px;
+  margin-top: 10px;
+}
