@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import { Box } from '@chakra-ui/react';
 import { RichText } from 'prismic-reactjs';
+import { NextSeo } from 'next-seo';
 import Section from '../../components/Home/Section';
 import Event from '../../components/Events/EventPage';
 
@@ -10,16 +10,31 @@ import {
 import styles from '../../styles/EventDescription.module.css';
 import FadeInUp from '../../components/FadeInUp';
 import SectionContent from '../../components/Home/Section/SectionContent';
+import getStatus from '../../utils';
 
-const EventPage = ({ eventObj }) => {
-  const router = useRouter();
-  return (
+const EventPage = ({ eventObj }) => (
+  <>
+    <NextSeo
+      title={RichText.asText(eventObj.prismicTitle)}
+      description={RichText.asText(eventObj.prismicDescription)}
+      canonical={`https://ieeemuj.com/events/${eventObj.slug}`}
+      openGraph={{
+        description: RichText.asText(eventObj.prismicDescription),
+        images: [
+          {
+            height: eventObj.coverImage.dimensions.height,
+            width: eventObj.coverImage.dimensions.width,
+            url: eventObj.coverImage.url,
+            alt: RichText.asText(eventObj.prismicTitle),
+          },
+        ],
+      }}
+    />
     <Section>
       <FadeInUp>
         <SectionContent>
           <Event
             eventObj={eventObj}
-            slug={router.query.slug}
           />
           <Box
             className={styles.description}
@@ -30,11 +45,15 @@ const EventPage = ({ eventObj }) => {
         </SectionContent>
       </FadeInUp>
     </Section>
-  );
-};
+  </>
+);
 
 export async function getStaticProps({ params }) {
   const eventObj = (await getEventByUID(params.slug));
+
+  const status = getStatus(eventObj.startISO, eventObj.endISO);
+
+  if (status === 'ONGOING' || status === 'COMPLETED') delete eventObj.linkToRegistrationForm;
 
   if (eventObj) {
     return {

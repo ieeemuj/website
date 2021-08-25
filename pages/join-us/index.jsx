@@ -4,16 +4,33 @@ import {
   Button, Box, Link, Text,
 } from '@chakra-ui/react';
 
+import { NextSeo } from 'next-seo';
 import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
-import SocietyCard from '../../components/MembershipDrive/SocietyCard';
-import Slideshow from '../../components/MembershipDrive/Slideshow';
-import Benefits from '../../components/MembershipDrive/Benefits';
-import Plans from '../../components/MembershipDrive/plans';
+import SocietyCard from '../../components/JoinUs/SocietyCard';
+import Benefits from '../../components/JoinUs/Benefits';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
+import getJoinUsData from '../../cms/queries/joinus';
+import Slideshow from '../../components/MembershipDrive/Slideshow';
 
-const JoinUs = () => (
+const JoinUs = ({ joinUsData }) => (
   <main>
+    <NextSeo
+      title={joinUsData.seo.title}
+      description={joinUsData.seo.description}
+      canonical="https://ieeemuj.com/join-us"
+      openGraph={{
+        description: joinUsData.seo.description,
+        images: [
+          {
+            height: joinUsData.seo.image.dimensions.height,
+            width: joinUsData.seo.image.dimensions.width,
+            url: joinUsData.seo.image.url,
+            alt: joinUsData.seo.image.alt,
+          },
+        ],
+      }}
+    />
     <TitleHeader>
       <FadeInUp>
         <Heading
@@ -21,14 +38,14 @@ const JoinUs = () => (
           textAlign="center"
           color="white"
           backgroundColor="brand.700"
-          padding="16px"
+          padding="8px"
           rounded="lg"
         >
           MEMBERSHIP
         </Heading>
         <Text
-          fontSize="lg"
-          color="white"
+          fontSize="md"
+          color="gray.200"
           textAlign="center"
           backgroundColor="brand.700"
           padding="8px"
@@ -54,6 +71,7 @@ const JoinUs = () => (
           <Box>
             <Button
               as={Link}
+              href={joinUsData.registrationFormLink}
               float="right"
               bgColor="brand.700"
               boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
@@ -81,14 +99,7 @@ const JoinUs = () => (
         </SimpleGrid>
       </FadeInUp>
       <FadeInUp>
-        <SimpleGrid
-          py="32px"
-          columns={['1', '1', '1', '2', '2']}
-          spacing="10"
-        >
-          <Plans />
-          <Benefits />
-        </SimpleGrid>
+        <Benefits reasons={joinUsData.reasons} />
       </FadeInUp>
       <FadeInUp>
         <SimpleGrid
@@ -102,7 +113,7 @@ const JoinUs = () => (
             as="h7"
             size="sm"
           >
-            Each plan gets you membership for all Societies
+            All Societies & Affinity Groups included in membership.
           </Heading>
         </SimpleGrid>
       </FadeInUp>
@@ -115,9 +126,9 @@ const JoinUs = () => (
           spacingX="50px"
           spacingY="50px"
         >
-          <SocietyCard />
-          <SocietyCard />
-          <SocietyCard />
+          {joinUsData.societies.map((society) => (
+            <SocietyCard society={society} />
+          ))}
         </SimpleGrid>
       </FadeInUp>
       <FadeInUp>
@@ -130,6 +141,8 @@ const JoinUs = () => (
           <Heading
             as="h7"
             size="sm"
+            width="100%"
+            textAlign="center"
           >
             Glimpse of what we do
           </Heading>
@@ -143,11 +156,26 @@ const JoinUs = () => (
           spacingY="90px"
           minChildWidth="150px"
         >
-          <Slideshow />
+          <Slideshow gallery={joinUsData.gallery} />
         </SimpleGrid>
       </FadeInUp>
     </ResponsiveContainer>
   </main>
 );
+
+export async function getStaticProps() {
+  const joinUsData = await getJoinUsData();
+
+  if (joinUsData) {
+    return {
+      props: {
+        joinUsData,
+      },
+    };
+  }
+  return {
+    notFound: true,
+  };
+}
 
 export default JoinUs;

@@ -1,6 +1,7 @@
 import {
   Box, Heading, SimpleGrid, Link, Stack, Text, Image, Button,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import NextLink from 'next/link';
 import FadeInUp from '../components/FadeInUp';
 
@@ -9,6 +10,10 @@ import ResponsiveContainer from '../components/Layout/ResponsiveContainer';
 function PageNotFound() {
   return (
     <>
+      <NextSeo
+        title="500"
+        canonical="https://ieeemuj.com/500"
+      />
       <ResponsiveContainer>
         <FadeInUp>
           <SimpleGrid

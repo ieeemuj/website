@@ -3,11 +3,10 @@ import {
   Image, Box, Heading, HStack, Text, VStack,
 } from '@chakra-ui/react';
 
-const testImg = 'https://source.unsplash.com/100x100';
-
-const ReasonCard = () => (
+const ReasonCard = ({ reason }) => (
   <Box
     maxW="600px"
+    minH="120px"
     rounded="md"
     width="100%"
   >
@@ -22,9 +21,9 @@ const ReasonCard = () => (
         flexGrow="0"
       >
         <Image
-          src={testImg}
+          src={reason.icon.url}
           rounded="lg"
-          width="100px"
+          width="48px"
         />
       </Box>
 
@@ -37,14 +36,12 @@ const ReasonCard = () => (
           as="h3"
           size="md"
         >
-          Discover
+          {reason.heading}
         </Heading>
         <Text
           fontSize="sm"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras sed sapien ornare lacus imperdiet efficitur posuere vel justo.
-          Proin fringilla pellentesque neque, nec venenatis metus.
+          {reason.text}
         </Text>
       </VStack>
     </HStack>

@@ -1,11 +1,11 @@
 import {
-  Stack, Text, VStack,
+  Stack, VStack,
 } from '@chakra-ui/react';
 import { RichText } from 'prismic-reactjs';
 import AboutUsContentText from './AboutUsContentText';
 import StatGroup from './StatGroup';
 
-import styles from '../../../styles/Navbar.module.css';
+import NextLink from '../../NextLink';
 
 const AboutUsContent = ({
   aboutIEEE, aboutIEEESBMUJ, visionText, missionText, stats,
@@ -19,21 +19,13 @@ const AboutUsContent = ({
       textAlign="center"
     >
       {RichText.render(aboutIEEE)}
-      <a
-        className={styles.underLineAnimation}
-        href="https://www.ieee.org/"
-        aria-label="id"
-        target="_blank"
-        rel="noreferrer"
+      <NextLink
+        to="https://ieee.org/"
+        color="brand.500"
+        fontWeight="bold"
       >
-        <Text
-          color="brand.500"
-          size="sm"
-          fontWeight="bold"
-        >
-          Learn more at ieee.org
-        </Text>
-      </a>
+        Learn more at ieee.org
+      </NextLink>
     </VStack>
     <Stack
       direction={['column', 'column', 'column', 'column', 'row']}

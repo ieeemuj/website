@@ -1,8 +1,8 @@
-import NextLink from 'next/link';
+import NLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
 import {
-  Box, Button, Heading, HStack, Link, Text, VStack,
+  Box, Button, Divider, Heading, HStack, Link, Text, VStack,
 } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
 import { RichText } from 'prismic-reactjs';
@@ -26,6 +26,9 @@ import getStatus from '../utils';
 import styles from '../styles/ScrollIndicator.module.css';
 import getHomeData from '../cms/queries/home';
 import FadeInUp from '../components/FadeInUp';
+import NextLink from '../components/NextLink';
+import BlogsHeader from '../components/Home/Blogs/BlogsHeader';
+import BlogsContent from '../components/Home/Blogs/BlogContent';
 
 const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -84,19 +87,18 @@ const Home = ({ allEvents, homeData }) => {
               position="relative"
               minH="calc(100vh - 96px)"
               width="100%"
-              spacing="7"
+              spacing="10"
             >
               <VStack
                 width={['100%', '100%', '100%', '100%', '45%']}
                 minH="calc(100vh - 96px)"
                 boxSizing="border-box"
-                justify={['center', 'center', 'center', 'center', 'start']}
-                py={['0px', '0px', '0px', '0px', '64px']}
+                justify={['center', 'center', 'center', 'center', 'center']}
                 alignItems={['center', 'center', 'center', 'center', 'flex-start']}
                 spacing="10"
               >
                 <Heading
-                  fontSize={['4xl', '5xl', '7xl', '7xl', '6xl', '6xl']}
+                  fontSize={['4xl', '5xl', '7xl', '7xl', '5xl', '5xl']}
                   color="white"
                   textAlign={['center', 'center', 'center', 'center', 'left']}
                 >
@@ -121,13 +123,13 @@ const Home = ({ allEvents, homeData }) => {
                   >
                     <Text
                       width={['100%', '100%', '100%', '100%', '100%']}
-                      color="white"
+                      color="gray.100"
                       fontSize={['md', 'xl']}
                       textAlign={['center', 'center', 'center', 'center', 'left']}
                     >
                       {homeData.featuredText}
                     </Text>
-                    <NextLink
+                    <NLink
                       href={homeData.featuredButtonLink}
                       passHref
                     >
@@ -135,7 +137,7 @@ const Home = ({ allEvents, homeData }) => {
                         as={Link}
                         bg="white"
                         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
-                        padding="32px"
+                        px="32px"
                         rounded="lg"
                         color="brand"
                         _hover={{
@@ -155,7 +157,7 @@ const Home = ({ allEvents, homeData }) => {
                       >
                         {homeData.featuredButtonText}
                       </Button>
-                    </NextLink>
+                    </NLink>
                   </VStack>
                 </Box>
                 <Box
@@ -193,7 +195,7 @@ const Home = ({ allEvents, homeData }) => {
         </FadeInUp>
       </Section>
       <Section
-        bgColor="whitesmoke"
+        bgColor="gray.50"
       >
         <FadeInUp>
           <SectionHeader>
@@ -203,9 +205,56 @@ const Home = ({ allEvents, homeData }) => {
             <ActiveEventsCarousel
               activeEventsData={activeEventsData}
             />
+            <Box
+              width="100%"
+              textAlign="center"
+              marginTop="16px"
+            >
+              <NextLink
+                to="/events"
+                color="brand.500"
+                fontWeight="bold"
+                marginTop="16px"
+              >
+                Have a look at our past events.
+              </NextLink>
+            </Box>
           </SectionContent>
         </FadeInUp>
       </Section>
+      <Section>
+        <FadeInUp>
+          <SectionHeader>
+            <BlogsHeader />
+          </SectionHeader>
+          <SectionContent>
+            <BlogsContent blogs={homeData.blogs} />
+            <Box
+              width="100%"
+              textAlign="center"
+              marginTop="16px"
+            >
+              <NextLink
+                to="https://medium.com/@ieeemuj"
+                color="brand.500"
+                fontWeight="bold"
+                marginTop="16px"
+              >
+                See more blog posts.
+              </NextLink>
+            </Box>
+          </SectionContent>
+        </FadeInUp>
+      </Section>
+      <Divider
+        margin="auto"
+        height="2px"
+        borderBottomWidth="2px"
+        borderColor="brand.500"
+        opacity="0.1"
+        width="50vw"
+        maxWidth="700px"
+      />
       <Section>
         <FadeInUp>
           <SectionHeader>

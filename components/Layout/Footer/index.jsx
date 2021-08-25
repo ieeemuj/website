@@ -1,8 +1,8 @@
 import {
   Box, Flex, HStack, Stack, Text, VStack,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import NextImage from 'next/image';
 import FadeInUp from '../../FadeInUp';
 import ResponsiveContainer from '../ResponsiveContainer';
 import FooterSection from './FooterSection';
@@ -11,13 +11,15 @@ import FooterSectionHeading from './FooterSectionHeading';
 import FooterSectionLink from './FooterSectionLink';
 import FooterSectionSocialIcon from './FooterSectionSocialIcon';
 import FooterSectionSocialLink from './FooterSectionSocialLink';
+import NextLink from '../../NextLink';
+import ieeeLogo from '../../../public/imgs/logo.png';
 
 const Footer = () => (
   <>
     <Box
       bgColor="brand.700"
       width="100%"
-      backgroundImage="url(/footer.svg)"
+      backgroundImage="url(/svg/footer.svg)"
       backgroundAttachment="fixed"
       backgroundPosition="center"
       backgroundSize="cover"
@@ -31,17 +33,16 @@ const Footer = () => (
             direction={['column', 'column', 'column', 'column', 'row']}
             columns={[1, 1, 1, 1, 3]}
             width="100%"
-            alignItems="center"
+            alignItems="flex-start"
             justifyItems="center"
             spacing="48px"
           >
             <VStack
               width={['100%', '100%', '100%', '100%', '200%']}
             >
-              <Image
-                width="256"
-                height="75"
-                src="https://www.dawex.com/hubfs/migration-assets/img/events/ieee-logo.svg"
+              <NextImage
+                src={ieeeLogo}
+                alt="IEEE SB MUJ Logo"
               />
               <HStack
                 width="100%"
@@ -79,8 +80,8 @@ const Footer = () => (
                 <FooterSectionContact number="+919825440501" name="Shaleen Poddar">
                   +91 98254 40501
                 </FooterSectionContact>
-                <FooterSectionContact number="+917503584851" name="Vaibhav Khandelwal">
-                  +91 75035 84851
+                <FooterSectionContact number="+918106853161" name="Ronak Modi">
+                  +91 81068 53161
                 </FooterSectionContact>
                 <FooterSectionLink href="mailto:ieee@muj.manipal.edu">
                   ieee@muj.manipal.edu
@@ -101,58 +102,70 @@ const Footer = () => (
               spacing={10}
             >
               <FooterSection>
-                <FooterSectionHeading>Website Links</FooterSectionHeading>
-                <FooterSectionLink
-                  underline
-                  href="www.ieee.org"
+                <FooterSectionHeading>Faculty Messages</FooterSectionHeading>
+                <NextLink
+                  color="white"
+                  to="/faculty-messages/director-scit"
                 >
-                  Ex-President&apos;s Message
-                </FooterSectionLink>
-                <FooterSectionLink
-                  underline
-                  href="www.ieee.org"
+                  Director&apos;s Message
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="/faculty-messages/coordinator"
                 >
-                  Website Team & Credits
-                </FooterSectionLink>
-                <FooterSectionLink
-                  underline
-                  href="www.ieee.org"
+                  Coordinator&apos;s Message
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="/faculty-messages/dsw"
                 >
-                  IEEE SB GitHub
-                </FooterSectionLink>
+                  DSW&apos;s Message
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="/faculty-messages/faculty-advisor-wie"
+                >
+                  Advisor&apos;s Message
+                </NextLink>
               </FooterSection>
               <FooterSection>
                 <FooterSectionHeading>Links</FooterSectionHeading>
-                <FooterSectionLink
-                  underline
-                  href="http://jaipur.manipal.edu/"
+                <NextLink
+                  color="white"
+                  to="/credits"
+                >
+                  Website Team
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="http://jaipur.manipal.edu/"
                 >
                   MUJ Official Website
-                </FooterSectionLink>
-                <FooterSectionLink
-                  underline
-                  href="http://www.ieee.org/about/index.html"
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="http://www.ieee.org/about/index.html"
                 >
                   IEEE Official Website
-                </FooterSectionLink>
-                <FooterSectionLink
-                  underline
-                  href="http://www.ieee.org/membership_services/membership/students/awards/index.html"
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="https://site.ieee.org/r1-sac/resources/student-scholarships/"
                 >
                   IEEE Scholarships
-                </FooterSectionLink>
-                <FooterSectionLink
-                  underline
-                  href="http://www.ieee.org/membership_services/membership/benefits/benefits.html"
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="http://www.ieee.org/membership_services/membership/benefits/benefits.html"
                 >
                   IEEE Benefits
-                </FooterSectionLink>
-                <FooterSectionLink
-                  underline
-                  href="http://www.ieee.org/membership_services/membership/join/index.html"
+                </NextLink>
+                <NextLink
+                  color="white"
+                  to="http://www.ieee.org/membership_services/membership/join/index.html"
                 >
                   IEEE Global Membership
-                </FooterSectionLink>
+                </NextLink>
               </FooterSection>
             </VStack>
           </Stack>

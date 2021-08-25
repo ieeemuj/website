@@ -9,8 +9,8 @@ const StatGroup = ({ stats }) => {
     <SimpleGrid
       ref={containerRef}
       columns="2"
-      height={['300px', '360px', '400px', '400px', '400px', '440px']}
-      width={['300px', '360px', '400px', '400px', '400px', '440px']}
+      height={['280px', '360px', '400px', '400px', '400px', '440px']}
+      width={['100%', '360px', '400px', '400px', '400px', '440px']}
       spacing="24px"
       paddingBottom="0%"
     >

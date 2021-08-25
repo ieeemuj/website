@@ -12,4 +12,6 @@ const getStatus = (startISO, endISO) => {
   return 'COMPLETED';
 };
 
+export const formatBlogDate = (isoDate) => DateTime.fromISO(isoDate).toFormat('MMM d, yyyy');
+
 export default getStatus;

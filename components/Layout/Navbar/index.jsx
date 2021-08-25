@@ -10,7 +10,6 @@ import {
   Link,
   Icon,
   Collapse,
-  VStack,
 } from '@chakra-ui/react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import NextLink from 'next/link';
@@ -18,28 +17,46 @@ import NextLink from 'next/link';
 import NavLink from './NavLink';
 import ResponsiveContainer from '../ResponsiveContainer';
 
-const NavLinks = () => (
+const NavLinks = ({ closeMenu }) => (
   <>
-    <NavLink to="/">
+    <NavLink
+      to="/"
+      onClick={closeMenu}
+    >
       <span>HOME</span>
     </NavLink>
-    <NavLink to="/events">
+    <NavLink
+      to="/events"
+      onClick={closeMenu}
+    >
       <span>EVENTS</span>
     </NavLink>
-    <NavLink to="https://www.medium.com">
+    <NavLink
+      to="https://medium.com/@ieeemuj"
+      onClick={closeMenu}
+    >
       <span>BLOG</span>
     </NavLink>
-    <NavLink to="/societies">
+    <NavLink
+      to="/societies"
+      onClick={closeMenu}
+    >
       <span>SOCIETIES</span>
     </NavLink>
-    <NavLink to="/team">
+    <NavLink
+      to="/team"
+      onClick={closeMenu}
+    >
       <span>TEAM</span>
     </NavLink>
-    <NavLink to="/contactus">
+    <NavLink
+      to="/contactus"
+      onClick={closeMenu}
+    >
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
-      href="/join-us"
+      href="/membership"
       passHref
     >
       <Button
@@ -84,38 +101,20 @@ const Navbar = () => {
             h={16}
             alignItems="center"
             justifyContent="space-between"
+
           >
             <NextLink
               href="/"
               passHref
             >
-              <VStack
-                marginBottom="-18px"
+              <Heading
                 cursor="pointer"
-                spacing="0"
-                textAlign="justify"
+                size="md"
+                color="white"
               >
-                <Heading
-                  size="md"
-                  color="white"
-                >
-                  IEEE STUDENT BRANCH
-                </Heading>
-                <Heading
-                  size="xs"
-                  color="white"
-                  width="100%"
-                  _after={{
-                    content: '""',
-                    display: 'inline-block',
-                    width: '100%',
-                  }}
-                >
-                  MANIPAL UNIVERSITY JAIPUR
-                </Heading>
-              </VStack>
+                IEEE SB MUJ
+              </Heading>
             </NextLink>
-
             <HStack as="nav" spacing={4} display={{ base: 'none', xl: 'flex' }}>
               <NavLinks />
             </HStack>
@@ -171,9 +170,9 @@ const Navbar = () => {
               spacing={10}
               alignItems="center"
               justify="center"
-              height="100%"
+              height="85%"
             >
-              <NavLinks />
+              <NavLinks closeMenu={onClose} />
             </Stack>
           </Box>
         </Collapse>

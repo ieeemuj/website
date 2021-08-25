@@ -26,7 +26,7 @@ const JoinUsBanner = () => (
             color="brand.700"
             size="lg"
           >
-            What Are You Waiting For? Join Our Awesome Community
+            Discover what IEEE has to offer. Become a member.
           </Heading>
           <Text
             width="100%"
@@ -34,11 +34,11 @@ const JoinUsBanner = () => (
             color="brand.500"
             fontSize="lg"
           >
-            Jumstart you career. Become an IEEE Member.
+            Be a part of a community that prepares you for college and beyond.
           </Text>
         </VStack>
         <NextLink
-          href="/join-us"
+          href="/membership"
           passHref
         >
           <Button

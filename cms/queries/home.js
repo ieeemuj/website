@@ -6,7 +6,7 @@ import SEO from '../seo/SEO';
 class HomeData {
   constructor(headerTagLine, headerSubTagLine, aboutIEEE, aboutIEEESBMUJ, ieeeSBVision,
     ieeeSBMission, testimonials, stats, featuredText, featuredButtonText,
-    featuredButtonLink, body, uid) {
+    featuredButtonLink, blogs, body, uid) {
     this.headerTagLine = headerTagLine;
     this.headerSubTagLine = headerSubTagLine;
     this.aboutIEEE = aboutIEEE;
@@ -18,6 +18,7 @@ class HomeData {
     this.featuredText = featuredText;
     this.featuredButtonText = featuredButtonText;
     this.featuredButtonLink = featuredButtonLink;
+    this.blogs = blogs;
     this.seo = new SEO(body);
     this.uid = uid;
   }
@@ -35,6 +36,7 @@ class HomeData {
       featuredText: this.featuredText,
       featuredButtonText: this.featuredButtonText,
       featuredButtonLink: this.featuredButtonLink,
+      blogs: this.blogs,
       seo: this.seo.object(),
       uid: this.uid,
     };
@@ -54,13 +56,25 @@ const getHomeData = async () => {
           ieee_sb_muj_mission
           testimonial {
             author_profile_pic
-            testimonial_text
+            text
             testimonial_author
             testimonial_author_title
           },
           stats {
             statistic_number
             statistic_subject
+          }
+          blogs {
+            title
+            image
+            summary
+            published_date
+            author_name
+            blog_link {
+              ... on _ExternalLink {
+                url
+              }
+            }
           }
           featured_text
           featured_button_text
@@ -101,6 +115,7 @@ const getHomeData = async () => {
         node.featured_text,
         node.featured_button_text,
         node.featured_button_link,
+        node.blogs,
         node.body,
         node._meta.uid,
       ).object();

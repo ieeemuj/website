@@ -37,11 +37,21 @@ const MyApp = ({ Component, pageProps }) => {
     <ChakraProvider theme={theme}>
       <CSSReset />
       <DefaultSeo
-        titleTemplate="IEEE SB MUJ | %s"
+        titleTemplate="%s | IEEE SB MUJ"
+        description="IEEE Student Branch, Manipal University Jaipur is a group of driven individuals striving to create and spread awareness about various technologies that surround us."
         openGraph={{
           type: 'website',
+          description: 'IEEE Student Branch, Manipal University Jaipur is a group of driven individuals striving to create and spread awareness about various technologies that surround us.',
           locale: 'en_US',
           site_name: 'IEEE SB MUJ',
+          images: [
+            {
+              height: '320',
+              width: '600',
+              url: 'https://images.prismic.io/ieeemuj/54fc4fee-55f5-4550-a4d6-c4409430c2b7_promote-01.png?auto=compress,format&rect=0,145,1334,711&w=600&h=320',
+              alt: 'IEEE SB MUJ',
+            },
+          ],
         }}
         twitter={{
           handle: '@ieeemuj',

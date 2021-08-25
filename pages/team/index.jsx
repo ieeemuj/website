@@ -1,260 +1,90 @@
 import React from 'react';
 import { Heading, Text } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import JoinUsBanner from '../../components/Layout/JoinUsBanner';
 import Section from '../../components/Home/Section';
 import SectionContent from '../../components/Home/Section/SectionContent';
 import TeamsContent from '../../components/Teams/TeamsContent';
 import TitleHeader from '../../components/Layout/TitleHeader';
-import NavLink from '../../components/Layout/Navbar/NavLink';
 import FadeInUp from '../../components/FadeInUp';
+import getTeamsData from '../../cms/queries/teams';
+import NextLink from '../../components/NextLink';
 
-const AboutUs = () => {
-  const faculty = [
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-  ];
-  const ieeeSB = [
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-  ];
-  const ieeeCS = [
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-  ];
-  const ieeeWIE = [
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-    {
-      name: 'Lorem Ipsum',
-      title: 'Error ab perspicitias',
-      linkedIn: '#',
-      insta: '#',
-      facebook: '#',
-    },
-
-  ];
-  return (
-    <main>
-      <TitleHeader>
-        <FadeInUp>
-          <Heading
-            size="lg"
-            textAlign="center"
-            color="white"
-            backgroundColor="brand.700"
-            padding="16px"
-            rounded="lg"
-          >
-            TEAMS
-          </Heading>
-          <Text
-            fontSize="lg"
-            color="white"
-            textAlign="center"
-            backgroundColor="brand.700"
-            padding="8px"
-            rounded="lg"
-          >
-            Looking for Website Team?
-            <NavLink to="/credits">
-              <span>WEBSITE CREDITS</span>
-            </NavLink>
-          </Text>
-        </FadeInUp>
-      </TitleHeader>
-      <Section>
-        <FadeInUp>
-          <SectionContent>
-            <TeamsContent faculty={faculty} ieeeCS={ieeeCS} ieeeSB={ieeeSB} ieeeWIE={ieeeWIE} />
-          </SectionContent>
-        </FadeInUp>
-      </Section>
+const AboutUs = ({ teamsData }) => (
+  <main>
+    <NextSeo
+      title={teamsData.seo.title}
+      description={teamsData.seo.description}
+      canonical="https://ieeemuj.com/team"
+      openGraph={{
+        description: teamsData.seo.description,
+        images: [
+          {
+            height: teamsData.seo.image.dimensions.height,
+            width: teamsData.seo.image.dimensions.width,
+            url: teamsData.seo.image.url,
+            alt: teamsData.seo.image.alt,
+          },
+        ],
+      }}
+    />
+    <TitleHeader>
       <FadeInUp>
-        <JoinUsBanner />
+        <Heading
+          size="lg"
+          textAlign="center"
+          color="white"
+          backgroundColor="brand.700"
+          padding="8px"
+          rounded="lg"
+        >
+          TEAM
+        </Heading>
+        <Text
+          fontSize="md"
+          color="gray.200"
+          textAlign="center"
+          backgroundColor="brand.700"
+          padding="8px"
+          rounded="lg"
+        >
+          Looking for Website Team?
+          <br />
+          <NextLink
+            color="white"
+            to="/credits"
+          >
+            <span>Click Here.</span>
+          </NextLink>
+        </Text>
       </FadeInUp>
-    </main>
-  );
-};
+    </TitleHeader>
+    <Section>
+      <SectionContent>
+        <TeamsContent
+          teamsData={teamsData}
+        />
+      </SectionContent>
+    </Section>
+    <FadeInUp>
+      <JoinUsBanner />
+    </FadeInUp>
+  </main>
+);
+
+export async function getStaticProps() {
+  const teamsData = await getTeamsData();
+
+  if (teamsData) {
+    return {
+      props: {
+        teamsData,
+      },
+    };
+  }
+  return {
+    notFound: false,
+  };
+}
 
 export default AboutUs;

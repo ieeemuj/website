@@ -21,12 +21,15 @@ const NavLink = ({ to, children, ...props }) => {
           px={2}
           py={1}
           color="white"
+          fontSize="0.9rem"
+          fontWeight="medium"
           _hover={{
             textDecoration: 'none',
           }}
           _focus={{
             border: 'none',
           }}
+          {...props}
         >
           {React.cloneElement(child, {
             className: `${styles.underLineAnimation} ${match ? styles.active : ''}`,
