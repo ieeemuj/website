@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   SimpleGrid, Heading,
-  Button, Box, Link, Text,
+  Button, Box, Link, Text, VStack,
 } from '@chakra-ui/react';
 
 import { NextSeo } from 'next-seo';
@@ -57,16 +57,53 @@ const JoinUs = ({ joinUsData }) => (
     </TitleHeader>
     <ResponsiveContainer>
       <FadeInUp>
+        <Box pt="32px">
+          <Benefits reasons={joinUsData.reasons} />
+        </Box>
+      </FadeInUp>
+      <FadeInUp>
+        <SimpleGrid
+          pt="32px"
+          columns={1}
+          spacing="10"
+          minChildWidth="200px"
+        >
+          <Heading
+            as="h7"
+            pb="16px"
+            size="sm"
+            textAlign={['center', 'center', 'left', 'left', 'left']}
+          >
+            All Societies & Affinity Groups included in membership.
+          </Heading>
+        </SimpleGrid>
         <SimpleGrid
           py="32px"
-          columns={2}
-          minChildWidth="180px"
+          pb="48px"
+          columns={['1', '1', '1', '2', '2']}
+          width="100%"
+          justifyItems="center"
+          spacingX="50px"
+          spacingY="50px"
+        >
+          {joinUsData.societies.map((society) => (
+            <SocietyCard society={society} />
+          ))}
+        </SimpleGrid>
+      </FadeInUp>
+      <hr />
+      <FadeInUp>
+        <VStack
+          py="48px"
+          // minChildWidth="180px"
         >
           <Heading
             as="h3"
+            py={4}
             size="md"
+            textAlign="center"
           >
-            Registration is now Open!
+            Registration is now Open! What are you waiting for?
           </Heading>
           <Box>
             <Button
@@ -93,47 +130,15 @@ const JoinUs = ({ joinUsData }) => (
                 bg: 'brand',
               }}
             >
-              REGISTER
+              JOIN NOW
             </Button>
           </Box>
-        </SimpleGrid>
+        </VStack>
       </FadeInUp>
-      <FadeInUp>
-        <Benefits reasons={joinUsData.reasons} />
-      </FadeInUp>
+      <hr />
       <FadeInUp>
         <SimpleGrid
-          py="32px"
-          columns={1}
-          spacing="10"
-          minChildWidth="200px"
-          marginTop="10"
-        >
-          <Heading
-            as="h7"
-            size="sm"
-          >
-            All Societies & Affinity Groups included in membership.
-          </Heading>
-        </SimpleGrid>
-      </FadeInUp>
-      <FadeInUp>
-        <SimpleGrid
-          py="32px"
-          columns={['1', '1', '1', '2', '2']}
-          width="100%"
-          justifyItems="center"
-          spacingX="50px"
-          spacingY="50px"
-        >
-          {joinUsData.societies.map((society) => (
-            <SocietyCard society={society} />
-          ))}
-        </SimpleGrid>
-      </FadeInUp>
-      <FadeInUp>
-        <SimpleGrid
-          py="32px"
+          py="48px"
           columns={2}
           spacingX="90px"
           minChildWidth="200px"
@@ -148,6 +153,7 @@ const JoinUs = ({ joinUsData }) => (
           </Heading>
         </SimpleGrid>
       </FadeInUp>
+
       <FadeInUp>
         <SimpleGrid
           py="32px"
@@ -159,6 +165,7 @@ const JoinUs = ({ joinUsData }) => (
           <Slideshow gallery={joinUsData.gallery} />
         </SimpleGrid>
       </FadeInUp>
+
     </ResponsiveContainer>
   </main>
 );

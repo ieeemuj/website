@@ -7,7 +7,8 @@ const Benefits = ({ data }) => (
     spacing="5"
   >
     <Heading
-      as="h1"
+      as="h2"
+      py="3"
       size="md"
       width="100%"
       textAlign={['center', 'center', 'center', 'center', 'left']}
