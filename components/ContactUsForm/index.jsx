@@ -51,7 +51,7 @@ const ContactUsForm = () => {
       py="32px"
     >
       <form name="contact" data-netlify="true" action="/contactus" method="POST" onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isInvalid={errors.name}>
+        <FormControl pb={2} isInvalid={errors.name}>
           <FormLabel htmlFor="name">Name</FormLabel>
           <Input
             id="name"
@@ -63,7 +63,7 @@ const ContactUsForm = () => {
             {errors.name?.message}
           </FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.email}>
+        <FormControl pb={2} isInvalid={errors.email}>
           <FormLabel htmlFor="email">Email</FormLabel>
 
           <Input
@@ -76,7 +76,7 @@ const ContactUsForm = () => {
             {errors.email?.message}
           </FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.msg}>
+        <FormControl pb={2} isInvalid={errors.msg}>
           <FormLabel htmlFor="msg">Message</FormLabel>
           <Textarea
             id="msg"
@@ -89,6 +89,7 @@ const ContactUsForm = () => {
           </FormErrorMessage>
         </FormControl>
         <Button
+          width="100%"
           type="submit"
           isLoading={isSubmitting}
           bgColor="#00132B"
