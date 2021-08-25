@@ -55,7 +55,7 @@ const EventCardBase = ({
           passHref
         >
           <LinkOverlay>
-            <Heading size="md">{RichText.asText(title)}</Heading>
+            <Heading as="h3" size="md">{RichText.asText(title)}</Heading>
           </LinkOverlay>
         </NextLink>
       </VStack>

@@ -32,6 +32,7 @@ const BlogCard = ({ blog }) => (
           href={blog.blog_link.url}
         >
           <Heading
+            as="h3"
             size="md"
             className={styles.link}
           >

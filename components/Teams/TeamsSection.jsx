@@ -5,10 +5,10 @@ const TeamsSection = ({ heading, data }) => (
   <>
     {heading && (
     <Heading
-      as="h6"
+      as="h3"
       width="100%"
       size="md"
-      paddingY="64px"
+      paddingY="32px"
       textAlign="center"
     >
       {heading}

@@ -3,6 +3,7 @@ import ReasonCard from './ReasonCard';
 
 const Benefits = ({ reasons }) => (
   <VStack
+    py="32px"
     alignItems="flex-start"
     spacing="5"
   >

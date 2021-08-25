@@ -21,11 +21,11 @@ function PageNotFound() {
             paddingY="64px"
           >
             <Box>
-              <Image src="/imgs/9.png" />
+              <Image src="/imgs/9.png" alt="" />
             </Box>
             <Box>
               <Stack p="40px" spacing="60px">
-                <Heading size="xl" align="center" marginTop="30px">
+                <Heading as="h1" size="xl" align="center" marginTop="30px">
                   Whoops !!
                 </Heading>
                 <Text align="center" fontSize="lg">

@@ -34,6 +34,7 @@ const Membership = ({ membershipData }) => (
     <TitleHeader>
       <FadeInUp>
         <Heading
+          as="h1"
           size="lg"
           textAlign="center"
           color="white"
@@ -57,22 +58,22 @@ const Membership = ({ membershipData }) => (
     </TitleHeader>
     <ResponsiveContainer>
       <FadeInUp>
-        <SimpleGrid
-          py="32px"
-          columns={['1', '1', '1', '1', '3']}
-          spacing="16"
-        >
-          <Benefits data={membershipData.reason1} />
-          <Benefits data={membershipData.reason2} />
-          <Benefits data={membershipData.reason3} />
-        </SimpleGrid>
-      </FadeInUp>
-      <FadeInUp>
         <Flex
-          direction="row"
+          py="48px"
+          direction="column"
           justify="center"
+          alignItems="center"
         >
+          <Heading
+            as="h3"
+            py={4}
+            size="md"
+            textAlign="center"
+          >
+            Registration is now Open! What are you waiting for?
+          </Heading>
           <Link
+            aria-label="ieee membership"
             target="_blank"
             href="https://www.ieee.org/membership/join/index.html"
           >
@@ -97,22 +98,34 @@ const Membership = ({ membershipData }) => (
                 bg: 'brand',
               }}
             >
-              REGISTER
+              JOIN NOW
             </Button>
           </Link>
         </Flex>
       </FadeInUp>
-
+      <hr />
       <FadeInUp>
         <SimpleGrid
-          py="32px"
+          py="48px"
+          columns={['1', '1', '1', '1', '3']}
+          spacing="16"
+        >
+          <Benefits data={membershipData.reason1} />
+          <Benefits data={membershipData.reason2} />
+          <Benefits data={membershipData.reason3} />
+        </SimpleGrid>
+      </FadeInUp>
+      <hr />
+      <FadeInUp>
+        <SimpleGrid
+          py="48px"
           columns={2}
           spacingX="90px"
           minChildWidth="200px"
         >
           <Heading
             as="h7"
-            size="sm"
+            size="md"
             width="100%"
             textAlign="center"
           >
