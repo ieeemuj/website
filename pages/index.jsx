@@ -98,6 +98,7 @@ const Home = ({ allEvents, homeData }) => {
                 spacing="10"
               >
                 <Heading
+                  as="h1"
                   fontSize={['4xl', '5xl', '7xl', '7xl', '5xl', '5xl']}
                   color="white"
                   textAlign={['center', 'center', 'center', 'center', 'left']}

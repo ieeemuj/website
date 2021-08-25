@@ -9,10 +9,13 @@ import { FaRegClock } from 'react-icons/fa';
 
 const EventDetailsGrid = ({ eventObj }) => (
   <SimpleGrid
-    columns={['1', '1', '1', '1', '2']}
-    width={['100%', '100%', '100%', '100%', '480px']}
-    justifyItems={['center', 'center', 'center', 'center', 'start']}
+    py={3}
+    mx="auto"
+    columns={['1', '1', '2', '2', '2']}
+    width={['max-content', 'max-content', 'max-content', 'max-content', '480px']}
+    justifyItems={['start', 'start', 'start', 'start', 'start']}
     spacing="3"
+    columnGap="4rem"
   >
     <HStack>
       <Icon
@@ -23,6 +26,7 @@ const EventDetailsGrid = ({ eventObj }) => (
       />
       <Text
         size="sm"
+        width="max-content"
       >
         {eventObj.dateTimeObj.dateStr}
       </Text>

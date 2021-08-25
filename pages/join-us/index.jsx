@@ -34,6 +34,7 @@ const JoinUs = ({ joinUsData }) => (
     <TitleHeader>
       <FadeInUp>
         <Heading
+          as="h1"
           size="lg"
           textAlign="center"
           color="white"

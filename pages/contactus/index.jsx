@@ -36,6 +36,7 @@ const Contactus = ({ contactUsData }) => (
     <TitleHeader>
       <FadeInUp>
         <Heading
+          as="h1"
           size="lg"
           textAlign="center"
           color="white"
@@ -83,7 +84,7 @@ const Contactus = ({ contactUsData }) => (
                     </Heading>
                     <Text
                       py={1}
-                      color="gray.500"
+                      color="gray.700"
                     >
                       {contact.position}
                     </Text>

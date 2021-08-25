@@ -3,7 +3,7 @@ import { Heading } from '@chakra-ui/react';
 const ActiveEventsHeader = () => (
   <>
     <Heading
-      as="h6"
+      as="h2"
       width="100%"
       size="lg"
       padding={4}

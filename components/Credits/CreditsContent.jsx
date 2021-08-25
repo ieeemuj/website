@@ -21,13 +21,15 @@ const CreditsContent = ({
         src={image}
       />
       <Heading
+        pt="2"
         as="h4"
+        textAlign="center"
         size="md"
       >
         {name}
       </Heading>
       <Text
-        fontSize="lg"
+        fontSize="md"
         color="#8a9494"
         fontWeight="medium"
         textAlign="center"
