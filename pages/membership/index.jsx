@@ -73,6 +73,7 @@ const Membership = ({ membershipData }) => (
             Registration is now Open! What are you waiting for?
           </Heading>
           <Link
+            aria-label="ieee membership"
             target="_blank"
             href="https://www.ieee.org/membership/join/index.html"
           >

@@ -46,6 +46,7 @@ const SocietiesContent = ({
         >
           {society.website && (
             <Link
+              aria-label="Website Link"
               target="_blank"
               href={society.website.url}
               _hover={{
@@ -64,6 +65,7 @@ const SocietiesContent = ({
           )}
           {society.instagram && (
             <Link
+              aria-label="Instagram Link"
               target="_blank"
               href={society.instagram.url}
               _hover={{
@@ -84,6 +86,7 @@ const SocietiesContent = ({
           )}
           {society.linkedin && (
             <Link
+              aria-label="Linkedin Link"
               target="_blank"
               href={society.linkedin.url}
               _hover={{

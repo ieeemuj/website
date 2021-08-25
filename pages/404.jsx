@@ -21,7 +21,7 @@ function PageNotFound() {
             paddingY="64px"
           >
             <Box>
-              <Image src="/imgs/9.png" />
+              <Image src="/imgs/9.png" alt="" />
             </Box>
             <Box>
               <Stack p="40px" spacing="60px">

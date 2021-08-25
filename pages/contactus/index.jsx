@@ -92,6 +92,7 @@ const Contactus = ({ contactUsData }) => (
                       fontSize="md"
                     >
                       <Link
+                        aria-label={`Phone Number is +91${contact.indian_mobile_number}`}
                         href={`tel:+91${contact.indian_mobile_number}`}
                       >
                         +91

@@ -12,6 +12,7 @@ const NextLink = ({ to, children, ...props }) => (
       passHref
     >
       <Link
+        aria-label={`${to}`}
         _hover={{
           textDecoration: 'none',
         }}
