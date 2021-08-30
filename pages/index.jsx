@@ -13,7 +13,7 @@ import AboutUsHeader from '../components/Home/AboutUs/AboutUsHeader';
 import SectionContent from '../components/Home/Section/SectionContent';
 import AboutUsContent from '../components/Home/AboutUs/AboutUsContent';
 import TestimonialHeader from '../components/Home/Testimonial/TestimonialHeader';
-import TestimonialContent from '../components/Home/Testimonial/TestimonialContent';
+import TestimonialCarousel from '../components/Home/Testimonial/TestimonialCarousel';
 import JoinUsBanner from '../components/Layout/JoinUsBanner';
 import ActiveEventsHeader from '../components/Events/ActiveEvents/ActiveEventsHeader';
 
@@ -262,7 +262,7 @@ const Home = ({ allEvents, homeData }) => {
             <TestimonialHeader />
           </SectionHeader>
           <SectionContent>
-            <TestimonialContent testimonials={homeData.testimonials} />
+                <TestimonialCarousel testimonials={homeData.testimonials} />
           </SectionContent>
         </FadeInUp>
       </Section>

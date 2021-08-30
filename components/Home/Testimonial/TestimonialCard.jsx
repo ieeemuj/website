@@ -12,9 +12,10 @@ const TestimonialCard = ({ testimonial }) => (
   <Box
     as="section"
     bg="gray.50"
-    borderRadius="lg"
-    boxShadow="xl"
+    borderRadius="md"
+    boxShadow="2xl"  rounded="md"
   >
+    
     <Box
       maxW="xl"
       height="100%"
