@@ -10,7 +10,10 @@ const BlogsContent = ({ blogs }) => (
       spacing="10"
     >
       {blogs.map((blog) => (
-        <BlogCard blog={blog} />
+        <BlogCard
+          key={blog.title}
+          blog={blog}
+        />
       ))}
     </VStack>
   </Box>

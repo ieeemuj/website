@@ -26,9 +26,9 @@ import getStatus from '../utils';
 import styles from '../styles/ScrollIndicator.module.css';
 import getHomeData from '../cms/queries/home';
 import FadeInUp from '../components/FadeInUp';
-import NextLink from '../components/NextLink';
 import BlogsHeader from '../components/Home/Blogs/BlogsHeader';
 import BlogsContent from '../components/Home/Blogs/BlogContent';
+import NextButton from '../components/NextButton';
 
 const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -211,14 +211,11 @@ const Home = ({ allEvents, homeData }) => {
               textAlign="center"
               marginTop="16px"
             >
-              <NextLink
+              <NextButton
                 to="/events"
-                color="brand.500"
-                fontWeight="bold"
-                marginTop="16px"
               >
-                Have a look at our past events.
-              </NextLink>
+                Past Events
+              </NextButton>
             </Box>
           </SectionContent>
         </FadeInUp>
@@ -235,14 +232,12 @@ const Home = ({ allEvents, homeData }) => {
               textAlign="center"
               marginTop="16px"
             >
-              <NextLink
+              <NextButton
                 to="https://medium.com/@ieeemuj"
-                color="brand.500"
-                fontWeight="bold"
-                marginTop="16px"
+                target="_blank"
               >
-                See more blog posts.
-              </NextLink>
+                More Blogs
+              </NextButton>
             </Box>
           </SectionContent>
         </FadeInUp>
@@ -262,7 +257,9 @@ const Home = ({ allEvents, homeData }) => {
             <TestimonialHeader />
           </SectionHeader>
           <SectionContent>
-                <TestimonialCarousel testimonials={homeData.testimonials} />
+            <TestimonialCarousel
+              testimonials={homeData.testimonials}
+            />
           </SectionContent>
         </FadeInUp>
       </Section>

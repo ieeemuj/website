@@ -1,32 +1,26 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
-import TestimonialCard from '../Testimonial/TestimonialCard';
-
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 480, itemsToShow: 1 },
-  { width: 768, itemsToShow: 1 },
-  { width: 1080, itemsToShow: 1 },
-];
+import TestimonialCard from './TestimonialCard';
 
 const TestimonialCarousel = ({ testimonials }) => (
   <Carousel
-    breakPoints={breakPoints}
-    enableAutoPlay={true}
+    enableAutoPlay
     paginationenableAutoPlay="true"
-    autoPlaySpeed="5500"
+    autoPlaySpeed={4000}
     itemsToShow={1}
     enableMouseSwipe={false}
     pagination
   >
     {
-        testimonials.map((testimonial) => (
-            <TestimonialCard
-              testimonial={testimonial}
-              rounded="2xl"
-              bgColor="gray.500"
-            />
-          ))
+        testimonials.map((testimonial, i) => (
+          <TestimonialCard
+            // eslint-disable-next-line react/no-array-index-key
+            key={i}
+            testimonial={testimonial}
+            rounded="2xl"
+            bgColor="gray.500"
+          />
+        ))
     }
   </Carousel>
 );
