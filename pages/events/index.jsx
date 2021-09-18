@@ -4,18 +4,9 @@ import {
   Heading,
   Text,
   Box,
-  Flex,
   Stack,
   Input,
-  InputGroup,
-  InputLeftElement,
-  Menu,
-  MenuButton,
-  Button,
-  MenuItem,
-  MenuList,
 } from '@chakra-ui/react';
-import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
 import { NextSeo } from 'next-seo';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
@@ -29,11 +20,17 @@ import { getAllEvents } from '../../cms/queries/event';
 import getStatus from '../../utils';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
-import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
+import FitlerDropdown from '../../components/Events/EventControl/FilterDropdown';
+// import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 
 const Events = ({ allEvents }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
   const [pastEventsData, setPastEventsData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
+  const [searchState, setSearchState] = useState('');
+  const [yearState, setYearState] = useState('2021');
+  const [societyState, setSocietyState] = useState('All Societies');
 
   useEffect(() => {
     const tempActive = [];
@@ -67,7 +64,28 @@ const Events = ({ allEvents }) => {
 
     setActiveEventsData(tempActive);
     setPastEventsData(tempPast);
+    setFilteredData(tempPast);
   }, [allEvents]);
+
+  useEffect(() => {
+    let tempData = pastEventsData;
+    if (societyState !== 'All Societies') {
+      if (societyState === 'SB MUJ') {
+        tempData = tempData.filter((eventObj) => eventObj.club === 'SB');
+      } else if (societyState === 'CS MUJ') {
+        tempData = tempData.filter((eventObj) => eventObj.club === 'CS');
+      } else if (societyState === 'WIE MUJ') {
+        tempData = tempData.filter((eventObj) => eventObj.club === 'WIE');
+      }
+    }
+    tempData = tempData.filter(
+      (eventObj) => DateTime.fromISO(eventObj.startISO).year === parseInt(yearState, 10),
+    );
+    if (searchState !== '') {
+      tempData = tempData.filter((eventObj) => eventObj.prismicTitle[0].text.includes(searchState));
+    }
+    setFilteredData(tempData);
+  }, [societyState, yearState, searchState, pastEventsData]);
 
   return (
     <main>
@@ -121,51 +139,61 @@ const Events = ({ allEvents }) => {
           <PastEventsHeader />
         </SectionHeader>
         {/* </Section> */}
-        <Box width="100%" bgColor="white" paddingTop="16px" paddingBottom="16px">
-          <ResponsiveContainer>
-            <Flex minH="70px" marginY="32px">
-              <Stack spacing="10" alignItems="center" flexGrow="1" direction={['column', 'row']}>
-                <InputGroup backgroundColor="gray.50">
-                  <InputLeftElement
-                    pointerEvents="none"
-                  >
-                    <SearchIcon marginTop="5px" marginLeft="5px" boxSize="20px" color="gray.300" />
-                  </InputLeftElement>
-                  <Input type="text" placeholder="Search Events" size="lg" />
-                </InputGroup>
+        <Box
+          width="100%"
+          bgColor="white"
+          paddingTop="16px"
+          paddingBottom="16px"
+        >
+          <Stack
+            alignItems="center"
+            flexGrow="1"
+            width="100%"
+            direction={['column', 'column', 'column', 'row']}
+          >
+            <Input
+              type="search"
+              paddingX="32px"
+              // paddingY="32px"
+              bgColor="#F8FAFC"
+              placeholder="Search Events"
+              border="none"
+              _hover={{
+                border: 'none',
+              }}
+              _active={{
+                border: 'none',
+              }}
+              _focus={{
+                border: 'none',
+              }}
+              size="lg"
+              // flexBasis={['auto', '60%']}
+              onChange={(e) => setSearchState(e.target.value)}
+            />
+            <Stack
+              alignItems="center"
+              width="100%"
+              direction={['column', 'row']}
+              // flexBasis={['auto', '40%']}
+            >
+              <FitlerDropdown
+                items={[2021, 2020]}
+                initialValue="2021"
+                onChange={setYearState}
+              />
+              <FitlerDropdown
+                items={['All Societies', 'SB MUJ', 'CS MUJ', 'WIE MUJ']}
+                initialValue="All Societies"
+                onChange={setSocietyState}
+              />
+            </Stack>
 
-                <Menu>
-                  <MenuButton width="150px" as={Button} size="lg" backgroundColor="#003366" color="#fff" _hover={{ bg: '#003366' }} _expanded={{ bg: '#003366' }} _focus={{ boxShadow: 'outline' }}>
-                    Year
-                    <ChevronDownIcon />
-                  </MenuButton>
-                  <MenuList>
-                    <MenuItem>2021</MenuItem>
-                    <MenuItem>2020</MenuItem>
-                    <MenuItem>2019</MenuItem>
-                    <MenuItem>2018</MenuItem>
-                  </MenuList>
-
-                </Menu>
-                <Menu>
-                  <MenuButton width="150px" as={Button} size="lg" backgroundColor="#003366" color="#fff" paddingRight="35px" _hover={{ bg: '#003366' }} _expanded={{ bg: '#003366' }} _focus={{ boxShadow: 'outline' }}>
-                    Society
-                    <ChevronDownIcon />
-                  </MenuButton>
-                  <MenuList>
-                    <MenuItem>IEEE SB MUJ</MenuItem>
-                    <MenuItem>IEEE CS MUJ</MenuItem>
-                    <MenuItem>IEEE WIE MUJ</MenuItem>
-                  </MenuList>
-                </Menu>
-              </Stack>
-            </Flex>
-          </ResponsiveContainer>
+          </Stack>
         </Box>
-        {/* <Section> */}
         <SectionContent>
           <PastEventsGrid
-            allEventsData={pastEventsData}
+            eventsData={filteredData}
           />
         </SectionContent>
       </Section>
