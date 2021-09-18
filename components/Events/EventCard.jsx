@@ -29,6 +29,7 @@ const EventCardBase = ({
     <VStack align="flex-start">
       <Image
         src={image}
+        alt={RichText.asText(title)}
         width="100%"
         height="100%"
         objectFit="cover"

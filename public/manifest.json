@@ -1,0 +1,15 @@
+{
+  "name": "IEEE Student Branch MUJ",
+  "short_name": "IEEE SB MUJ",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00132B",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "350x348",
+      "type": "image/png"
+    }
+  ]
+}

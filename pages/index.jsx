@@ -135,6 +135,7 @@ const Home = ({ allEvents, homeData }) => {
                     >
                       <Button
                         as={Link}
+                        rel="noreferrer"
                         bg="white"
                         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
                         px="32px"

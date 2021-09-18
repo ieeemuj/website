@@ -18,6 +18,7 @@ const BlogCard = ({ blog }) => (
         width={['300px', '300px', '300px', '300px', '250px']}
         height={['194px', '194px', '194px', '194px', '144px']}
         src={blog.image.url}
+        alt={blog.title}
       />
       <VStack
         minHeight="144px"
@@ -30,6 +31,7 @@ const BlogCard = ({ blog }) => (
           width="100%"
           target="_blank"
           href={blog.blog_link.url}
+          rel="noreferrer"
         >
           <Heading
             as="h3"

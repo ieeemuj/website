@@ -89,12 +89,15 @@ const Footer = () => (
               </FooterSection>
               <FooterSection>
                 <FooterSectionHeading>Address</FooterSectionHeading>
-                <FooterSectionLink>
+                <Text
+                  color="white"
+                  size="sm"
+                >
                   Manipal University Jaipur,
                   Dehmi Kalan, Near GVK Toll Plaza,
                   Jaipur-Ajmer Expressway, Jaipur,
                   Rajasthan 303007
-                </FooterSectionLink>
+                </Text>
               </FooterSection>
             </VStack>
             <VStack

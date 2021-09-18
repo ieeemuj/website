@@ -13,6 +13,7 @@ const NextLink = ({
     >
       <Button
         as={Link}
+        rel="noreferrer"
         target={target}
         aria-label={`${to}`}
         bgColor="brand.700"

@@ -5,6 +5,7 @@ import { DefaultSeo } from 'next-seo';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
+import Head from 'next/head';
 import Layout from '../components/Layout';
 
 // theme
@@ -58,6 +59,9 @@ const MyApp = ({ Component, pageProps }) => {
           cardType: 'summary_large_image',
         }}
       />
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>

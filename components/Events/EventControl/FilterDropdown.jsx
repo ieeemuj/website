@@ -43,7 +43,12 @@ const FitlerDropdown = ({ items, onChange, initialValue }) => {
       </MenuButton>
       <MenuList>
         {items.map((item) => (
-          <MenuItem onClick={(e) => handleChange(e)}>{item}</MenuItem>
+          <MenuItem
+            key={item}
+            onClick={(e) => handleChange(e)}
+          >
+            {item}
+          </MenuItem>
         ))}
       </MenuList>
 
