@@ -16,7 +16,6 @@ import TestimonialHeader from '../components/Home/Testimonial/TestimonialHeader'
 import TestimonialCarousel from '../components/Home/Testimonial/TestimonialCarousel';
 import JoinUsBanner from '../components/Layout/JoinUsBanner';
 import ActiveEventsHeader from '../components/Events/ActiveEvents/ActiveEventsHeader';
-
 import ActiveEventsCarousel from '../components/Events/ActiveEvents/ActiveEventsCarousel';
 import ResponsiveContainer from '../components/Layout/ResponsiveContainer';
 import HeaderSvg from '../public/svg/header.svg';

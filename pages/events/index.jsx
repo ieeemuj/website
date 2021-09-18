@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { Heading, Text } from '@chakra-ui/react';
+import {
+  Heading,
+  Text,
+  Box,
+  Stack,
+  Input,
+} from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import Section from '../../components/Home/Section';
 import SectionHeader from '../../components/Home/Section/SectionHeader';
@@ -14,10 +20,17 @@ import { getAllEvents } from '../../cms/queries/event';
 import getStatus from '../../utils';
 import TitleHeader from '../../components/Layout/TitleHeader';
 import FadeInUp from '../../components/FadeInUp';
+import FitlerDropdown from '../../components/Events/EventControl/FilterDropdown';
+// import ResponsiveContainer from '../../components/Layout/ResponsiveContainer';
 
 const Events = ({ allEvents }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
   const [pastEventsData, setPastEventsData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
+  const [searchState, setSearchState] = useState('');
+  const [yearState, setYearState] = useState('2021');
+  const [societyState, setSocietyState] = useState('All Societies');
 
   useEffect(() => {
     const tempActive = [];
@@ -51,7 +64,28 @@ const Events = ({ allEvents }) => {
 
     setActiveEventsData(tempActive);
     setPastEventsData(tempPast);
+    setFilteredData(tempPast);
   }, [allEvents]);
+
+  useEffect(() => {
+    let tempData = pastEventsData;
+    if (societyState !== 'All Societies') {
+      if (societyState === 'SB MUJ') {
+        tempData = tempData.filter((eventObj) => eventObj.club === 'SB');
+      } else if (societyState === 'CS MUJ') {
+        tempData = tempData.filter((eventObj) => eventObj.club === 'CS');
+      } else if (societyState === 'WIE MUJ') {
+        tempData = tempData.filter((eventObj) => eventObj.club === 'WIE');
+      }
+    }
+    tempData = tempData.filter(
+      (eventObj) => DateTime.fromISO(eventObj.startISO).year === parseInt(yearState, 10),
+    );
+    if (searchState !== '') {
+      tempData = tempData.filter((eventObj) => eventObj.prismicTitle[0].text.includes(searchState));
+    }
+    setFilteredData(tempData);
+  }, [societyState, yearState, searchState, pastEventsData]);
 
   return (
     <main>
@@ -104,9 +138,62 @@ const Events = ({ allEvents }) => {
         <SectionHeader>
           <PastEventsHeader />
         </SectionHeader>
+        {/* </Section> */}
+        <Box
+          width="100%"
+          bgColor="white"
+          paddingTop="16px"
+          paddingBottom="16px"
+        >
+          <Stack
+            alignItems="center"
+            flexGrow="1"
+            width="100%"
+            direction={['column', 'column', 'column', 'row']}
+          >
+            <Input
+              type="search"
+              paddingX="32px"
+              // paddingY="32px"
+              bgColor="#F8FAFC"
+              placeholder="Search Events"
+              border="none"
+              _hover={{
+                border: 'none',
+              }}
+              _active={{
+                border: 'none',
+              }}
+              _focus={{
+                border: 'none',
+              }}
+              size="lg"
+              // flexBasis={['auto', '60%']}
+              onChange={(e) => setSearchState(e.target.value)}
+            />
+            <Stack
+              alignItems="center"
+              width="100%"
+              direction={['column', 'row']}
+              // flexBasis={['auto', '40%']}
+            >
+              <FitlerDropdown
+                items={[2021, 2020]}
+                initialValue="2021"
+                onChange={setYearState}
+              />
+              <FitlerDropdown
+                items={['All Societies', 'SB MUJ', 'CS MUJ', 'WIE MUJ']}
+                initialValue="All Societies"
+                onChange={setSocietyState}
+              />
+            </Stack>
+
+          </Stack>
+        </Box>
         <SectionContent>
           <PastEventsGrid
-            allEventsData={pastEventsData}
+            eventsData={filteredData}
           />
         </SectionContent>
       </Section>
