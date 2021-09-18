@@ -16,6 +16,7 @@ const StatGroup = ({ stats }) => {
     >
       {stats.map((stat) => (
         <StatBox
+          key={stat.statistic_subject}
           numtext={stat.statistic_number}
           subtext={stat.statistic_subject}
           visible={vis}
