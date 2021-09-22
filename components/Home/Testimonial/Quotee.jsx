@@ -7,7 +7,7 @@ const Quotee = (props) => {
   } = props;
   return (
     <Box {...boxProps}>
-      <Img src={imageSrc} mx="auto" objectFit="cover" w="16" h="16" rounded="full" />
+      <Img src={imageSrc} mx="auto" objectFit="cover" w="16" h="16" rounded="full" alt="" />
       <Box mt="3">
         <Text as="cite" fontStyle="normal" fontWeight="bold">
           {name}

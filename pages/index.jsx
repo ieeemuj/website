@@ -13,10 +13,9 @@ import AboutUsHeader from '../components/Home/AboutUs/AboutUsHeader';
 import SectionContent from '../components/Home/Section/SectionContent';
 import AboutUsContent from '../components/Home/AboutUs/AboutUsContent';
 import TestimonialHeader from '../components/Home/Testimonial/TestimonialHeader';
-import TestimonialContent from '../components/Home/Testimonial/TestimonialContent';
+import TestimonialCarousel from '../components/Home/Testimonial/TestimonialCarousel';
 import JoinUsBanner from '../components/Layout/JoinUsBanner';
 import ActiveEventsHeader from '../components/Events/ActiveEvents/ActiveEventsHeader';
-
 import ActiveEventsCarousel from '../components/Events/ActiveEvents/ActiveEventsCarousel';
 import ResponsiveContainer from '../components/Layout/ResponsiveContainer';
 import HeaderSvg from '../public/svg/header.svg';
@@ -26,9 +25,9 @@ import getStatus from '../utils';
 import styles from '../styles/ScrollIndicator.module.css';
 import getHomeData from '../cms/queries/home';
 import FadeInUp from '../components/FadeInUp';
-import NextLink from '../components/NextLink';
 import BlogsHeader from '../components/Home/Blogs/BlogsHeader';
 import BlogsContent from '../components/Home/Blogs/BlogContent';
+import NextButton from '../components/NextButton';
 
 const Home = ({ allEvents, homeData }) => {
   const [activeEventsData, setActiveEventsData] = useState([]);
@@ -98,6 +97,7 @@ const Home = ({ allEvents, homeData }) => {
                 spacing="10"
               >
                 <Heading
+                  as="h1"
                   fontSize={['4xl', '5xl', '7xl', '7xl', '5xl', '5xl']}
                   color="white"
                   textAlign={['center', 'center', 'center', 'center', 'left']}
@@ -135,6 +135,7 @@ const Home = ({ allEvents, homeData }) => {
                     >
                       <Button
                         as={Link}
+                        rel="noreferrer"
                         bg="white"
                         boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
                         px="32px"
@@ -210,14 +211,11 @@ const Home = ({ allEvents, homeData }) => {
               textAlign="center"
               marginTop="16px"
             >
-              <NextLink
+              <NextButton
                 to="/events"
-                color="brand.500"
-                fontWeight="bold"
-                marginTop="16px"
               >
-                Have a look at our past events.
-              </NextLink>
+                Past Events
+              </NextButton>
             </Box>
           </SectionContent>
         </FadeInUp>
@@ -234,14 +232,12 @@ const Home = ({ allEvents, homeData }) => {
               textAlign="center"
               marginTop="16px"
             >
-              <NextLink
+              <NextButton
                 to="https://medium.com/@ieeemuj"
-                color="brand.500"
-                fontWeight="bold"
-                marginTop="16px"
+                target="_blank"
               >
-                See more blog posts.
-              </NextLink>
+                More Blogs
+              </NextButton>
             </Box>
           </SectionContent>
         </FadeInUp>
@@ -261,7 +257,9 @@ const Home = ({ allEvents, homeData }) => {
             <TestimonialHeader />
           </SectionHeader>
           <SectionContent>
-            <TestimonialContent testimonials={homeData.testimonials} />
+            <TestimonialCarousel
+              testimonials={homeData.testimonials}
+            />
           </SectionContent>
         </FadeInUp>
       </Section>

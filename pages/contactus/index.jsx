@@ -36,6 +36,7 @@ const Contactus = ({ contactUsData }) => (
     <TitleHeader>
       <FadeInUp>
         <Heading
+          as="h1"
           size="lg"
           textAlign="center"
           color="white"
@@ -83,7 +84,7 @@ const Contactus = ({ contactUsData }) => (
                     </Heading>
                     <Text
                       py={1}
-                      color="gray.500"
+                      color="gray.700"
                     >
                       {contact.position}
                     </Text>
@@ -91,6 +92,7 @@ const Contactus = ({ contactUsData }) => (
                       fontSize="md"
                     >
                       <Link
+                        aria-label={`Phone Number is +91${contact.indian_mobile_number}`}
                         href={`tel:+91${contact.indian_mobile_number}`}
                       >
                         +91

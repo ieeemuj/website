@@ -3,6 +3,7 @@ import { Heading } from '@chakra-ui/react';
 const AboutUsHeader = () => (
   <>
     <Heading
+      as="h2"
       width="100%"
       size="lg"
       textAlign="center"
@@ -10,6 +11,7 @@ const AboutUsHeader = () => (
       Institute of Electrical and Electronics Engineers
     </Heading>
     <Heading
+      as="h2"
       width="100%"
       textAlign="center"
       color="brand.500"

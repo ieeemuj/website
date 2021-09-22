@@ -29,6 +29,7 @@ const EventCardBase = ({
     <VStack align="flex-start">
       <Image
         src={image}
+        alt={RichText.asText(title)}
         width="100%"
         height="100%"
         objectFit="cover"
@@ -55,7 +56,7 @@ const EventCardBase = ({
           passHref
         >
           <LinkOverlay>
-            <Heading size="md">{RichText.asText(title)}</Heading>
+            <Heading as="h3" size="md">{RichText.asText(title)}</Heading>
           </LinkOverlay>
         </NextLink>
       </VStack>
