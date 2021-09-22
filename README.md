@@ -12,7 +12,7 @@
   <a href="#netlify"><img alt="Netlify" src="https://img.shields.io/netlify/9fa1c44d-fd96-468c-af1e-b276b887610a?style=flat"></a>
   <a href="#website"><img alt="Website" src="https://img.shields.io/website?style=flat&url=http%3A%2F%2Fwww.ieeemuj.com%2F"></a>
   <a href="#license"><img alt="GPLv3 License" src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat"></a>
-  <a href="#contributors"><img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/ieeee/website.svg?style=flat"></a>
+  <a href="#contributors"><img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/ieeemuj/website.svg?style=flat"></a>
 </p>
 
 ## Getting Started
