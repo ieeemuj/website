@@ -6,57 +6,57 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://ieeemuj.netlify.app/</loc>
+  <loc>https://ieeemuj.com/</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/events</loc>
+  <loc>https://ieeemuj.com/events</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/societies</loc>
+  <loc>https://ieeemuj.com/societies</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/team</loc>
+  <loc>https://ieeemuj.com/team</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/contactus</loc>
+  <loc>https://ieeemuj.com/contactus</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/membership</loc>
+  <loc>https://ieeemuj.com/membership</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/faculty-messages/director-scit</loc>
+  <loc>https://ieeemuj.com/faculty-messages/director-scit</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/faculty-messages/coordinator</loc>
+  <loc>https://ieeemuj.com/faculty-messages/coordinator</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/faculty-messages/dsw</loc>
+  <loc>https://ieeemuj.com/faculty-messages/dsw</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/faculty-messages/faculty-advisor-wie</loc>
+  <loc>https://ieeemuj.com/faculty-messages/faculty-advisor-wie</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ieeemuj.netlify.app/credits</loc>
+  <loc>https://ieeemuj.com/credits</loc>
   <lastmod>2021-09-18T13:01:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://ieeemuj.netlify.app/sitemap.xml
+Sitemap: http://ieeemuj.com/sitemap.xml
