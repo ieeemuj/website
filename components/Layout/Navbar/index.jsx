@@ -56,7 +56,8 @@ const NavLinks = ({ closeMenu }) => (
       <span>CONTACT US</span>
     </NavLink>
     <NextLink
-      href="https://forms.office.com/Pages/ResponsePage.aspx?id=3S8oJwtM-026kSKM2D_fcZCSDIgDC1tMpM795oWPHW1UMDU1MERaSEZXVTFVNloxNUlZNDhHVEVITS4u"
+      // href="https://forms.office.com/Pages/ResponsePage.aspx?id=3S8oJwtM-026kSKM2D_fcZCSDIgDC1tMpM795oWPHW1UMDU1MERaSEZXVTFVNloxNUlZNDhHVEVITS4u"
+      href = "https://forms.gle/v3i9crmYZjsUs4Yk7"
       passHref
     >
       <Button
