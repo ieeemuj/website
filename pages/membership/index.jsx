@@ -75,7 +75,8 @@ const Membership = ({ membershipData }) => (
           <Link
             aria-label="ieee membership"
             target="_blank"
-            href="https://www.ieee.org/membership/join/index.html"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeFfR859Eibnbq7xZQymeT9xoIp1Xr700xVzbmJb1YZYK1PSQ/viewform"
+            // href="https://www.ieee.org/membership/join/index.html"
           >
             <Button
               bgColor="brand.700"
