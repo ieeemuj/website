@@ -178,8 +178,8 @@ const Events = ({ allEvents }) => {
               // flexBasis={['auto', '40%']}
             >
               <FitlerDropdown
-                items={[2021, 2020]}
-                initialValue="2021"
+                items={[2022, 2021, 2020]}
+                initialValue="2022"
                 onChange={setYearState}
               />
               <FitlerDropdown
