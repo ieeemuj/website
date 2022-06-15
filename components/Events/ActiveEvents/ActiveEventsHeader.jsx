@@ -9,7 +9,7 @@ const ActiveEventsHeader = () => (
       padding={4}
       textAlign="center"
     >
-      Active Events
+      Latest Events
     </Heading>
   </>
 );

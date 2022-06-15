@@ -34,25 +34,42 @@ const Home = ({ allEvents, homeData }) => {
   const myRef = useRef(null);
 
   useEffect(() => {
-    const tempActive = [];
+    let temp = [];
     allEvents.forEach((eventObj) => {
       const tempObj = eventObj;
-      const status = getStatus(tempObj.startISO, tempObj.endISO);
-
-      if (status !== 'COMPLETED') {
-        tempObj.status = status;
-        tempActive.push(tempObj);
-      }
+        temp.push(tempObj);
+      // }
     });
 
-    tempActive.sort((a, b) => {
+    temp.sort((a, b) => {
       const dta = DateTime.fromISO(a.startISO);
       const dtb = DateTime.fromISO(b.startISO);
 
-      return dta.toMillis() - dtb.toMillis();
+      return dtb.toMillis() - dta.toMillis();
     });
+    temp = temp.slice(0,6);
+    setActiveEventsData(temp);
 
-    setActiveEventsData(tempActive);
+
+    // const tempActive = [];
+    // allEvents.forEach((eventObj) => {
+    //   const tempObj = eventObj;
+    //   const status = getStatus(tempObj.startISO, tempObj.endISO);
+
+    //   if (status !== 'COMPLETED') {
+    //     tempObj.status = status;
+    //     tempActive.push(tempObj);
+    //   }
+    // });
+
+    // tempActive.sort((a, b) => {
+    //   const dta = DateTime.fromISO(a.startISO);
+    //   const dtb = DateTime.fromISO(b.startISO);
+
+    //   return dta.toMillis() - dtb.toMillis();
+    // });
+
+    // setActiveEventsData(tempActive);
   }, [allEvents]);
 
   return (
