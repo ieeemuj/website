@@ -77,11 +77,11 @@ const Footer = () => (
             >
               <FooterSection>
                 <FooterSectionHeading>Contact Us</FooterSectionHeading>
-                <FooterSectionContact number="+919825440501" name="Shaleen Poddar">
-                  +91 98254 40501
+                <FooterSectionContact number="+919999214243" name="Aarohi Manchanda">
+                +91 99992 14243
                 </FooterSectionContact>
-                <FooterSectionContact number="+918106853161" name="Ronak Modi">
-                  +91 81068 53161
+                <FooterSectionContact number="+919930048037" name="Vikramaditya Hiran">
+                +91 99300 48037
                 </FooterSectionContact>
                 <FooterSectionLink href="mailto:ieee@muj.manipal.edu">
                   ieee@muj.manipal.edu
