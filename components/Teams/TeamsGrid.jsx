@@ -1,7 +1,7 @@
 import { SimpleGrid } from '@chakra-ui/react';
 import CreditsContent from '../Credits/CreditsContent';
 
-const TeamsGrid = ({ members }) => (
+const TeamsGrid = ({ members, ec }) => (
   <SimpleGrid
     columns={['1', '1', '2', '2', '3']}
     height="100%"
@@ -21,6 +21,7 @@ const TeamsGrid = ({ members }) => (
         github={member.github}
         twitter={member.twitter}
         behance={member.behance}
+        ec={ec}
       />
     ))}
   </SimpleGrid>

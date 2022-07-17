@@ -48,6 +48,7 @@ const TeamsContent = ({
           <TeamsSection
             heading="Executive Committee"
             data={teamsData.ecSb}
+            ec="true"
           />
           <Divider />
           <TeamsSection
@@ -64,6 +65,7 @@ const TeamsContent = ({
           <TeamsSection
             heading="Executive Committee"
             data={teamsData.ecCs}
+            ec="true"
           />
           <Divider />
           <TeamsSection
@@ -80,6 +82,7 @@ const TeamsContent = ({
           <TeamsSection
             heading="Executive Committee"
             data={teamsData.ecWie}
+            ec="true"
           />
           <Divider />
           <TeamsSection

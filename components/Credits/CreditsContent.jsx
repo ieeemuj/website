@@ -7,9 +7,14 @@ import {
 } from 'react-icons/fa';
 import FadeInUp from '../FadeInUp';
 
-const CreditsContent = ({
-  name, image, position, linkedIn, instagram, github, twitter, behance,
-}) => (
+  const CreditsContent = (props) =>{
+  const {name, image, position, linkedIn, instagram, github, twitter, behance,ec} = props;
+  var avtrSize="xl";
+  if(ec==="true")
+  {
+    avtrSize="2xl";
+  }
+  return(
   <FadeInUp>
     <VStack
       marginY="2em"
@@ -17,7 +22,7 @@ const CreditsContent = ({
       alignItems="center"
     >
       <Avatar
-        size="xl"
+        size={avtrSize}
         src={image}
       />
       <Heading
@@ -99,5 +104,6 @@ const CreditsContent = ({
     </VStack>
   </FadeInUp>
 );
+        }
 
 export default CreditsContent;

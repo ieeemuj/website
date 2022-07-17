@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/react';
 import TeamsGrid from './TeamsGrid';
 
-const TeamsSection = ({ heading, data }) => (
+const TeamsSection = ({ heading, data, ec }) => (
   <>
     {heading && (
     <Heading
@@ -14,7 +14,7 @@ const TeamsSection = ({ heading, data }) => (
       {heading}
     </Heading>
     )}
-    <TeamsGrid members={data} />
+    <TeamsGrid members={data} ec={ec} />
   </>
 );
 
