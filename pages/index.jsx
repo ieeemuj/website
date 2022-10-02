@@ -133,6 +133,8 @@ const Home = ({ allEvents, homeData }) => {
                   width="100%"
                   height="100px"
                 >
+                  <HStack spacing="44px">
+
                   <VStack
                     justify={['center', 'center', 'center', 'center', 'start']}
                     alignItems={['center', 'center', 'center', 'center', 'flex-start']}
@@ -177,6 +179,52 @@ const Home = ({ allEvents, homeData }) => {
                       </Button>
                     </NLink>
                   </VStack>
+                  <VStack
+                    justify={['center', 'center', 'center', 'center', 'start']}
+                    alignItems={['center', 'center', 'center', 'center', 'flex-start']}
+                    spacing="5"
+                  >
+                    <Text
+                      width={['100%', '100%', '100%', '100%', '100%']}
+                      color="gray.100"
+                      fontSize={['md', 'xl']}
+                      textAlign={['center', 'center', 'center', 'center', 'left']}
+                    >
+                     Explore Genesis 2.0
+                    </Text>
+                    <NLink
+                      href="https://genesis.ieeemuj.com"
+                      passHref
+                    >
+                      <Button
+                        as={Link}
+                        rel="noreferrer"
+                        bg="white"
+                        boxShadow="0 4px 8px rgba(0, 9, 61, .24);"
+                        px="32px"
+                        rounded="lg"
+                        color="brand"
+                        _hover={{
+                          border: 'none',
+                          textDecoration: 'none',
+                        }}
+                        _active={{
+                          border: 'none',
+                          boxShadow: 'none',
+                          transform: 'scale(0.97)',
+                        }}
+                        _focus={{
+                          border: 'none',
+                          boxShadow: 'none',
+                          bg: 'brand',
+                        }}
+                      >
+                        GENESIS 2.0
+                      </Button>
+                    </NLink>
+                  </VStack>
+                  </HStack>
+
                 </Box>
                 <Box
                   className={styles.scrollIndicator}
