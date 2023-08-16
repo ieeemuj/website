@@ -1,10 +1,23 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-import PrismicClient from '../PrismicClient';
-import SEO from '../seo/SEO';
+import PrismicClient from "../PrismicClient";
+import SEO from "../seo/SEO";
 
 class TeamsData {
-  constructor(faculty, advisors, ecSb, ocSb, ccSb, ecCs, ccCs, ttCS, ecWie, ocWie, ccWie, body) {
+  constructor(
+    faculty,
+    advisors,
+    ecSb,
+    ocSb,
+    ccSb,
+    ecCs,
+    ccCs,
+    ttCS,
+    ecWie,
+    ocWie,
+    ccWie,
+    body
+  ) {
     this.faculty = TeamsData.mapToMember(faculty);
     this.advisors = TeamsData.mapToMember(advisors);
     this.ecSb = TeamsData.mapToMember(ecSb);
@@ -20,14 +33,16 @@ class TeamsData {
   }
 
   static mapToMember(group) {
-    return group.map((type) => type.member).map((member) => ({
-      ...member,
-      linkedIn: member.linkedin ? member.linkedin.url : null,
-      instagram: member.instagram ? member.instagram.url : null,
-      github: member.github ? member.github.url : null,
-      twitter: member.twitter ? member.twitter.url : null,
-      behance: member.behance ? member.behance.url : null,
-    }));
+    return group
+      .map((type) => type.member)
+      .map((member) => ({
+        ...member,
+        linkedIn: member.linkedin ? member.linkedin.url : null,
+        instagram: member.instagram ? member.instagram.url : null,
+        github: member.github ? member.github.url : null,
+        twitter: member.twitter ? member.twitter.url : null,
+        behance: member.behance ? member.behance.url : null,
+      }));
   }
 
   object() {
@@ -52,107 +67,108 @@ const getTeamsData = async () => {
   const response = await PrismicClient.query({
     query: gql`
       query GetTeamsPage {
-      teams_page(uid: "teams-page", lang: "en-us") {
-        faculty {
-          member {
-            ...memberDetails
+        teams_page(uid: "teams-page1", lang: "en-us") {
+          faculty {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        advisors {
-          member {
-            ...memberDetails
+          advisors {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        ec_sb {
-          member {
-            ...memberDetails
+          ec_sb {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        oc_sb {
-          member {
-            ...memberDetails
+          oc_sb {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        cc_sb {
-          member {
-            ...memberDetails
+          cc_sb {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        ec_cs {
-          member {
-            ...memberDetails
+          ec_cs {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        tt_cs {
-          member {
-            ...memberDetails
+          tt_cs {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        cc_cs {
-          member {
-            ...memberDetails
+          cc_cs {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        ec_wie {
-          member {
-            ...memberDetails
+          ec_wie {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        oc_wie {
-          member {
-            ...memberDetails
+          oc_wie {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        cc_wie {
-          member {
-            ...memberDetails
+          cc_wie {
+            member {
+              ...memberDetails
+            }
           }
-        }
-        body {
-          ... on Teams_pageBodySocial_card {
-            type
-            primary {
-              page_title
-              description
-              image
-              twitter_handle
-              twitter_card_type
+          body {
+            ... on Teams_pageBodySocial_card {
+              type
+              primary {
+                page_title
+                description
+                image
+                twitter_handle
+                twitter_card_type
+              }
             }
           }
         }
       }
-    }
 
-    fragment memberDetails on Member {
-      image
-      title
-      position
-      linkedin {
-        ... on _ExternalLink {
-          url
+      fragment memberDetails on Member {
+        image
+        title
+        year1
+        position
+        linkedin {
+          ... on _ExternalLink {
+            url
+          }
+        }
+        instagram {
+          ... on _ExternalLink {
+            url
+          }
+        }
+        github {
+          ... on _ExternalLink {
+            url
+          }
+        }
+        twitter {
+          ... on _ExternalLink {
+            url
+          }
+        }
+        behance {
+          ... on _ExternalLink {
+            url
+          }
         }
       }
-      instagram {
-        ... on _ExternalLink {
-          url
-        }
-      }
-      github {
-        ... on _ExternalLink {
-          url
-        }
-      }
-      twitter {
-        ... on _ExternalLink {
-          url
-        }
-      }
-      behance {
-        ... on _ExternalLink {
-          url
-        }
-      }
-    }
     `,
   });
 
@@ -172,7 +188,7 @@ const getTeamsData = async () => {
         node.ec_wie,
         node.oc_wie,
         node.cc_wie,
-        node.body,
+        node.body
       ).object();
     }
   }
