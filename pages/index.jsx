@@ -190,7 +190,7 @@ const Home = ({ allEvents, homeData }) => {
                       fontSize={['md', 'xl']}
                       textAlign={['center', 'center', 'center', 'center', 'left']}
                     >
-                     Explore Genesis 2.0
+                     Explore Genesis 3.0
                     </Text>
                     <NLink
                       href="https://genesis.ieeemuj.com"
@@ -219,7 +219,7 @@ const Home = ({ allEvents, homeData }) => {
                           bg: 'brand',
                         }}
                       >
-                        GENESIS 2.0
+                        GENESIS 3.0
                       </Button>
                     </NLink>
                   </VStack>
