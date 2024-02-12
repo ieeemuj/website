@@ -29,7 +29,7 @@ const Events = ({ allEvents }) => {
   const [filteredData, setFilteredData] = useState([]);
 
   const [searchState, setSearchState] = useState('');
-  const [yearState, setYearState] = useState('2021');
+  const [yearState, setYearState] = useState('2023');
   const [societyState, setSocietyState] = useState('All Societies');
 
   useEffect(() => {
