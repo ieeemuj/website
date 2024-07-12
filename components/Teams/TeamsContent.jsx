@@ -12,7 +12,7 @@ import TeamsSection from "./TeamsSection";
 import FilterDropdown from "../Events/EventControl/FilterDropdown";
 
 const TeamsContent = ({ teamsData }) => {
-  const [yearState, setYearState] = useState("2023");
+  const [yearState, setYearState] = useState("2024");
 
   return (
     <Box>
