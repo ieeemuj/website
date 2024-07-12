@@ -27,8 +27,8 @@ const TeamsContent = ({ teamsData }) => {
   <Box justifySelf="flex-end" width="35%" alignSelf="flex-end">
     <FilterDropdown
       width="100%"
-      items={[2022, 2023]}
-      initialValue="2023"
+      items={[2022, 2023, 2024]}
+      initialValue="2024"
       onChange={setYearState}
     />
   </Box>
